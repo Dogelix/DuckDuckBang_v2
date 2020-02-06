@@ -1,0 +1,64 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerScore : MonoBehaviour
+{
+    private int _currentScore = 0;
+    // Multiplier is 0 due to: NUM * 0 = 0
+    private int _multiplier = 1;
+
+    /// <summary>
+    /// Updates the current score. Can be used to both increment and decrement score.
+    /// If the value is less than 0 the multiplier will reset.
+    /// </summary>
+    /// <param name="value">A positive or negative value</param>
+    public void UpdateScore(int value )
+    {
+        if ( value < 0 )
+            ResetMultiplier();
+
+        _currentScore += (value * _multiplier);
+
+        //TODO: Add an invoke here to update the UI points
+    }
+
+    /// <summary>
+    /// Updates the multiplier value. Bothe negative and positive values work
+    /// </summary>
+    /// <param name="value">A positive or negative value</param>
+    public void UpdateMultiplier(int value )
+    {
+        _multiplier += value;
+    }
+
+    /// <summary>
+    /// Resets the multiplier value to the base;
+    /// </summary>
+    public void ResetMultiplier()
+    {
+        _multiplier = 1;
+    }
+
+    /// <summary>
+    /// Get the current score.
+    /// </summary>
+    public int GetScore
+    {
+        get
+        {
+            return _currentScore;
+        }
+    }
+
+    /// <summary>
+    /// Get the current multiplier
+    /// </summary>
+    public int GetMultiplier
+    {
+        get
+        {
+            return _multiplier;
+        }
+    }
+}
