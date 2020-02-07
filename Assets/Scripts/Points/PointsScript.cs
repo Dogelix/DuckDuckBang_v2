@@ -23,6 +23,10 @@ public class PointsScript : MonoBehaviour
 
     private void OnDestroy()
     {
+        var goPosition = gameObject.transform.position;
+
+        //PointsPopUp.Create(goPosition, _pointsValue);
+
         _playerScore.UpdateScore(_pointsValue);
 
         if ( _hasMultiplier )
