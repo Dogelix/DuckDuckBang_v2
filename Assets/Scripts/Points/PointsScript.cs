@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,19 +16,20 @@ public class PointsScript : MonoBehaviour
 
     private PlayerScore _playerScore;
 
+    private string _uniqueToken;
+
     private void Awake()
     {
+        _uniqueToken = Guid.NewGuid().ToString();
         _playerScore = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<PlayerScore>();
     }
 
 
     private void OnDestroy()
     {
-        var goPosition = gameObject.transform.position;
+        PointsPopUp.Create(transform.position, _pointsValue);
 
-        //PointsPopUp.Create(goPosition, _pointsValue);
-
-        _playerScore.UpdateScore(_pointsValue);
+        _playerScore.UpdateScore(_pointsValue, _uniqueToken);
 
         if ( _hasMultiplier )
             _playerScore.UpdateMultiplier(_multiplierValue);

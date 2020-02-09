@@ -8,6 +8,6 @@ public class Testing : MonoBehaviour
     void Awake()
     {
         Debug.Log("Hi I'm Testing");
-        PointsPopUp.Create(Vector3.zero, 500);   
+        var popUp = PointsPopUp.Create(Vector3.zero, 500);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerScore : MonoBehaviour
 {
+    private List<string> _seenTokens = new List<string>();
     private int _currentScore = 0;
     // Multiplier is 0 due to: NUM * 0 = 0
     private int _multiplier = 1;
@@ -13,12 +14,17 @@ public class PlayerScore : MonoBehaviour
     /// If the value is less than 0 the multiplier will reset.
     /// </summary>
     /// <param name="value">A positive or negative value</param>
-    public void UpdateScore(int value )
+    public void UpdateScore(int value, string unqToken )
     {
+        if ( _seenTokens.Contains(unqToken) ) return;
+        else _seenTokens.Add(unqToken);
+
         if ( value < 0 )
             ResetMultiplier();
 
-        _currentScore += (value * _multiplier);
+        _currentScore = _currentScore + (value * _multiplier);
+
+        Debug.Log("Score: " + _currentScore);
 
         //TODO: Add an invoke here to update the UI points
     }

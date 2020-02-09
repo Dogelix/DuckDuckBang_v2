@@ -8,22 +8,24 @@ public class PointsPopUp : MonoBehaviour
     private Transform _mainCam  = null;
     private TextMeshPro _textMesh;
 
+    [SerializeField]
+    private float _displayLength = 10.0f;
+
     public static PointsPopUp Create(Vector3 loc, int pointsValue)
     {
-        var popupTransform = Instantiate(GameAssets.i.PointsPopup, loc, Quaternion.identity);
-
-        Debug.Log(popupTransform.name);
-        var popupScript = popupTransform.GetComponent<PointsPopUp>();
-        Debug.Log(popupScript);
-        popupScript.SetUp(pointsValue);
-
-        return popupScript;
+        Transform @object = Instantiate(GameAssets.i.PointsPopup) as Transform;
+        @object.position = loc;
+        PointsPopUp script = @object.GetComponent<PointsPopUp>();
+        script.SetUp(pointsValue);
+        return script;
     }
 
 
     private void Awake()
     {
         _textMesh = transform.GetComponent<TextMeshPro>();
+
+        Destroy(gameObject, _displayLength);
     }
 
     private void FixedUpdate()
@@ -46,12 +48,13 @@ public class PointsPopUp : MonoBehaviour
     {
         if ( pointsValue < 0 )
         {
-            _textMesh.SetText("-" + pointsValue);
+            _textMesh.SetText(pointsValue.ToString());
+            _textMesh.color = new Color(255, 0, 0);
         }
-            
         else
         {
             _textMesh.SetText("+" + pointsValue);
+            _textMesh.color = new Color(0, 255, 0);
         }
     }
 }
