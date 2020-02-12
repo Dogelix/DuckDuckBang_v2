@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2017301641818836496
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Clouds
+  m_Shader: {fileID: -6465566751694194690, guid: 0f713859e2afe6045a5a442784c06474,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    MotionVector: User
+  disabledShaderPasses:
+  - TransparentBackface
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_26D1F33F: 3.9
+    - Vector1_2F78F643: 2.89
+    - Vector1_58E61FDB: 0.05
+    - Vector1_5E449967: -1.97
+    - Vector1_73B2D91A: 0
+    - Vector1_8AD26EA5: 1
+    - Vector1_C3BBF728: 3.27
+    - Vector1_C48A7AFB: 0.04
+    - Vector1_D78EDD55: 163.2
+    - Vector1_FA78521E: -3.6
+    - _AlphaCutoffEnable: 0
+    - _AlphaDstBlend: 0
+    - _AlphaSrcBlend: 1
+    - _BlendMode: 0
+    - _CullMode: 2
+    - _CullModeForward: 2
+    - _DoubleSidedEnable: 0
+    - _DoubleSidedNormalMode: 2
+    - _DstBlend: 0
+    - _ReceivesSSR: 0
+    - _RenderQueueType: 1
+    - _RequireSplitLighting: 0
+    - _SrcBlend: 1
+    - _StencilRef: 0
+    - _StencilRefDepth: 32
+    - _StencilRefDistortionVec: 64
+    - _StencilRefGBuffer: 34
+    - _StencilRefMV: 160
+    - _StencilWriteMask: 3
+    - _StencilWriteMaskDepth: 48
+    - _StencilWriteMaskDistortionVec: 64
+    - _StencilWriteMaskGBuffer: 51
+    - _StencilWriteMaskMV: 176
+    - _SurfaceType: 0
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentSortPriority: 0
+    - _UseShadowThreshold: 0
+    - _ZTestDepthEqualForOpaque: 3
+    - _ZTestGBuffer: 4
+    - _ZTestTransparent: 4
+    - _ZWrite: 1
+    m_Colors:
+    - Color_84A7B5BB: {r: 0, g: 0, b: 0, a: 0}
+    - Color_9DFE9132: {r: 1, g: 1, b: 1, a: 0}
+    - Vector4_2866133B: {r: 4.4, g: 0.68, b: 0.81, a: 96.16}
+    - Vector4_3AA8760D: {r: 43.68, g: -2, b: 1.5, a: 0.41}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
