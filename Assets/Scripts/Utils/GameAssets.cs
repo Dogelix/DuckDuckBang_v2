@@ -32,11 +32,21 @@ public class GameAssets : MonoBehaviour
             return _i;
         }
     }
-    
+
+    public GameObject SceneManager => this.gameObject;
+
     /// <summary>
     /// Points Pop Up Text
     /// </summary>
     public Transform PointsPopup;
 
+    /// <summary>
+    /// Basic Testing Duck
+    /// </summary>
     public Transform GameJamDuck;
+
+    /// <summary>
+    /// For anything that has hearts
+    /// </summary>
+    public Sprite EmptyHeart;
 }

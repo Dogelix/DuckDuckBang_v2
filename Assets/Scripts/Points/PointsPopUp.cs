@@ -30,18 +30,6 @@ public class PointsPopUp : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if ( !_mainCam )
-        {
-            if ( !Camera.main )
-            {
-                Debug.Log("Can't find main cam");
-                return;
-            }
-
-            _mainCam = Camera.main.transform;
-        }
-
-
         transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
         DecreaseFont();
         //transform.LookAt(_mainCam.transform, Vector3.up);
