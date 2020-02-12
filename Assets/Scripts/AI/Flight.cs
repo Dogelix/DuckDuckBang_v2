@@ -98,8 +98,6 @@ public class Flight : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody>().useGravity = true;
             moveTowardsBread = false;
-
-            
             //TODO: Decrease Life
             CheckForRespawn();
         }
