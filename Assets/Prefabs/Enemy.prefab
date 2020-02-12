@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointsValue: 100
   _hasMultiplier: 0
-  _multiplierValue: 1
+  _multiplierValue: 3
 --- !u!33 &91227690063037437
 MeshFilter:
   m_ObjectHideFlags: 0

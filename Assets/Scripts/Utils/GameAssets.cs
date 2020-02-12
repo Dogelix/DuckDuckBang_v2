@@ -37,4 +37,6 @@ public class GameAssets : MonoBehaviour
     /// Points Pop Up Text
     /// </summary>
     public Transform PointsPopup;
+
+    public Transform GameJamDuck;
 }

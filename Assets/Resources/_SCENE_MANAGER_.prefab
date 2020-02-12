@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fc250d6d078e84aa67b9c30f53052f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PointsPopup: {fileID: 59684589355850407, guid: 1ccac097b4db13b448654f038ad3e2f4,
+  PointsPopup: {fileID: 1213111585124137877, guid: 4b243201727e707428fc2b699b17285f,
+    type: 3}
+  GameJamDuck: {fileID: 1199668281248264204, guid: 0a951e87498025942b33b3ae94605e2c,
     type: 3}
 --- !u!114 &2082417313564726036
 MonoBehaviour:

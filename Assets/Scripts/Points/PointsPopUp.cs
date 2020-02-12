@@ -41,7 +41,20 @@ public class PointsPopUp : MonoBehaviour
             _mainCam = Camera.main.transform;
         }
 
-        transform.LookAt(_mainCam.transform, Vector3.up);
+
+        transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
+        DecreaseFont();
+        //transform.LookAt(_mainCam.transform, Vector3.up);
+    }
+
+    float lerp = 0.0f;
+    int startSize = 32;
+    int endSize = 0;
+
+    private void DecreaseFont()
+    {
+        lerp += Time.deltaTime / _displayLength;
+        _textMesh.fontSize = Mathf.Lerp(startSize, endSize, lerp);
     }
 
     public void SetUp(int pointsValue )
