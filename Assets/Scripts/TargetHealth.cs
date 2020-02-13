@@ -4,26 +4,47 @@ using UnityEngine;
 
 public class TargetHealth : MonoBehaviour
 {
-    private SpriteRenderer[] _hearts = new SpriteRenderer[3];
+    private SpriteRenderer[] _hearts;
 
+    [SerializeField]
     private int _health = 3;
+
+    [SerializeField]
+    private float _heartsHeight = 0.4f;
+
+    private float _spacing = 0.34f;
 
     private void Awake()
     {
-        var gottenComps = gameObject.GetComponentsInChildren<SpriteRenderer>();
+        float currentSpacing = _spacing;
 
-        for (int i = 1; i < 4; i++)
+        //Setting up the current 
+        for (int i = 0; i < _health; i++)
         {
-            foreach (var heart in gottenComps)
-            {
-                if (heart.name.Contains(i.ToString()))
-                {
-                    _hearts[i - 1] = heart;
-                    break;
-                }
-            }
+            currentSpacing += _spacing;
+        }
+
+        currentSpacing = -currentSpacing;
+        currentSpacing = currentSpacing / 2;
+
+        _hearts = new SpriteRenderer[_health];
+
+        Debug.Log(2 % 2);
+
+        for(int i = 0; i < _health; i++)
+        {
+            var heart = Instantiate(GameAssets.i.InWorldSprite, transform);
+            heart.name = "Heart_" + i.ToString();
+            heart.transform.localScale = new Vector3(0.25f, 0.25f, 1);
+
+            heart.transform.localPosition = new Vector3(currentSpacing, _heartsHeight, 0);
+            currentSpacing += _spacing;
+
+            heart.GetComponent<SpriteRenderer>().sprite = GameAssets.i.FullHeart;
+            _hearts[i] = heart.GetComponent<SpriteRenderer>();
         }
     }
+
 
     private void FixedUpdate()
     {
@@ -32,12 +53,12 @@ public class TargetHealth : MonoBehaviour
     }
 
 
-    public void TakeDamge()
+    public void TakeDamage()
     {
         if(_health == 1)
         {
             Destroy(this.transform.parent.gameObject);
-            GameAssets.i.SceneManager.GetComponent<GameModeController>().GameOver();
+            GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameModeController>().GameOver();
             return;
         }
 

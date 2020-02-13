@@ -10,7 +10,7 @@ public class Testing : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject.FindGameObjectsWithTag("Bread").First().GetComponentInChildren<TargetHealth>().TakeDamge();
+            GameObject.FindGameObjectsWithTag("Bread").First().GetComponentInChildren<TargetHealth>().TakeDamage();
         }
     }
 }

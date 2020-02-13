@@ -33,12 +33,16 @@ public class GameAssets : MonoBehaviour
         }
     }
 
-    public GameObject SceneManager => this.gameObject;
 
     /// <summary>
     /// Points Pop Up Text
     /// </summary>
     public Transform PointsPopup;
+
+    /// <summary>
+    /// For adding sprites as children to a game object
+    /// </summary>
+    public Transform InWorldSprite;
 
     /// <summary>
     /// Basic Testing Duck
@@ -49,4 +53,9 @@ public class GameAssets : MonoBehaviour
     /// For anything that has hearts
     /// </summary>
     public Sprite EmptyHeart;
+
+    /// <summary>
+    /// For anything that has hearts
+    /// </summary>
+    public Sprite FullHeart;
 }
