@@ -8,6 +8,11 @@ TagManager:
   - Enemy
   - Bullet
   - _SCENE_MANAGER_
+  - projectile
+  - FxTemporaire
+  - Fire
+  - Obstacle
+  - AiTarget
   layers:
   - Default
   - TransparentFX
