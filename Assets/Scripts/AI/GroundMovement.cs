@@ -41,8 +41,8 @@ public class GroundMovement : MonoBehaviour
 
     private void SetDestination()
     {
-        SelectTarget();
-        Vector3 targetVector = SelectTarget().transform.position;
-        _navMeshAgent.SetDestination(targetVector);
+        //SelectTarget();
+        //Vector3 targetVector = SelectTarget().transform.position;
+        //_navMeshAgent.SetDestination(targetVector);
     }
 }
