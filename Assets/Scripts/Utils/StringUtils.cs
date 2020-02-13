@@ -8,4 +8,6 @@ public static class StringUtils
     /// The tag for the scene manager
     /// </summary>
     public static string SceneManager => "_SCENE_MANAGER_";
+
+    public static string GameObjective => "GameObjective";
 }

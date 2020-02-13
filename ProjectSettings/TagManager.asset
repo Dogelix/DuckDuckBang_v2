@@ -13,6 +13,7 @@ TagManager:
   - Fire
   - Obstacle
   - AiTarget
+  - GameObjective
   layers:
   - Default
   - TransparentFX

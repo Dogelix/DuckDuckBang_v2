@@ -32,11 +32,30 @@ public class GameAssets : MonoBehaviour
             return _i;
         }
     }
-    
+
+
     /// <summary>
     /// Points Pop Up Text
     /// </summary>
     public Transform PointsPopup;
 
+    /// <summary>
+    /// For adding sprites as children to a game object
+    /// </summary>
+    public Transform InWorldSprite;
+
+    /// <summary>
+    /// Basic Testing Duck
+    /// </summary>
     public Transform GameJamDuck;
+
+    /// <summary>
+    /// For anything that has hearts
+    /// </summary>
+    public Sprite EmptyHeart;
+
+    /// <summary>
+    /// For anything that has hearts
+    /// </summary>
+    public Sprite FullHeart;
 }

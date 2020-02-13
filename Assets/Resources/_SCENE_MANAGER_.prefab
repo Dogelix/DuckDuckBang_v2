@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2082417313564726042}
   - component: {fileID: 2082417313564726036}
   - component: {fileID: 2082417313564726041}
+  - component: {fileID: 6488330807104862337}
   m_Layer: 0
   m_Name: _SCENE_MANAGER_
   m_TagString: _SCENE_MANAGER_
@@ -47,8 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PointsPopup: {fileID: 1213111585124137877, guid: 4b243201727e707428fc2b699b17285f,
     type: 3}
+  InWorldSprite: {fileID: 6039809543801955085, guid: aba8b6f89c0d8024785bd8d8f6292c6f,
+    type: 3}
   GameJamDuck: {fileID: 1199668281248264204, guid: 0a951e87498025942b33b3ae94605e2c,
     type: 3}
+  EmptyHeart: {fileID: 21300000, guid: 275cc3e84e9121a4788d64bac89aa222, type: 3}
+  FullHeart: {fileID: 21300000, guid: 7d51f8539517efc44aca39e96b0f5e94, type: 3}
 --- !u!114 &2082417313564726036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,3 +78,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77db18a778a2d434caa5d3eef36c65f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6488330807104862337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082417313564726037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee581201749dfb4c9e12aaba9232a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameOverConditionsCount: 1
