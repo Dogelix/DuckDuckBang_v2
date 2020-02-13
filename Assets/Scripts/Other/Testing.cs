@@ -8,10 +8,11 @@ public class Testing : MonoBehaviour
 {
     //private UnityAction action;
 
-    //private void Awake()
-    //{
-    //    action = new UnityAction(SomeOtherFunction);   
-    //}
+    private void Awake()
+    {
+        Debug.Log(Application.dataPath);
+        //action = new UnityAction(SomeOtherFunction);
+    }
 
     //private void OnEnable()
     //{
@@ -22,7 +23,11 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //Debug.Log(Highscore.i.SaveScore(new Score { Level = "test", Name = "jake", Value = 11 }));
+            //Debug.Log(Highscore.i.GetTopThreeScore("test"));
+        }
     }
 
     //void SomeOtherFunction()
