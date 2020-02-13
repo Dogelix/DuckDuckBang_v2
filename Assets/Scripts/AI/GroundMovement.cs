@@ -6,9 +6,6 @@ using UnityEngine.AI;
 
 public class GroundMovement : MonoBehaviour
 {
-    [SerializeField]
-    Transform _destination;
-
     NavMeshAgent _navMeshAgent;
 
     // Start is called before the first frame update
@@ -25,7 +22,7 @@ public class GroundMovement : MonoBehaviour
     public GameObject SelectTarget()
     {
         GameObject[] target;
-        target = GameObject.FindGameObjectsWithTag("AiTarget");
+        target = GameObject.FindGameObjectsWithTag("GameObjective");
         GameObject selected = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;
