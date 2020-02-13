@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 8087866355408670932}
   m_Layer: 0
   m_Name: pfPicNicBasket
-  m_TagString: Bread
+  m_TagString: GameObjective
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,3 +174,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  _heartsHeight: 0.4
