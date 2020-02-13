@@ -22,7 +22,7 @@ public class GroundMovement : MonoBehaviour
     public GameObject SelectTarget()
     {
         GameObject[] target;
-        target = GameObject.FindGameObjectsWithTag("GameObjective");
+        target = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective);
         GameObject selected = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;
