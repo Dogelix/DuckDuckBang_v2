@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c496290e0b262fd4f8df331b505bba2a, type: 3}
   m_Name: SteeredCohisionBehaviour
   m_EditorClassIdentifier: 
-  agentSmoothTime: 0.5
+  filter: {fileID: 0}
+  agentSmoothTime: 3

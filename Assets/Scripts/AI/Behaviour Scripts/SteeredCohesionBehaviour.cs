@@ -21,7 +21,7 @@ public class SteeredCohesionBehaviour : FilterFlockBehaviour
         cohesionMove /= context.Count;
         //create offset from agent pos
         cohesionMove -= agent.transform.position;
-        cohesionMove = Vector3.SmoothDamp(agent.transform.forward, cohesionMove, ref currentVelocity, agentSmoothTime);
+        cohesionMove = Vector3.SmoothDamp(agent.transform.forward, cohesionMove, ref currentVelocity, agentSmoothTime);      
         return cohesionMove;
     }
 }

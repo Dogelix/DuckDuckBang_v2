@@ -11,7 +11,7 @@ public class CollisionDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flock = GameObject.Find("/Sky/Flock").GetComponent<Flock>();
+        flock = GameObject.Find("/FlyingDucks").GetComponent<Flock>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,10 +25,18 @@ public class CollisionDetection : MonoBehaviour
 
             if (flock.agents.Count == 0) // Respawn
             {
-                flock.Respawn();
+                flock.NextWave();
             } 
 
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "GameObjective")
+        {
+            collision.gameObject.GetComponentInChildren<TargetHealth>().TakeDamage();
+            agent.attack = false;
+            agent.stayInRadius = true;
+            agent.allign = true;
         }
     }
 }

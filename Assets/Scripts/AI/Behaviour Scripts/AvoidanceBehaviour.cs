@@ -7,6 +7,7 @@ public class AvoidanceBehaviour : FilterFlockBehaviour
 {
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
+        context.RemoveAll(x => x.tag == "Bullet");
         //if no neighbours, return no adjustment
         if (context.Count == 0)
             return Vector3.zero;      

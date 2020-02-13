@@ -5,6 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class FlockAgent : MonoBehaviour
 {
+    public bool attack;
+    public bool stayInRadius = true;
+    public bool allign = true;
+
     private void Start()
     {
         // Turn off kinematic mode

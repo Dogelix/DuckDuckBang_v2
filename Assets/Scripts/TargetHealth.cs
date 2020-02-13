@@ -65,6 +65,6 @@ public class TargetHealth : MonoBehaviour
         _hearts[_health - 1].sprite = GameAssets.i.EmptyHeart;
 
         _health--;
-    }
+    } 
 
 }
