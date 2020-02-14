@@ -20,6 +20,7 @@ public class PointsScript : MonoBehaviour
 
     private void Awake()
     {
+        _hasMultiplier = (UnityEngine.Random.Range(0, 2) == 0) ? false : true;
         _uniqueToken = Guid.NewGuid().ToString();
         _playerScore = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<PlayerScore>();
     }

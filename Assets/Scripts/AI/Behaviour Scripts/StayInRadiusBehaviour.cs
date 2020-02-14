@@ -5,19 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Flock/Behaviour/Stay In Radius")]
 public class StayInRadiusBehaviour : FlockBehaviour
 {
-    private GameObject Center;
     public float radius = 15f;
     public float height;
-    void OnEnable()
-    {
-        Center = GameObject.Find("/pfPicNicBasket_main");
-    }
 
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
         if (agent.stayInRadius)
         {
-            var higher = new Vector3(Center.transform.position.x, height, Center.transform.position.z);
+            var higher = new Vector3(agent.target.transform.position.x, height, agent.target.transform.position.z);
 
             Vector3 centerOffset = higher - agent.transform.position;
 

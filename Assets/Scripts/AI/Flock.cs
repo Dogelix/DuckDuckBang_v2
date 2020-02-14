@@ -55,9 +55,12 @@ public class Flock : MonoBehaviour
         if (agents.Count() > 0)
         {
             var randomDuck = agents[Random.Range(0, agents.Count())];
-            randomDuck.stayInRadius = false;
-            randomDuck.allign = false;
-            randomDuck.attack = true;
+            if(!randomDuck.lockHealthDamage)
+            {
+                randomDuck.stayInRadius = false;
+                randomDuck.allign = false;
+                randomDuck.attack = true;
+            }           
         }
         // set different timing
         attackDelay = Random.Range(1f, 7f);

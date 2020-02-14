@@ -33,10 +33,22 @@ public class CollisionDetection : MonoBehaviour
 
         if (collision.gameObject.tag == "GameObjective")
         {
-            collision.gameObject.GetComponentInChildren<TargetHealth>().TakeDamage();
-            agent.attack = false;
-            agent.stayInRadius = true;
-            agent.allign = true;
+            if(!agent.lockHealthDamage)
+            {
+                agent.lockHealthDamage = true; // Lock damaging
+                StartCoroutine(UnlockHealthDamage()); // Unlock Health damage after certain time
+                collision.gameObject.GetComponentInChildren<TargetHealth>().TakeDamage();
+                agent.attack = false;
+                agent.stayInRadius = true;
+                agent.allign = true;
+            }           
         }
+    }
+
+
+    private IEnumerator UnlockHealthDamage()
+    {
+        yield return new WaitForSeconds(2f); // Wait two seconds before attacking again
+        agent.lockHealthDamage = false;
     }
 }

@@ -10,7 +10,7 @@ public class AllignmentBehaviour : FilterFlockBehaviour
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
         if (agent.allign)
-        {           
+        {
             //if no neighbours, return no adjustment
             if (context.Count == 0)
                 return agent.transform.forward;
