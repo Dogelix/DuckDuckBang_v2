@@ -5,16 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Flock/Behaviour/Attack")]
 public class AttackBehaviour : FlockBehaviour
 {
-    private GameObject target;
+    private GameObject[] targets;
     private void OnEnable()
     {
-        target = GameObject.Find("/pfPicNicBasket_main");
+        targets = GameObject.FindGameObjectsWithTag("GameObjective");
     }
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     { 
-        if (agent.attack)
+        if (targets.Length > 0 && agent.attack)
         {
-            return target.transform.position - agent.transform.position;
+            int random = Random.Range(0, targets.Length);
+            return targets[random].transform.position - agent.transform.position;
         }
         return Vector3.zero;
     }

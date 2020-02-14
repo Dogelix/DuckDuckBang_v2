@@ -33,12 +33,6 @@ public class Flock : MonoBehaviour
     Vector3[] spawnPoints;
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
-    private IEnumerator WaitAndPrint(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        print("Coroutine ended: " + Time.time + " seconds");
-    }
-
     private IEnumerator Spawn()
     {
         yield return new WaitForSeconds(spawnDelay);
@@ -46,7 +40,7 @@ public class Flock : MonoBehaviour
         var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
         var newAgent = Instantiate(agentPrefab, pos, Quaternion.identity);
         newAgent.SetCollider();
-        newAgent.name = "Flying Duck " + 1;
+        newAgent.name = "Flying Duck " + agents.Count() + 1;
         agents.Add(newAgent);
         spawnCount++;
         if (spawnCount < startingCount)
@@ -66,7 +60,7 @@ public class Flock : MonoBehaviour
             randomDuck.attack = true;
         }
         // set different timing
-        attackDelay = Random.Range(0.5f, 7f);
+        attackDelay = Random.Range(1f, 7f);
         StartCoroutine(Attack());
     }
 
