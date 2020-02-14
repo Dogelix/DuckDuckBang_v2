@@ -22,6 +22,7 @@ public class FlockAgent : MonoBehaviour
     {
         if (!target)
             SetTarget();
+            CheckBoundaries();
     }
 
     private void SetTarget()
@@ -44,5 +45,23 @@ public class FlockAgent : MonoBehaviour
     public void SetCollider()
     {
         agentCollider = GetComponent<Collider>();
+    }
+
+    private void CheckBoundaries()
+    {
+        float maxY = 30f;
+        float maxX = 31f;
+        float minX = -30f;
+        float maxZ = 33f;
+        float minZ = -39f;
+
+        var pos = transform.position;
+        if (pos.y > maxY || pos.x > maxX || pos.x < minX || pos.z > maxZ || pos.z < minZ)
+        {
+            attack = false;
+            stayInRadius = true;
+            allign = true;
+        }
+
     }
 }

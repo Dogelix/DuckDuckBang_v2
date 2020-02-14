@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CollisionDetection : MonoBehaviour
 {
@@ -21,9 +22,9 @@ public class CollisionDetection : MonoBehaviour
             // Destroy bullet too
             Destroy(collision.gameObject);
             // Remove from list first
-            flock.agents.Remove(agent);
+            Flock.agents.Remove(agent);
 
-            if (flock.agents.Count == 0) // Respawn
+            if (Flock.agents.Count == 0) // Respawn
             {
                 flock.NextWave();
             } 
@@ -42,6 +43,12 @@ public class CollisionDetection : MonoBehaviour
                 agent.stayInRadius = true;
                 agent.allign = true;
             }           
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Flock.agents.Remove(agent);
+            Flock.agents.Add(agent);
         }
     }
 

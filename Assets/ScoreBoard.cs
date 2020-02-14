@@ -19,6 +19,8 @@ public class ScoreBoard : MonoBehaviour
 
         _value = transform.Find("lblScoreValue").GetComponent<TextMeshPro>();
         _multiplier = transform.Find("lblScoreMultiplier").GetComponent<TextMeshPro>();
+
+        _value.text = "0";
     }
 
     private void OnEnable()

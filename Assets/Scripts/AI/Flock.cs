@@ -7,7 +7,7 @@ public class Flock : MonoBehaviour
 {
     public GameObject SpawnPoints;
     public FlockAgent agentPrefab;
-    public List<FlockAgent> agents = new List<FlockAgent>();
+    public static List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
     public int startingCount = 10;
@@ -54,13 +54,13 @@ public class Flock : MonoBehaviour
         yield return new WaitForSeconds(attackDelay);
         if (agents.Count() > 0)
         {
-            var randomDuck = agents[Random.Range(0, agents.Count())];
-            if(!randomDuck.lockHealthDamage)
+            var randomDuck = agents.FirstOrDefault(x => !x.lockHealthDamage && x.transform.position.y > 6);
+            if (randomDuck != null)
             {
                 randomDuck.stayInRadius = false;
                 randomDuck.allign = false;
                 randomDuck.attack = true;
-            }           
+            }            
         }
         // set different timing
         attackDelay = Random.Range(1f, 7f);
