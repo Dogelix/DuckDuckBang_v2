@@ -89,7 +89,7 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean SnapTurnLeft
+        public virtual SteamVR_Action_Vector2 SnapTurnLeft
         {
             get
             {
@@ -97,11 +97,19 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean SnapTurnRight
+        public virtual SteamVR_Action_Vector2 SnapTurnRight
         {
             get
             {
                 return SteamVR_Actions.default_SnapTurnRight;
+            }
+        }
+        
+        public virtual SteamVR_Action_Vector2 Swipe
+        {
+            get
+            {
+                return SteamVR_Actions.default_Swipe;
             }
         }
         

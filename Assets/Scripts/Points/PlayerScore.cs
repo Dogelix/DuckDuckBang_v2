@@ -25,9 +25,6 @@ public class PlayerScore : MonoBehaviour
 
         _currentScore = _currentScore + (value * _multiplier);
         EventManager.TriggerEvent("UpdateScore");
-        Debug.Log("Score: " + _currentScore);
-
-        //TODO: Add an invoke here to update the UI points
     }
 
     /// <summary>

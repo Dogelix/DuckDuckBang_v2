@@ -27,7 +27,6 @@ public class Hitscan : MonoBehaviour
     void Awake()
     {
         _pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
-        sphere = GameObject.FindGameObjectWithTag("temp");
     }
 
 
@@ -36,10 +35,6 @@ public class Hitscan : MonoBehaviour
         laser = GetComponent<LineRenderer>();
     }
 
-    private void FixedUpdate()
-    {
-        sphere.transform.position = Barrel.transform.position + (Parent.transform.forward * laserRange);
-    }
 
     // Update is called once per frame
     void Update()
@@ -61,7 +56,7 @@ public class Hitscan : MonoBehaviour
 
                 if (hit.collider.tag == "Enemy")
                 {
-                    //hit.collider.gameObject.GetComponent<Enemy>().ImHit();
+                    hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
                 }
             }
             else
@@ -71,20 +66,6 @@ public class Hitscan : MonoBehaviour
         }
     }
 
-    //public void Shoot()
-    //{
-    //    RaycastHit hit = new RaycastHit();
-    //    Ray shot = new Ray(Barrel.transform.position, transform.forward); 
-
-    //    if(Physics.Raycast(shot, out hit, 1000))
-    //    {
-    //        if (hit.collider.attachedRigidbody)
-    //        {
-    //            Debug.Log(hit.collider.gameObject.name + " has been hit");
-    //        }
-    //    }
-
-    //}
 
     private IEnumerator FireEffect()
     {

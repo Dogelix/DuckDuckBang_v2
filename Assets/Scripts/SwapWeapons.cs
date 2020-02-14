@@ -7,9 +7,14 @@ using System.Linq;
 
 public class SwapWeapons : MonoBehaviour
 {
+    public Vector2 m_deadzone = new Vector2(0.1f, 0.1f);
+    public Vector2 m_NeutralPosition = new Vector2(0.0f, 0.0f);
+
     public SteamVR_Action_Boolean swapAction = null;
-    public SteamVR_Action_Boolean swipeLeft = null;
-    public SteamVR_Action_Boolean swipeRight = null;
+    public SteamVR_Action_Vector2 swipe = null;
+
+    //public SteamVR_Action_Boolean swipeLeft = null;
+    //public SteamVR_Action_Boolean swipeRight = null;
 
     private SteamVR_Behaviour_Pose _pose;
     private int currentImageIndex = 0;
@@ -19,11 +24,14 @@ public class SwapWeapons : MonoBehaviour
     private bool isDisplayed;
     private Image imageHolder;
     private int tempIndex = 0;
+
+    SteamVR_TrackedObject trackedObj;
     // Start is called before the first frame update
     void Start()
     {
         imageHolder = GetComponentInChildren<Image>();
         _pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
+        trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
    
@@ -52,19 +60,13 @@ public class SwapWeapons : MonoBehaviour
 
 
         // Swipe Left
-        if (swipeLeft.GetStateDown(_pose.inputSource) && isDisplayed)
+        Vector2 delta = swipe[SteamVR_Input_Sources.RightHand].delta;
+        if (delta.x >= (m_NeutralPosition.x + m_deadzone.x) && isDisplayed)
         {
             tempIndex = currentImageIndex;
             currentImageIndex = (currentImageIndex - 1 < 0) ? WeaponImages.Length - 1 : currentImageIndex - 1;
-            imageHolder.sprite = WeaponImages[currentImageIndex];           
-        }
-
-        // Swipe Right
-        if (swipeRight.GetStateDown(_pose.inputSource) && isDisplayed)
-        {
-            tempIndex = currentImageIndex;
-            currentImageIndex = (currentImageIndex + 1 > WeaponImages.Length - 1) ? 0 : currentImageIndex + 1;
             imageHolder.sprite = WeaponImages[currentImageIndex];
         }
+
     }
 }

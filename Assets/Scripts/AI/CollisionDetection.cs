@@ -58,4 +58,17 @@ public class CollisionDetection : MonoBehaviour
         yield return new WaitForSeconds(2f); // Wait two seconds before attacking again
         agent.lockHealthDamage = false;
     }
+
+    public void RaycastDestroy()
+    {
+        // Remove from list first
+        Flock.agents.Remove(agent);
+
+        if (Flock.agents.Count == 0) // Respawn
+        {
+            flock.NextWave();
+        }
+
+        Destroy(gameObject);
+    }
 }

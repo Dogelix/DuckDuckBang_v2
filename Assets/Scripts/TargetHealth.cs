@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,8 +15,11 @@ public class TargetHealth : MonoBehaviour
 
     private float _spacing = 0.34f;
 
+    private string id;
+
     private void Awake()
     {
+        id = Guid.NewGuid().ToString();
         float currentSpacing = _spacing;
 
         //Setting up the current 
@@ -65,6 +69,9 @@ public class TargetHealth : MonoBehaviour
         _hearts[_health - 1].sprite = GameAssets.i.EmptyHeart;
 
         _health--;
+
+        GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<PlayerScore>().UpdateScore(-10, id);
+        PointsPopUp.Create(transform.position + new Vector3(0, 1, 0), -10);
     } 
 
 }

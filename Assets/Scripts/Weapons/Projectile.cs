@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class GunController : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public float shotPower = 8000f;
