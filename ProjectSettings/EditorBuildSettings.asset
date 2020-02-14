@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/NightOfTheLivingDuck.unity
+    guid: 207a83e1ed99ef447b320135af7bb446
   m_configObjects: {}
