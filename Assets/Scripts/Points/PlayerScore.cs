@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerScore : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class PlayerScore : MonoBehaviour
             ResetMultiplier();
 
         _currentScore = _currentScore + (value * _multiplier);
-
+        EventManager.TriggerEvent("UpdateScore");
         Debug.Log("Score: " + _currentScore);
 
         //TODO: Add an invoke here to update the UI points
@@ -36,14 +37,16 @@ public class PlayerScore : MonoBehaviour
     public void UpdateMultiplier(int value )
     {
         _multiplier += value;
+        EventManager.TriggerEvent("UpdateMultiplier");
     }
 
     /// <summary>
     /// Resets the multiplier value to the base;
     /// </summary>
     public void ResetMultiplier()
-    {
+    {        
         _multiplier = 1;
+        EventManager.TriggerEvent("UpdateMultiplier");
     }
 
     /// <summary>
