@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Flock : MonoBehaviour
+public class FlockJ : MonoBehaviour
 {
     public GameObject SpawnPoints;
     public FlockAgent agentPrefab;
@@ -38,20 +38,6 @@ public class Flock : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnDelay);
         // Get random spawn point
-        var randomSpawn = Random.Range(0, 2);
-
-        if (randomSpawn == 0)
-        {
-            StartCoroutine(FlyingSpawn());
-        }
-        else if (randomSpawn == 1)
-        {
-            StartCoroutine(GroundSpawn());
-        }
-    }
-
-    private IEnumerator FlyingSpawn()
-    {
         var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
         var newAgent = Instantiate(agentPrefab, pos, Quaternion.identity);
         newAgent.SetCollider();
@@ -62,22 +48,53 @@ public class Flock : MonoBehaviour
         {
             StartCoroutine(Spawn());
         }
-        yield return null;
     }
-    private IEnumerator GroundSpawn()
-    {
-        var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        var newAgent = Instantiate(groundPrefab, pos, Quaternion.identity);
-        newAgent.SetCollider();
-        newAgent.name = "Ground Duck " + agents.Count() + 1;
-        agents.Add(newAgent);
-        spawnCount++;
-        if (spawnCount < startingCount)
-        {
-            StartCoroutine(Spawn());
-        }
-        yield return null;
-    }
+
+    //private IEnumerator Spawn()
+    //{
+    //    yield return new WaitForSeconds(spawnDelay);
+    //    // Get random spawn point
+    //    var randomSpawn = Random.Range(0, 2);
+
+    //    if (randomSpawn == 0)
+    //    {
+    //        FlyingSpawn();
+    //    }
+    //    else if (randomSpawn == 1)
+    //    {
+    //        GroundSpawn();
+    //    }
+
+    //}
+
+    //private IEnumerator FlyingSpawn()
+    //{
+    //    var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
+    //    var newAgent = Instantiate(agentPrefab, pos, Quaternion.identity);
+    //    newAgent.SetCollider();
+    //    newAgent.name = "Flying Duck " + agents.Count() + 1;
+    //    agents.Add(newAgent);
+    //    spawnCount++;
+    //    if (spawnCount < startingCount)
+    //    {
+    //        StartCoroutine(Spawn());
+    //    }
+    //    yield return null;
+    //}
+    //private IEnumerator GroundSpawn()
+    //{
+    //    var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
+    //    var newAgent = Instantiate(groundPrefab, pos, Quaternion.identity);
+    //    newAgent.SetCollider();
+    //    newAgent.name = "Ground Duck " + agents.Count() + 1;
+    //    agents.Add(newAgent);
+    //    spawnCount++;
+    //    if (spawnCount < startingCount)
+    //    {
+    //        StartCoroutine(Spawn());
+    //    }
+    //    yield return null;
+    //}
 
     private IEnumerator Attack()
     {
