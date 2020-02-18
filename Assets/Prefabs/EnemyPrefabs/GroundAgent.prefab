@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 7485382167933233459}
   - component: {fileID: -511508069554771652}
   - component: {fileID: -2470590606772754355}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundAgent
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -110,11 +110,11 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

@@ -17,6 +17,7 @@ public class CollisionDetection : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.tag == "Bullet")
         {
             // Destroy bullet too
@@ -27,7 +28,7 @@ public class CollisionDetection : MonoBehaviour
             if (Flock.agents.Count == 0) // Respawn
             {
                 flock.NextWave();
-            } 
+            }
 
             Destroy(gameObject);
         }
@@ -42,7 +43,7 @@ public class CollisionDetection : MonoBehaviour
                 agent.attack = false;
                 agent.stayInRadius = true;
                 agent.allign = true;
-            }           
+            }
         }
 
         if (collision.gameObject.tag == "Enemy")
