@@ -6,8 +6,6 @@ using UnityEngine.AI;
 public class GroundMovement : MonoBehaviour
 {
     NavMeshAgent _navMeshAgent;
-    NavMeshAgent _navMeshObstacle;
-    private Flock flock;
     public FlockAgent agent;
 
     // Start is called before the first frame update
@@ -46,41 +44,4 @@ public class GroundMovement : MonoBehaviour
         _navMeshAgent.SetDestination(targetVector);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Bullet")
-        {
-            // Destroy bullet too
-            Destroy(collision.gameObject);
-            // Remove from list first
-            Flock.agents.Remove(agent);
-
-            if (Flock.agents.Count == 0) // Respawn
-            {
-                flock.NextWave();
-            }
-
-            Destroy(gameObject);
-        }
-
-        if(collision.gameObject.tag == "GameObjective")
-        {
-            collision.gameObject.GetComponentInChildren<TargetHealth>().TakeDamage();
-            // Remove from list first
-            Flock.agents.Remove(agent);
-
-            if (Flock.agents.Count == 0) // Respawn
-            {
-                flock.NextWave();
-            }
-
-            Destroy(gameObject);
-        }
-
-        if(collision.gameObject.tag == "Enemy")
-        {
-            SetDestination();
-        }
-
-    }
 }

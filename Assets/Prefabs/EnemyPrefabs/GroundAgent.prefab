@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 9078101940696186675}
   - component: {fileID: 7485382167933233459}
   - component: {fileID: -511508069554771652}
+  - component: {fileID: -2470590606772754355}
   m_Layer: 0
   m_Name: GroundAgent
   m_TagString: Enemy
@@ -133,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe7968795d480e4595606f0201fd0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   agent: {fileID: 0}
 --- !u!208 &2769078661282182524
 NavMeshObstacle:
@@ -199,3 +199,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2470590606772754355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916069836710401455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f983856190253345a934f7ef8a3a112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 9078101940696186675}
