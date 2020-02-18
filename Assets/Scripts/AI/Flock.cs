@@ -9,6 +9,7 @@ public class Flock : MonoBehaviour
     public FlockAgent agentPrefab;
     public FlockAgent groundPrefab;
     public static List<FlockAgent> agents = new List<FlockAgent>();
+    public static List<FlockAgent> agentsGround = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
     public int startingCount = 10;
@@ -69,8 +70,8 @@ public class Flock : MonoBehaviour
         var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
         var newAgent = Instantiate(groundPrefab, pos, Quaternion.identity);
         newAgent.SetCollider();
-        newAgent.name = "Ground Duck " + agents.Count() + 1;
-        agents.Add(newAgent);
+        newAgent.name = "Ground Duck " + agentsGround.Count() + 1;
+        agentsGround.Add(newAgent);
         spawnCount++;
         if (spawnCount < startingCount)
         {
