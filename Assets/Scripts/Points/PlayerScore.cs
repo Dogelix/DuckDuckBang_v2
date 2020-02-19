@@ -5,6 +5,10 @@ using UnityEngine.Events;
 
 public class PlayerScore : MonoBehaviour
 {
+    public int GetCurrentScore()
+    {
+        return _currentScore;
+    }
     private List<string> _seenTokens = new List<string>();
     private int _currentScore = 0;
     // Multiplier is 0 due to: NUM * 0 = 0
