@@ -40,6 +40,10 @@ public class WaveGameMode_SO : GameMode_SO
 
     public bool _countUp;
 
+    /// <summary>
+    /// Initalisation
+    /// </summary>
+    /// <param name="value">The Spawn Locations as a List<Transform></param>
     public override void Init(object value)
     {
         base._type = GameModeTypes.Wave;
@@ -98,12 +102,14 @@ public class WaveGameMode_SO : GameMode_SO
             {
                 if(ratioCountUpper != 0)
                 {
-                    _agents.Add(Instantiate(GameAssets.i.ZombieWalkingDuck.gameObject, _spawnLocations[Random.Range(0, _spawnLocations.Count)]));
+                    _agents.Add(Instantiate(GameAssets.i.ZombieWalkingDuck.gameObject, _spawnLocations[Random.Range(0, _spawnLocations.Count)].position, Quaternion.identity));
                     ratioCountUpper--;
                 }
                 else
                 {
-                    _agents.Add(Instantiate(GameAssets.i.GameJamDuck.gameObject, _spawnLocations[Random.Range(0, _spawnLocations.Count)]));
+                    var t = Instantiate(GameAssets.i.GameJamDuck.gameObject, _spawnLocations[Random.Range(0, _spawnLocations.Count)].position, Quaternion.identity);
+                    Flock.agents.Add(t.GetComponent<FlockAgent>());
+                    _agents.Add(t);
                     ratioCountLower--;
                 }
 

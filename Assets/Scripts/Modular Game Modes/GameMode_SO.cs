@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMode_SO : ScriptableObject
+public class GameMode_SO : MonoBehaviour
 {
     public bool _gameOver;
     public GameModeTypes _type;

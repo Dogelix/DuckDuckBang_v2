@@ -7,11 +7,12 @@ public class GameModeController : MonoBehaviour
     [SerializeField]
     private int _gameOverConditionsCount = 1;
 
-    public GameMode_SO GameMode;
+    private GameMode_SO GameMode;
 
     private void Awake()
     {
-        
+        GameMode = GetComponent<GameMode_SO>();   
+
         switch (GameMode._type)
         {
             case GameModeTypes.Timed:
@@ -31,7 +32,7 @@ public class GameModeController : MonoBehaviour
                 break;
         }
 
-        GameMode.Print();
+        //GameMode.Print();
     }
 
     private void Update()
