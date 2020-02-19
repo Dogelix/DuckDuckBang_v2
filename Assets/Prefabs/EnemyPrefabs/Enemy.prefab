@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointsValue: 10
-  _hasMultiplier: 0
+  _hasMultiplier: 1
   _multiplierValue: 1
 --- !u!33 &91227690063037437
 MeshFilter:

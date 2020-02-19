@@ -50,6 +50,11 @@ public class GameAssets : MonoBehaviour
     public Transform GameJamDuck;
 
     /// <summary>
+    /// Zombie Reginald
+    /// </summary>
+    public Transform ZombieWalkingDuck;
+
+    /// <summary>
     /// For anything that has hearts
     /// </summary>
     public Sprite EmptyHeart;

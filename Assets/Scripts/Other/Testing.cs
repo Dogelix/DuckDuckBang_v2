@@ -25,8 +25,7 @@ public class Testing : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Debug.Log(Highscore.i.SaveScore(new Score { Level = "test", Name = "jake", Value = 11 }));
-            //Debug.Log(Highscore.i.GetTopThreeScore("test"));
+            
         }
     }
 

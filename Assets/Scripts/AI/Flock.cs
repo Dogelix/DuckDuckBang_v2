@@ -61,7 +61,7 @@ public class Flock : MonoBehaviour
         spawnCount++;
         if (spawnCount < startingCount)
         {
-            StartCoroutine(Spawn());
+           StartCoroutine(Spawn());
         }
         yield return null;
     }
@@ -111,8 +111,8 @@ public class Flock : MonoBehaviour
             tempList.Add(child.position);
         }
         spawnPoints = tempList.ToArray(); // convert to array to improve perfomrance
-        StartCoroutine(Spawn());
-        StartCoroutine(Attack());
+        //StartCoroutine(Spawn());
+        //StartCoroutine(Attack());
     }
 
     private bool IsCollidingWithOthers(Bounds b)
