@@ -26,6 +26,7 @@ public class PointsScript : MonoBehaviour
     }
 
 
+
     private void OnDestroy()
     {
         if (GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>()._gameOver)
