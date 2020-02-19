@@ -80,7 +80,7 @@ public class Flock : MonoBehaviour
         yield return null;
     }
 
-    private IEnumerator Attack()
+    public IEnumerator Attack()
     {
         yield return new WaitForSeconds(attackDelay);
         if (agents.Count() > 0)

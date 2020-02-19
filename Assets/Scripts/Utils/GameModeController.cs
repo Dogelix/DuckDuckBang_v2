@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameModeController : MonoBehaviour
@@ -7,11 +8,16 @@ public class GameModeController : MonoBehaviour
     [SerializeField]
     private int _gameOverConditionsCount = 1;
 
-    public GameMode_SO GameMode;
+    private GameMode_SO GameMode;
+
+    private List<GameObject> Targets;
+
 
     private void Awake()
     {
-        
+        Targets = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective).ToList();
+        GameMode = GetComponent<GameMode_SO>();   
+
         switch (GameMode._type)
         {
             case GameModeTypes.Timed:
@@ -31,18 +37,49 @@ public class GameModeController : MonoBehaviour
                 break;
         }
 
-        GameMode.Print();
+        //GameMode.Print();
     }
 
     private void Update()
     {
+        if (!GameMode._gameOver)
+        {
+            switch (GameMode._type)
+            {
+                case GameModeTypes.Timed:
+                    break;
+                case GameModeTypes.Wave:
+                    var gm = (WaveGameMode_SO)GameMode;
+                    gm.Tick();
+                    break;
+                case GameModeTypes.Points:
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            GameOverSystem();
+        }
+    }
+
+    bool _gameOverInvoked = false;
+
+    public void GameOverSystem()
+    {
+        if (_gameOverInvoked)
+            return;
+
+        _gameOverInvoked = true;
+
         switch (GameMode._type)
         {
             case GameModeTypes.Timed:
                 break;
             case GameModeTypes.Wave:
                 var gm = (WaveGameMode_SO)GameMode;
-                gm.Tick();
+                gm.EndGameMode();
                 break;
             case GameModeTypes.Points:
                 break;
@@ -50,15 +87,15 @@ public class GameModeController : MonoBehaviour
                 break;
         }
 
+
     }
 
-
-    public void GameOver()
+    public void TargetGameOver(GameObject target)
     {
-        _gameOverConditionsCount--;
-        if (_gameOverConditionsCount == 0)
+        Targets.Remove(target);
+        if (Targets.Count == 0)
         {
-            Debug.Log("Game Over!!!");
+            GameMode._gameOver = true;
             return;
         }
     }
