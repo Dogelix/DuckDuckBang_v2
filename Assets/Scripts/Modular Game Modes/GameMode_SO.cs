@@ -21,4 +21,9 @@ public class GameMode_SO : MonoBehaviour
     {
         Debug.Log("Base Print");
     }
+
+    public virtual void EndGameMode()
+    {
+
+    }
 }

@@ -33,7 +33,8 @@ public class PlayerScore : MonoBehaviour
     /// <param name="value">A positive or negative value</param>
     public void UpdateMultiplier(int value )
     {
-        _multiplier += value;
+        if (_multiplier != 20)
+            _multiplier += value;
         EventManager.TriggerEvent("UpdateMultiplier");
     }
 

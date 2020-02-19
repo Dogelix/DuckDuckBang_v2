@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Wave Mode", menuName = "Gamemodes/Wave", order = 2)]
 public class WaveGameMode_SO : GameMode_SO
 {
     /// <summary>
@@ -62,7 +62,7 @@ public class WaveGameMode_SO : GameMode_SO
     {
         if(_agents.Count == 0)
         {
-            Debug.Log("Agents: " + _agents.Count);
+            //Debug.Log("Agents: " + _agents.Count);
             if (_countUp)
             {
                 if(_waves != 1)
@@ -108,6 +108,7 @@ public class WaveGameMode_SO : GameMode_SO
                 else
                 {
                     var t = Instantiate(GameAssets.i.GameJamDuck.gameObject, _spawnLocations[Random.Range(0, _spawnLocations.Count)].position, Quaternion.identity);
+                    t.GetComponent<FlockAgent>().SetCollider();                    
                     Flock.agents.Add(t.GetComponent<FlockAgent>());
                     _agents.Add(t);
                     ratioCountLower--;
@@ -119,6 +120,8 @@ public class WaveGameMode_SO : GameMode_SO
                     ratioCountLower = _enemyWeighting.Lower;
                 }
             }
+
+            StartCoroutine(GetComponent<Flock>().Attack());
         }
     }
 
@@ -128,5 +131,19 @@ public class WaveGameMode_SO : GameMode_SO
         {
             Debug.Log("Spawn Loc: " + s.name + " Position: " + s.position);
         } 
+    }
+
+    public override void EndGameMode()
+    {
+        var allAgents = _agents;
+
+        foreach (var agent in allAgents)
+        {
+            Destroy(agent);
+        }
+
+        _agents.Clear();
+
+        Flock.agents.Clear();
     }
 }

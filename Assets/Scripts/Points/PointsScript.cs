@@ -28,6 +28,11 @@ public class PointsScript : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>()._gameOver)
+        {
+            return;
+        }
+
         PointsPopUp.Create(transform.position, _pointsValue);
 
         _playerScore.UpdateScore(_pointsValue, _uniqueToken);

@@ -61,8 +61,8 @@ public class TargetHealth : MonoBehaviour
     {
         if(_health == 1)
         {
+            GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameModeController>().TargetGameOver(this.transform.parent.gameObject);
             Destroy(this.transform.parent.gameObject);
-            GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameModeController>().GameOver();
             return;
         }
 
