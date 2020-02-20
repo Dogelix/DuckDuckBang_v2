@@ -10,7 +10,7 @@ public class StayInRadiusBehaviour : FlockBehaviour
 
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
-        if (agent.stayInRadius)
+        if (agent.stayInRadius && agent.target != null)
         {
             var higher = new Vector3(agent.target.transform.position.x, height, agent.target.transform.position.z);
 

@@ -31,61 +31,16 @@ public class Flock : MonoBehaviour
     float squareNeighbourRadius;
     float squareAvoidanceRadius;
 
-    int spawnCount = 0;
-    Vector3[] spawnPoints;
+
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
-    private IEnumerator Spawn()
-    {
-        yield return new WaitForSeconds(spawnDelay);
-        // Get random spawn point
-        var randomSpawn = Random.Range(0, 2);
-
-        if (randomSpawn == 0)
-        {
-            StartCoroutine(FlyingSpawn());
-        }
-        else if (randomSpawn == 1)
-        {
-            StartCoroutine(GroundSpawn());
-        }
-    }
-
-    private IEnumerator FlyingSpawn()
-    {
-        var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        var newAgent = Instantiate(agentPrefab, pos, Quaternion.identity);
-        newAgent.SetCollider();
-        newAgent.name = "Flying Duck " + agents.Count() + 1;
-        agents.Add(newAgent);
-        spawnCount++;
-        if (spawnCount < startingCount)
-        {
-           StartCoroutine(Spawn());
-        }
-        yield return null;
-    }
-    private IEnumerator GroundSpawn()
-    {
-        var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        var newAgent = Instantiate(groundPrefab, pos, Quaternion.identity);
-        newAgent.SetCollider();
-        newAgent.name = "Ground Duck " + agentsGround.Count() + 1;
-        agentsGround.Add(newAgent);
-        spawnCount++;
-        if (spawnCount < startingCount)
-        {
-            StartCoroutine(Spawn());
-        }
-        yield return null;
-    }
 
     public IEnumerator Attack()
     {
         yield return new WaitForSeconds(attackDelay);
         if (agents.Count() > 0)
         {
-            var randomDuck = agents.FirstOrDefault(x => !x.lockHealthDamage && x.transform.position.y > 6);
+            var randomDuck = agents.FirstOrDefault(x => !x.lockHealthDamage && x.transform.position.y > 6); // Make sure that duck reached certain height before performing attack.
             if (randomDuck != null)
             {
                 randomDuck.stayInRadius = false;
@@ -104,15 +59,8 @@ public class Flock : MonoBehaviour
         squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighbourRadius = neighbourRadius * neighbourRadius;
         squareAvoidanceRadius = squareNeighbourRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
-        // Populate spawn points
-        var tempList = new List<Vector3>();
-        foreach (Transform child in SpawnPoints.transform)
-        {
-            tempList.Add(child.position);
-        }
-        spawnPoints = tempList.ToArray(); // convert to array to improve perfomrance
-        //StartCoroutine(Spawn());
-        //StartCoroutine(Attack());
+
+        StartCoroutine(Attack()); ; // Init reccursive co-Routine for attacking
     }
 
     private bool IsCollidingWithOthers(Bounds b)
@@ -156,12 +104,5 @@ public class Flock : MonoBehaviour
             }
         }
         return context;
-    }
-
-    public void NextWave()
-    {
-        spawnCount = 0;
-        startingCount += (int)Random.Range(4, 8);
-        StartCoroutine(Spawn());
     }
 }

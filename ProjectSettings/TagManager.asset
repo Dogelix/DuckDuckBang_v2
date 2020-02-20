@@ -15,6 +15,7 @@ TagManager:
   - AiTarget
   - GameObjective
   - FlySpawn
+  - GroundSpawn
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Physics
   - AirEnemy
   - GroundEnemy
-  - 
+  - Physics
   - 
   - 
   - 

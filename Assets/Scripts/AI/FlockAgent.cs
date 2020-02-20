@@ -14,15 +14,13 @@ public class FlockAgent : MonoBehaviour
     private void Start()
     {
         SetTarget();
-        // Turn off kinematic mode
-        gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 
     private void LateUpdate()
     {
         if (!target)
             SetTarget();
-            CheckBoundaries();
+           // CheckBoundaries();
     }
 
     private void SetTarget()

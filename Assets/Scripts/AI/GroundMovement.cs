@@ -5,44 +5,58 @@ using UnityEngine.AI;
 
 public class GroundMovement : MonoBehaviour
 {
-    NavMeshAgent _navMeshAgent;
-    public FlockAgent agent;
-    public GameObject target;
+    private GameObject target;
+    public NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
-        _navMeshAgent = this.GetComponent<NavMeshAgent>();
-        _navMeshAgent.enabled = true;
         SetTarget();
-
     }
 
-    private void Update()
+    void Update()
     {
-        if(_navMeshAgent.speed > 2f)
+        if (target != null)
         {
-            _navMeshAgent.speed = 2f; 
+            agent.SetDestination(target.transform.position); // Navmesh movement
         }
     }
 
     private void LateUpdate()
     {
-        if (!target)
+        if (target == null)
+        {
             SetTarget();
+        }
     }
+
+    private IEnumerator KeepOnKilling(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (target != null) // if our target still exist, keep on Killing
+        {
+            target.GetComponentInChildren<TargetHealth>().TakeDamage();
+            StartCoroutine(KeepOnKilling(2f));
+        }
+
+    }
+
 
     private void SetTarget()
     {
         var targets = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective);
         int random = Random.Range(0, targets.Length);
         target = targets[random];
-        Vector3 targetVector = target.transform.position;
-        _navMeshAgent.SetDestination(targetVector);
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
-        SetTarget();
+        if (collision.gameObject.tag == "GameObjective")
+        {
+            target.GetComponentInChildren<TargetHealth>().TakeDamage();
+            StartCoroutine(KeepOnKilling(2f));
+        }
     }
+
 }

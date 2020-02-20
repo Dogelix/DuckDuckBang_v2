@@ -25,11 +25,6 @@ public class CollisionDetection : MonoBehaviour
             // Remove from list first
             Flock.agents.Remove(agent);
 
-            if (Flock.agents.Count == 0) // Respawn
-            {
-                flock.NextWave();
-            }
-
             Destroy(gameObject);
         }
 
@@ -39,10 +34,10 @@ public class CollisionDetection : MonoBehaviour
             {
                 agent.lockHealthDamage = true; // Lock damaging
                 StartCoroutine(UnlockHealthDamage()); // Unlock Health damage after certain time
-                collision.gameObject.GetComponentInChildren<TargetHealth>().TakeDamage();
                 agent.attack = false;
                 agent.stayInRadius = true;
                 agent.allign = true;
+                collision.gameObject.GetComponentInChildren<TargetHealth>().TakeDamage();
             }
         }
 
@@ -64,12 +59,6 @@ public class CollisionDetection : MonoBehaviour
     {
         // Remove from list first
         Flock.agents.Remove(agent);
-
-        if (Flock.agents.Count == 0) // Respawn
-        {
-            flock.NextWave();
-        }
-
         Destroy(gameObject);
     }
 }
