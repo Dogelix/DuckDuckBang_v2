@@ -43,41 +43,30 @@ public class Flock : MonoBehaviour
 
         if (randomSpawn == 0)
         {
-            StartCoroutine(FlyingSpawn());
+            var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            var newAgent = Instantiate(agentPrefab, pos, Quaternion.identity);
+            newAgent.SetCollider();
+            newAgent.name = "Flying Duck " + agents.Count() + 1;
+            agents.Add(newAgent);
+            spawnCount++;
+            if (spawnCount < startingCount)
+            {
+                StartCoroutine(Spawn());
+            }
         }
         else if (randomSpawn == 1)
         {
-            StartCoroutine(GroundSpawn());
+            var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            var newAgent = Instantiate(groundPrefab, pos, Quaternion.identity);
+            newAgent.SetCollider();
+            newAgent.name = "Ground Duck " + agentsGround.Count() + 1;
+            agentsGround.Add(newAgent);
+            spawnCount++;
+            if (spawnCount < startingCount)
+            {
+                StartCoroutine(Spawn());
+            }
         }
-    }
-
-    private IEnumerator FlyingSpawn()
-    {
-        var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        var newAgent = Instantiate(agentPrefab, pos, Quaternion.identity);
-        newAgent.SetCollider();
-        newAgent.name = "Flying Duck " + agents.Count() + 1;
-        agents.Add(newAgent);
-        spawnCount++;
-        if (spawnCount < startingCount)
-        {
-           StartCoroutine(Spawn());
-        }
-        yield return null;
-    }
-    private IEnumerator GroundSpawn()
-    {
-        var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        var newAgent = Instantiate(groundPrefab, pos, Quaternion.identity);
-        newAgent.SetCollider();
-        newAgent.name = "Ground Duck " + agentsGround.Count() + 1;
-        agentsGround.Add(newAgent);
-        spawnCount++;
-        if (spawnCount < startingCount)
-        {
-            StartCoroutine(Spawn());
-        }
-        yield return null;
     }
 
     public IEnumerator Attack()

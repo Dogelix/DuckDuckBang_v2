@@ -33,6 +33,8 @@ public class GameModeController : MonoBehaviour
                 break;
             case GameModeTypes.Points:
                 break;
+            case GameModeTypes.PopUp:
+                break;
             default:
                 break;
         }
@@ -49,10 +51,14 @@ public class GameModeController : MonoBehaviour
                 case GameModeTypes.Timed:
                     break;
                 case GameModeTypes.Wave:
-                    var gm = (WaveGameMode_SO)GameMode;
-                    gm.Tick();
+                    var gmWave = (WaveGameMode_SO)GameMode;
+                    gmWave.Tick();
                     break;
                 case GameModeTypes.Points:
+                    break;
+                case GameModeTypes.PopUp:
+                    var gmPopUp = (PopUpGameMode_SO)GameMode;
+                    gmPopUp.Tick();
                     break;
                 default:
                     break;
@@ -78,10 +84,14 @@ public class GameModeController : MonoBehaviour
             case GameModeTypes.Timed:
                 break;
             case GameModeTypes.Wave:
-                var gm = (WaveGameMode_SO)GameMode;
-                gm.EndGameMode();
+                var gmWave = (WaveGameMode_SO)GameMode;
+                gmWave.EndGameMode();
                 break;
             case GameModeTypes.Points:
+                break;
+            case GameModeTypes.PopUp:
+                var gmPopUp = (PopUpGameMode_SO)GameMode;
+                gmPopUp.EndGameMode();
                 break;
             default:
                 break;
