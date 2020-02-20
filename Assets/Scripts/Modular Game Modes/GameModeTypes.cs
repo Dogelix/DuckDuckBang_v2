@@ -2,5 +2,6 @@
 {
     Timed,
     Wave,
-    Points
+    Points,
+    PopUp
 }

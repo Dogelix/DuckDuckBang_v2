@@ -34,21 +34,21 @@
 //    Vector3[] spawnPoints;
 //    public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
-//    private IEnumerator Spawn()
+//private IEnumerator Spawn()
+//{
+//    yield return new WaitForSeconds(spawnDelay);
+//    // Get random spawn point
+//    var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
+//    var newAgent = Instantiate(agentPrefab, pos, Quaternion.identity);
+//    newAgent.SetCollider();
+//    newAgent.name = "Flying Duck " + agents.Count() + 1;
+//    agents.Add(newAgent);
+//    spawnCount++;
+//    if (spawnCount < startingCount)
 //    {
-//        yield return new WaitForSeconds(spawnDelay);
-//        // Get random spawn point
-//        var pos = spawnPoints[Random.Range(0, spawnPoints.Length)];
-//        var newAgent = Instantiate(agentPrefab, pos, Quaternion.identity);
-//        newAgent.SetCollider();
-//        newAgent.name = "Flying Duck " + agents.Count() + 1;
-//        agents.Add(newAgent);
-//        spawnCount++;
-//        if (spawnCount < startingCount)
-//        {
-//            StartCoroutine(Spawn());
-//        }
+//        StartCoroutine(Spawn());
 //    }
+//}
 
 //    //private IEnumerator Spawn()
 //    //{
