@@ -34,7 +34,7 @@ public class PointsScript : MonoBehaviour
             return;
         }
 
-        PointsPopUp.Create(transform.position, _pointsValue);
+        PointsPopUp.Create(transform.position, (_pointsValue * _playerScore.GetMultiplier));
 
         _playerScore.UpdateScore(_pointsValue, _uniqueToken);
 

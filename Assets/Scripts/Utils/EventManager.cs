@@ -12,7 +12,7 @@ class EventManager:MonoBehaviour
     {
         get
         {
-            Debug.Log("EventManager Get");
+            //Debug.Log("EventManager Get");
             if (!_i)
             {
                 _i = FindObjectOfType(typeof(EventManager)) as EventManager;

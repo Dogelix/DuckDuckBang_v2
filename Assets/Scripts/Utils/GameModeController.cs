@@ -97,7 +97,7 @@ public class GameModeController : MonoBehaviour
                 break;
         }
 
-
+        GetComponentInChildren<GameOverUI>().ShowGameOver();
     }
 
     public void TargetGameOver(GameObject target)

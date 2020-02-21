@@ -18,9 +18,14 @@ public class FlockAgent : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!target)
+        if (!target && !GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>()._gameOver)
             SetTarget();
            // CheckBoundaries();
+    }
+
+    private void OnDestroy()
+    {
+        Flock.agents.Remove(this);
     }
 
     private void SetTarget()
