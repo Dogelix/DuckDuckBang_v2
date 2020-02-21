@@ -110,7 +110,7 @@ public class WaveGameMode_SO : GameMode_SO
             for (int count = 0; count < _currentWaveSize; count++)
             {
                 StartCoroutine(Spawn(spawnDelay));
-                spawnDelay += 1.2f;
+                spawnDelay += 1.5f;
             }           
         }
     }

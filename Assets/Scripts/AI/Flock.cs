@@ -7,9 +7,7 @@ public class Flock : MonoBehaviour
 {
     public GameObject SpawnPoints;
     public FlockAgent agentPrefab;
-    public FlockAgent groundPrefab;
     public static List<FlockAgent> agents = new List<FlockAgent>();
-    public static List<FlockAgent> agentsGround = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
     public int startingCount = 10;
@@ -23,7 +21,6 @@ public class Flock : MonoBehaviour
     public float neighbourRadius = 1.5f;
     [Range(0f, 1f)]
     public float avoidanceRadiusMultiplier = 0.8f;
-    public float spawnDelay = 0.5f;
     public float attackDelay = 5f;
 
 
