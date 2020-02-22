@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1061164070300341860}
   m_Layer: 0
-  m_Name: AtractCamera
+  m_Name: AttractCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 1
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
