@@ -24,6 +24,8 @@ public class Hitscan : MonoBehaviour
 
     private GameObject sphere;
 
+    private AudioSource gunshot;
+
     void Awake()
     {
         _pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
@@ -33,6 +35,7 @@ public class Hitscan : MonoBehaviour
     void Start()
     {
         laser = GetComponent<LineRenderer>();
+        gunshot = GetComponent<AudioSource>();
     }
 
 
@@ -63,6 +66,7 @@ public class Hitscan : MonoBehaviour
             {
                 laser.SetPosition(1, Barrel.transform.position + (laserRange * Parent.transform.forward));
             }
+            gunshot.Play();
         }
     }
 
