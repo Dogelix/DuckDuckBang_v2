@@ -24,6 +24,7 @@ public class PointsPopUp : MonoBehaviour
     private void Awake()
     {
         _textMesh = transform.GetComponent<TextMeshPro>();
+        _textMesh.fontSize = startSize;
 
         Destroy(gameObject, _displayLength);
     }
@@ -36,7 +37,7 @@ public class PointsPopUp : MonoBehaviour
     }
 
     float lerp = 0.0f;
-    int startSize = 32;
+    int startSize = 12;
     int endSize = 0;
 
     private void DecreaseFont()
