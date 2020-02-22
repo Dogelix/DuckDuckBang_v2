@@ -23,14 +23,14 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    GetComponentInChildren<GrappleHook>().ShootGrappleHook();
-        //}
-        //if ( Input.GetKeyDown(KeyCode.LeftShift) )
-        //{
-        //    GetComponentInChildren<GrappleHook>().ReturnGrappleHook();
-        //}
+        if ( Input.GetKeyDown(KeyCode.Space) )
+        {
+            GetComponentInChildren<GrappleHook>().ShootGrappleHook();
+        }
+        if ( Input.GetKeyDown(KeyCode.LeftShift) )
+        {
+            GetComponentInChildren<GrappleHook>().ReturnGrappleHook();
+        }
     }
 
     //void SomeOtherFunction()
