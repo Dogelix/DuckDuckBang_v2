@@ -8,11 +8,11 @@ public class Testing : MonoBehaviour
 {
     //private UnityAction action;
 
-    private void Awake()
-    {
-        Debug.Log(Application.dataPath);
-        //action = new UnityAction(SomeOtherFunction);
-    }
+    //private void Awake()
+    //{
+    //    Debug.Log(Application.dataPath);
+    //    //action = new UnityAction(SomeOtherFunction);
+    //}
 
     //private void OnEnable()
     //{
@@ -23,10 +23,14 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    GetComponentInChildren<GrappleHook>().ShootGrappleHook();
+        //}
+        //if ( Input.GetKeyDown(KeyCode.LeftShift) )
+        //{
+        //    GetComponentInChildren<GrappleHook>().ReturnGrappleHook();
+        //}
     }
 
     //void SomeOtherFunction()
