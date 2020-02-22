@@ -76,13 +76,12 @@ public class WaveGameMode_SO : GameMode_SO
                 if(_waves != 1)
                 {
                     _currentWaveSize += Random.Range(_waveIncreaseValue.Lower, _waveIncreaseValue.Upper + 1);
+                    _waves++;
                 }
                 else
                 {
                     _currentWaveSize = _waveBaseValue;
                 }
-
-                _waves++;
             }
             else
             {
@@ -93,9 +92,8 @@ public class WaveGameMode_SO : GameMode_SO
                 else
                 {
                     _currentWaveSize += Random.Range(_waveIncreaseValue.Lower, _waveIncreaseValue.Upper + 1);
+                    _currentWave--;
                 }
-
-                _currentWave--;
 
                 if(_currentWave == 0)
                 {
