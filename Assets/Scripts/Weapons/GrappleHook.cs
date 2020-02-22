@@ -10,6 +10,9 @@ public class GrappleHook : MonoBehaviour
     private float grappleHookForce = 500;
 
     private bool _return = false;
+    private bool _fired = false;
+
+    private float _retSpeed = 2f;
 
     private Vector3 retPos;
 
@@ -23,7 +26,11 @@ public class GrappleHook : MonoBehaviour
         retPos = gameObject.transform.parent.position + gameObject.transform.parent.right;
         if ( _return )
         {
-            float step = 2f * Time.deltaTime;
+            float step = 0f;
+
+            if ( GetGameObjectiveChild != null) { step = _retSpeed * Time.deltaTime; }
+            else { step = (_retSpeed * 2) * Time.deltaTime; }
+
             transform.position = Vector3.MoveTowards(transform.position, retPos, step);
         }
         
@@ -39,6 +46,8 @@ public class GrappleHook : MonoBehaviour
             _rigidbody.isKinematic = true;
             other.transform.parent = transform;
             _rigidbody.isKinematic = false;
+
+            _retSpeed = 2f;
         }
         else if(other.transform.parent == transform.parent )
         {
@@ -47,6 +56,7 @@ public class GrappleHook : MonoBehaviour
             KillMotion();
             DestroyGrabbedObjective();
             transform.rotation = Quaternion.identity;
+            _fired = false;
         }
     }
 
@@ -56,23 +66,34 @@ public class GrappleHook : MonoBehaviour
         _rigidbody.velocity = Vector3.zero;
     }
 
+    private GameObject GetGameObjectiveChild
+    {
+        get
+        {
+            var children = GetComponentsInChildren<Transform>();
+            foreach ( var child in children )
+            {
+                if ( child.tag != StringUtils.GameObjective ) continue;
+                else return child.gameObject;
+            }
+
+            return null;
+        }
+    }
+
     private void DestroyGrabbedObjective()
     {
-        var children = GetComponentsInChildren<Transform>();
-        Transform objChild;
-
-        foreach ( var child in children )
-        {
-            if ( child.tag != StringUtils.GameObjective )
-                continue;
-            else { Destroy(child.gameObject); break; }
-        }        
+        Destroy(GetGameObjectiveChild);
     }
 
     public void ShootGrappleHook()
     {
+        if ( _fired )
+            return; //If the hook is attached to an objective don't apply force
+
         _rigidbody.useGravity = true;
         _rigidbody.AddForce(transform.right * grappleHookForce);
+        _fired = true;
     }
 
     public void ReturnGrappleHook()
