@@ -66,7 +66,7 @@ public class Hitscan : MonoBehaviour
             {
                 laser.SetPosition(1, Barrel.transform.position + (laserRange * Parent.transform.forward));
             }
-            gunshot.Play();
+            gunshot.Play();            
         }
     }
 

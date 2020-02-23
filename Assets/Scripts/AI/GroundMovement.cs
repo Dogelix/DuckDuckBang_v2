@@ -30,13 +30,13 @@ public class GroundMovement : MonoBehaviour
         }
     }
 
-    private IEnumerator KeepOnKilling(float delay)
+    private IEnumerator KeepOnKilling(float delay, GameObject t)
     {
         yield return new WaitForSeconds(delay);
-        if (target != null) // if our target still exist, keep on Killing
+        if (t != null) // if our target still exist, keep on Killing
         {
-            target.GetComponentInChildren<TargetHealth>().TakeDamage();
-            StartCoroutine(KeepOnKilling(2f));
+            t.GetComponentInChildren<TargetHealth>().TakeDamage();
+            StartCoroutine(KeepOnKilling(2f, t));
         }
 
     }
@@ -54,8 +54,9 @@ public class GroundMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "GameObjective")
         {
-            target.GetComponentInChildren<TargetHealth>().TakeDamage();
-            StartCoroutine(KeepOnKilling(2f));
+            var t = collision.gameObject;
+            t.GetComponentInChildren<TargetHealth>().TakeDamage();
+            StartCoroutine(KeepOnKilling(2f, t));
         }
     }
 
