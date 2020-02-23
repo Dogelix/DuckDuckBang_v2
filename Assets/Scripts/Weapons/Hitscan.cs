@@ -42,7 +42,7 @@ public class Hitscan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire)
+        if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire)
         {
             Debug.Log("Parent Forward Vector: " + Parent.transform.forward);
             nextFire = Time.time + firerate;
