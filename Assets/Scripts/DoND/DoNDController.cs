@@ -8,6 +8,7 @@ public class DoNDController : MonoBehaviour
     public float _downTime;
     public float _totalTime;
 
+    public int maxSpawnAttempt = 10;
     public int _boxAmountSpawn;
     public int _artPercentage;
     private int _boxCurrentAmount = 0;
@@ -17,18 +18,24 @@ public class DoNDController : MonoBehaviour
     public GameObject _spawnLocations;
     Vector3[] spawnLocations;
 
+    public float _pause = 1f;
+
     private IEnumerator Spawn()
     {
-        int randomValue = Random.Range(0, 100);
-        if (randomValue < _artPercentage)
+        int spawnAttempts = 0;
+        while (spawnAttempts < maxSpawnAttempt)
         {
-            var pos = spawnLocations[Random.Range(0, spawnLocations.Length)];
-            var newAgent = Instantiate(_targetArt, pos, Quaternion.identity);
-        }
-        else
-        {
-            var pos = spawnLocations[Random.Range(0, spawnLocations.Length)];
-            var newAgent = Instantiate(_targetDuck, pos, Quaternion.identity);
+            int randomValue = Random.Range(0, 100);
+            if (randomValue < _artPercentage)
+            {
+                var pos = spawnLocations[Random.Range(0, spawnLocations.Length)];
+                var newAgent = Instantiate(_targetArt, pos, Quaternion.identity);
+            }
+            else
+            {
+                var pos = spawnLocations[Random.Range(0, spawnLocations.Length)];
+                var newAgent = Instantiate(_targetDuck, pos, Quaternion.identity);
+            }
         }
         _boxCurrentAmount++;
         if (_boxCurrentAmount < _boxAmountSpawn)
