@@ -14,7 +14,7 @@ public class DoNDController : MonoBehaviour
 
     public bool _timerActive = false;
 
-    public int maxSpawnAttempt = 10;
+    public int _maxSpawnAttempt = 10;
     public int _boxAmountSpawn;
     public int _artPercentage;
     private int _boxCurrentAmount = 0;
@@ -28,33 +28,24 @@ public class DoNDController : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        int spawnAttempts = 0;
-        while (spawnAttempts < maxSpawnAttempt)
+        int randomValue = Random.Range(0, 100);
+        if (randomValue < _artPercentage)
         {
-            int randomValue = Random.Range(0, 100);
-            if (randomValue < _artPercentage)
-            {
-                var pos = spawnLocations[Random.Range(0, spawnLocations.Length)];
-                var newAgent = Instantiate(_targetArt, pos, Quaternion.identity);
-            }
-            else
-            {
-                var pos = spawnLocations[Random.Range(0, spawnLocations.Length)];
-                var newAgent = Instantiate(_targetDuck, pos, Quaternion.identity);
-            }
+            var pos = spawnLocations[Random.Range(0, spawnLocations.Length)];
+            var newAgent = Instantiate(_targetArt, pos, Quaternion.identity);
         }
-        _boxCurrentAmount++;
-        if (_boxCurrentAmount < _boxAmountSpawn)
+        else
         {
-            StartCoroutine(Spawn());
+            var pos = spawnLocations[Random.Range(0, spawnLocations.Length)];
+            var newAgent = Instantiate(_targetDuck, pos, Quaternion.identity);
         }
-        _boxCurrentAmount = 0;
         yield return null;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        new WaitForSeconds(5f);
         _textBox.text = _timerStart.ToString("F2");
         var tempList = new List<Vector3>();
         foreach (Transform child in _spawnLocations.transform)
@@ -62,7 +53,7 @@ public class DoNDController : MonoBehaviour
             tempList.Add(child.position);
         }
         spawnLocations = tempList.ToArray();
-        StartCoroutine(Spawn());
+        mode();
     }
 
     // Update is called once per frame
@@ -75,6 +66,14 @@ public class DoNDController : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(Spawn());
+        }
+    }
+
+    public void mode()
+    {
+        for (int i = 0; i < 4; i++)
         {
             StartCoroutine(Spawn());
         }
