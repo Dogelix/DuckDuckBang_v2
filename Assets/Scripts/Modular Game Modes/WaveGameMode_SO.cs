@@ -47,6 +47,11 @@ public class WaveGameMode_SO : GameMode_SO
     private int ratioCountUpper;
     private int ratioCountLower;
 
+    public void RemoveAgent(GameObject obj)
+    {
+        _agents.Remove(obj);
+    }
+
     /// <summary>
     /// Initalisation
     /// </summary>

@@ -59,7 +59,15 @@ public class Hitscan : MonoBehaviour
 
                 if (hit.collider.tag == "Enemy")
                 {
-                    hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
+                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GroundEnemy"))
+                    {
+                        hit.transform.gameObject.GetComponent<GroundAgentCollision>().RaycastDestroy();
+
+                    }
+                    else
+                    {
+                        hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
+                    }
                 }
             }
             else

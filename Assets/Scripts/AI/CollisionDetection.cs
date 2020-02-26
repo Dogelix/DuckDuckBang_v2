@@ -43,6 +43,7 @@ public class CollisionDetection : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
+            
             Flock.agents.Remove(agent);
             Flock.agents.Add(agent);
         }
