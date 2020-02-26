@@ -7,7 +7,6 @@ using UnityEditor;
 public class GameMode_Window : EditorWindow
 {
     [MenuItem("Window/Game Mode Editor")]
-
     public static void ShowWindow()
     {
         //Show exisiting window instance if nor make new
