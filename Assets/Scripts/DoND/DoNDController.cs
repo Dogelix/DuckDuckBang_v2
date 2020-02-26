@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoNDController : MonoBehaviour
 {
     public float _boxTime;
     public float _downTime;
     public float _totalTime;
+    public float _timerStart;
+    public float _radiusCheck = 1f;
+    public Text _textBox;
+
+    public bool _timerActive = false;
 
     public int maxSpawnAttempt = 10;
     public int _boxAmountSpawn;
@@ -49,6 +55,7 @@ public class DoNDController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _textBox.text = _timerStart.ToString("F2");
         var tempList = new List<Vector3>();
         foreach (Transform child in _spawnLocations.transform)
         {
@@ -61,9 +68,21 @@ public class DoNDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_timerActive)
+        {
+            _timerStart += Time.deltaTime;
+            _textBox.text = _timerStart.ToString("F2");
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(Spawn());
         }
+    }
+
+    public void timerSwitch()
+    {
+        _timerActive = !_timerActive;
+        return;
     }
 }
