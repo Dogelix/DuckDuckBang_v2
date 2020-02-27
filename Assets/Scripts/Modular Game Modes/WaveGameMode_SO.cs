@@ -124,15 +124,15 @@ public class WaveGameMode_SO : GameMode_SO
 
         if (ratioCountUpper != 0)
         {
-            _agents.Add(Instantiate(GameAssets.i.ZombieWalkingDuck.gameObject, _groundSpawnLocations[Random.Range(0, _groundSpawnLocations.Count)].position, Quaternion.identity));
+            _agents.Add(Instantiate(GameAssets.i.ZombieWalkingDuck.gameObject, _groundSpawnLocations[Random.Range(0, _groundSpawnLocations.Count)].position, Quaternion.identity)); //Comment out for unlimted spawn
             ratioCountUpper--;
         }
         else
         {
             var t = Instantiate(GameAssets.i.GameJamDuck.gameObject, _flySpawnLocations[Random.Range(0, _flySpawnLocations.Count)].position, Quaternion.identity);
-            t.GetComponent<FlockAgent>().SetCollider();
-            Flock.agents.Add(t.GetComponent<FlockAgent>());
-            _agents.Add(t);
+            t.GetComponent<FlockAgent>().SetCollider(); //Comment out for unlimted spawn
+            Flock.agents.Add(t.GetComponent<FlockAgent>()); //Comment out for unlimted spawn
+            _agents.Add(t); //Comment out for unlimted spawn
             ratioCountLower--;
         }
 
