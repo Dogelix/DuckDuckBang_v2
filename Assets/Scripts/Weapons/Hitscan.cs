@@ -69,6 +69,10 @@ public class Hitscan : MonoBehaviour
                         hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
                     }
                 }
+                else
+                {
+                    hit.transform.gameObject.GetComponent<QuitScript>().RaycastDestroy();
+                }
             }
             else
             {
