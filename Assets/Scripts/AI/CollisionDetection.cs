@@ -32,8 +32,8 @@ public class CollisionDetection : MonoBehaviour
         {
             if(!agent.lockHealthDamage)
             {
-                agent.lockHealthDamage = true; // Lock damaging
-                StartCoroutine(UnlockHealthDamage()); // Unlock Health damage after certain time
+                //agent.lockHealthDamage = true; // Lock damaging
+                //StartCoroutine(UnlockHealthDamage()); // Unlock Health damage after certain time
                 agent.attack = false;
                 agent.stayInRadius = true;
                 agent.allign = true;

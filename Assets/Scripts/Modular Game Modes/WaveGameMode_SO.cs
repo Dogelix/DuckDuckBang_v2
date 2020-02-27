@@ -61,7 +61,7 @@ public class WaveGameMode_SO : GameMode_SO
         base._type = GameModeTypes.Wave;
 
         _flySpawnLocations = GameObject.FindGameObjectsWithTag("FlySpawn").Select(x => x.transform).ToList();
-        _groundSpawnLocations = GameObject.FindGameObjectsWithTag("GroundSpawn").Select(x => x.transform).ToList();
+        _groundSpawnLocations = GameObject.FindGameObjectsWithTag("GroundSpawn").Select(x => x.transform).ToList(); 
 
         if (!_countUp)
         {

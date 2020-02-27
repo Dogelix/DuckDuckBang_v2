@@ -25,15 +25,15 @@ public class PointsScript : MonoBehaviour
         _playerScore = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<PlayerScore>();
     }
 
+    private void Update()
+    {
+
+    }
 
 
     private void OnDestroy()
     {
         var temp = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>();
-        if (temp._gameOver)
-        {
-            return;
-        }
 
         if(temp.GetType() == typeof(WaveGameMode_SO))
         {
@@ -50,5 +50,10 @@ public class PointsScript : MonoBehaviour
 
         if ( _hasMultiplier )
             _playerScore.UpdateMultiplier(_multiplierValue);
+
+        if (temp._gameOver)
+        {
+            return;
+        }
     }
 }
