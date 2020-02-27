@@ -35,13 +35,13 @@ public class PointsScript : MonoBehaviour
     {
         var temp = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>();
 
-        if(temp.GetType() == typeof(WaveGameMode_SO))
+        if (temp.GetType() == typeof(WaveGameMode_SO))
         {
             WaveGameMode_SO t = (WaveGameMode_SO)temp;
             t.RemoveAgent(gameObject);
         }
 
-        if(_pointsValue < 0)
+        if (_pointsValue < 0)
             PointsPopUp.Create(transform.position, _pointsValue);
         else
             PointsPopUp.Create(transform.position, (_pointsValue * _playerScore.GetMultiplier));
