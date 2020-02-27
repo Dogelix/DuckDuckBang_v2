@@ -35,6 +35,8 @@ public class WaveGameMode_SO : GameMode_SO
     [Tooltip("A ratio where Upper == Ground and Lower == Air e.g. Upper 2:1 Lower")]
     public Limits _enemyWeighting;
 
+    public float _spawnDelay = 1.5f;
+
     public List<GameObject> _agents;
 
     // Private holder for all transforms within spawn containers
@@ -42,6 +44,8 @@ public class WaveGameMode_SO : GameMode_SO
     private List<Transform> _groundSpawnLocations;
 
     public bool _countUp;
+
+    public bool _spawnExtraBaskets;
 
 
     private int ratioCountUpper;
@@ -113,7 +117,7 @@ public class WaveGameMode_SO : GameMode_SO
             for (int count = 0; count < _currentWaveSize; count++)
             {
                 StartCoroutine(Spawn(spawnDelay));
-                spawnDelay += 1.5f;
+                spawnDelay += _spawnDelay;
             }           
         }
     }
@@ -129,7 +133,7 @@ public class WaveGameMode_SO : GameMode_SO
         }
         else
         {
-            var t = Instantiate(GameAssets.i.GameJamDuck.gameObject, _flySpawnLocations[Random.Range(0, _flySpawnLocations.Count)].position, Quaternion.identity);
+            var t = Instantiate(GameAssets.i.FlyingDuck.gameObject, _flySpawnLocations[Random.Range(0, _flySpawnLocations.Count)].position, Quaternion.identity);
             t.GetComponent<FlockAgent>().SetCollider();
             Flock.agents.Add(t.GetComponent<FlockAgent>());
             _agents.Add(t);

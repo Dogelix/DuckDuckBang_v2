@@ -45,14 +45,23 @@ public class GameAssets : MonoBehaviour
     public Transform InWorldSprite;
 
     /// <summary>
-    /// Basic Testing Duck
+    /// Picnic Basket
     /// </summary>
-    public Transform GameJamDuck;
+    public Transform PicnicBasket;
+
+    // ---DUCKS---
+
+    /// <summary>
+    /// Flying Duck
+    /// </summary>
+    public Transform FlyingDuck;
 
     /// <summary>
     /// Zombie Reginald
     /// </summary>
     public Transform ZombieWalkingDuck;
+
+    // ---Sprites---
 
     /// <summary>
     /// For anything that has hearts
