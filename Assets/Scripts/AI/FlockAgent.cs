@@ -25,7 +25,7 @@ public class FlockAgent : MonoBehaviour
 
     private void OnDestroy()
     {
-        Flock.agents.Remove(this);
+       Flock.agents.Remove(this);
     }
 
     private void SetTarget()

@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class QuitScript : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public void RaycastDestroy()
     {
-        if(collision.gameObject.transform.tag == "Bullet")
-        {
-            Application.Quit();
-        }
+        //Application.Quit();
     }
 }

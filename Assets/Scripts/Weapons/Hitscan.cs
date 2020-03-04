@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using static SoundManager;
 
 public class Hitscan : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class Hitscan : MonoBehaviour
 
     private GameObject sphere;
 
-    private AudioSource gunshot;
+    private SoundManager soundManager;
 
     void Awake()
     {
@@ -35,7 +36,7 @@ public class Hitscan : MonoBehaviour
     void Start()
     {
         laser = GetComponent<LineRenderer>();
-        gunshot = GetComponent<AudioSource>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
 
@@ -44,6 +45,8 @@ public class Hitscan : MonoBehaviour
     {
         if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire)
         {
+            soundManager.PlaySound(SoundsNames.GunShot_1, false, false);
+
             Debug.Log("Parent Forward Vector: " + Parent.transform.forward);
             nextFire = Time.time + firerate;
 
@@ -69,12 +72,15 @@ public class Hitscan : MonoBehaviour
                         hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
                     }
                 }
+                else
+                {
+                    hit.transform.gameObject.GetComponent<QuitScript>().RaycastDestroy();
+                }
             }
             else
             {
                 laser.SetPosition(1, Barrel.transform.position + (laserRange * Parent.transform.forward));
             }
-            gunshot.Play();            
         }
     }
 
