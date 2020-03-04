@@ -34,6 +34,13 @@ public class GameModeController : MonoBehaviour
             case GameModeTypes.Points:
                 break;
             case GameModeTypes.PopUp:
+                var artSpawns = GameObject.FindGameObjectsWithTag("GroundSpawn");
+                List<Transform> artSpawnsT = new List<Transform>();
+                foreach (var s in artSpawns)
+                {
+                    artSpawnsT.Add(s.transform);
+                }
+                GameMode.Init(artSpawnsT);
                 break;
             default:
                 break;

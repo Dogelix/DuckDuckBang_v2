@@ -33,6 +33,9 @@ public class PopUpGameMode_SO : GameMode_SO
     public override void Init(object value)
     {
         base._type = GameModeTypes.PopUp;
+
+        _spawnLocations = (List<Transform>)value;
+
         base.Init(value);
     }
 

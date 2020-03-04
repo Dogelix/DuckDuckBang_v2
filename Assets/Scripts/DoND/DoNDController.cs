@@ -21,67 +21,91 @@ public class DoNDController : MonoBehaviour
 
     public GameObject _targetDuck;
     public GameObject _targetArt;
-    public GameObject _spawnLocations;
+    //public GameObject _spawnLocations;
     Vector3[] spawnLocations;
+    List<int> usedIndexes = new List<int>();
+
+    PopUpGameMode_SO gameMode;
+
+    void Awake()
+    {
+        gameMode = FindObjectOfType<PopUpGameMode_SO>();
+    }
 
     public float _pause = 1f;
 
     private IEnumerator Spawn()
     {
-        int randomValue = Random.Range(0, 100);
-        if (randomValue < _artPercentage)
+        int percentValue= Random.Range(0, 100);
+        int amountOfTargetLocs = gameMode._spawnLocations.Count;
+        int spawnPointIndex = Random.Range(0, amountOfTargetLocs);
+        var temp = gameMode._spawnLocations.ToArray();
+
+        while (usedIndexes.Contains(spawnPointIndex))
         {
-            var pos = spawnLocations[Random.Range(0, spawnLocations.Length)];
-            var newAgent = Instantiate(_targetArt, pos, Quaternion.identity);
+            spawnPointIndex = Random.Range(0, amountOfTargetLocs);
+
+            if(usedIndexes.Count == amountOfTargetLocs)
+                yield return null;
+        }
+
+        usedIndexes.Add(spawnPointIndex);
+
+        Vector3 targetLoc = temp[spawnPointIndex].position;
+
+        if (percentValue < _artPercentage)
+        {
+            Instantiate(_targetArt, targetLoc, Quaternion.identity);
         }
         else
         {
-            var pos = spawnLocations[Random.Range(0, spawnLocations.Length)];
-            var newAgent = Instantiate(_targetDuck, pos, Quaternion.identity);
+            Instantiate(_targetDuck, targetLoc, Quaternion.identity);
         }
-        yield return null;
+
+        yield return new WaitForSeconds(0.1f);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        new WaitForSeconds(5f);
-        _textBox.text = _timerStart.ToString("F2");
-        var tempList = new List<Vector3>();
-        foreach (Transform child in _spawnLocations.transform)
-        {
-            tempList.Add(child.position);
-        }
-        spawnLocations = tempList.ToArray();
-        mode();
-    }
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    //new WaitForSeconds(5f);
+    //    //_textBox.text = _timerStart.ToString("F2");
+    //    var tempList = new List<Vector3>();
+    //    foreach (Transform child in _spawnLocations.transform)
+    //    {
+    //        tempList.Add(child.position);
+    //    }
+    //    spawnLocations = tempList.ToArray();
+    //    mode();
+    //}
 
     // Update is called once per frame
     void Update()
     {
-        if (_timerActive)
-        {
-            _timerStart += Time.deltaTime;
-            _textBox.text = _timerStart.ToString("F2");
-        }
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("Space Down");
             StartCoroutine(Spawn());
         }
+
+        //if (_timerActive)
+        //{
+        //    _timerStart += Time.deltaTime;
+        //    _textBox.text = _timerStart.ToString("F2");
+        //}
     }
 
-    public void mode()
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            StartCoroutine(Spawn());
-        }
-    }
+    //public void mode()
+    //{
+    //    for (int i = 0; i < 22; i++)
+    //    {
+    //        StartCoroutine(Spawn());
+    //    }
+    //}
 
-    public void timerSwitch()
-    {
-        _timerActive = !_timerActive;
-        return;
-    }
+    //public void timerSwitch()
+    //{
+    //    _timerActive = !_timerActive;
+    //    return;
+    //}
 }
