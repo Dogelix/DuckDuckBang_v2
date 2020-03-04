@@ -74,7 +74,7 @@ public class Hitscan : MonoBehaviour
                 }
                 else
                 {
-                    hit.transform.gameObject.GetComponent<QuitScript>().RaycastDestroy();
+                    hit.transform.gameObject.GetComponent<QuitScript>().Activate();
                 }
             }
             else
