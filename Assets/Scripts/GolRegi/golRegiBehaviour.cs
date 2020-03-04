@@ -14,6 +14,7 @@ public class golRegiBehaviour : MonoBehaviour
     void Update()
     {
         transform.position += transform.forward * Time.deltaTime;
+        // transform.position += transform.forward;
     }
 
     int collideTrue = 0;

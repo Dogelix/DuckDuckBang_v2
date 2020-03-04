@@ -12,7 +12,7 @@ public class GolRegiSpawner : MonoBehaviour
     public GameObject[] prefabs;
     // Clones as array. Same as Prefabs.
     public GameObject[] clones;
-    int spawn = 0;
+    int spawn;
 
     void Start()
     {
@@ -28,6 +28,11 @@ public class GolRegiSpawner : MonoBehaviour
     {
         clones[1] = Instantiate(prefabs[1], spawnLocations[spawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
         clones[2] = Instantiate(prefabs[2], endLocations[spawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
+    }
+
+    void waitTime()
+    {
+
     }
 
     /// <summary>
