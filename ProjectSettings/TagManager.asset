@@ -16,6 +16,8 @@ TagManager:
   - GameObjective
   - FlySpawn
   - GroundSpawn
+  - GoldenRegi
+  - endPortal
   layers:
   - Default
   - TransparentFX
