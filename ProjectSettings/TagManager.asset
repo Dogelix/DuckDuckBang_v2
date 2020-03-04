@@ -16,6 +16,7 @@ TagManager:
   - GameObjective
   - FlySpawn
   - GroundSpawn
+  - MenuItem
   layers:
   - Default
   - TransparentFX
