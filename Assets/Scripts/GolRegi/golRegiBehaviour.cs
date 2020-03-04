@@ -10,11 +10,21 @@ public class golRegiBehaviour : MonoBehaviour
         
     }
 
+    public Transform target;
+
     // Update is called once per frame
     void Update()
     {
+        Direction();
         transform.position += transform.forward * Time.deltaTime;
         // transform.position += transform.forward;
+    }
+
+    void Direction()
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        transform.rotation = rotation;
     }
 
     int collideTrue = 0;

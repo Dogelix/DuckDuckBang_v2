@@ -30,11 +30,6 @@ public class GolRegiSpawner : MonoBehaviour
         clones[2] = Instantiate(prefabs[2], endLocations[spawn].transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
     }
 
-    void waitTime()
-    {
-
-    }
-
     /// <summary>
     /// Spawns a clone of the Prefab Golden Regi at a spawn location chosen by spawn, rotated to face position (QE)
     /// </summary>
