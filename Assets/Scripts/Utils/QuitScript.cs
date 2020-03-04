@@ -6,6 +6,6 @@ public class QuitScript : MonoBehaviour
 {
     public void RaycastDestroy()
     {
-        Application.Quit();
+        //Application.Quit();
     }
 }
