@@ -43,7 +43,7 @@ public class Hitscan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (/*_fireAction.GetStateDown(_pose.inputSource)*/ Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire)
+        if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire)
         {
             soundManager.PlaySound(SoundsNames.GunShot_1, false);
 

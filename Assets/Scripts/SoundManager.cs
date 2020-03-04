@@ -7,12 +7,6 @@ public class SoundManager : MonoBehaviour
 {
     [Tooltip("Sound names must correspond to enum names!")]
     public List<AudioClip> Sounds;
-    private GameObject Player;
-
-    private void Start()
-    {
-        Player = GameObject.FindGameObjectWithTag("Player");
-    }
 
     public void PlaySound(SoundsNames soundName, bool is3Dsound)
     {
@@ -46,7 +40,7 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public enum SoundsNames
+    public enum SoundsNames // Make sure to add an enum for every sound in the sounds list.
     {
         GunShot_1
     }
