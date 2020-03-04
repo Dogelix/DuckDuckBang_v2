@@ -19,7 +19,7 @@ public class golRegiBehaviour : MonoBehaviour
     int collideTrue = 0;
 
     /// <summary>
-    /// If collides with EndPortal, Destroys GoldenRegi and EndPortal
+    /// If collides with EndPortal -> destroys GoldenRegi and EndPortal
     /// </summary>
     /// <param name="collision"></param>
     void OnCollisionEnter (Collision collision)
