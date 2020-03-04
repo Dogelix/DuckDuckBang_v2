@@ -7,13 +7,23 @@ public class SoundManager : MonoBehaviour
 {
     [Tooltip("Sound names must correspond to enum names!")]
     public List<AudioClip> Sounds;
+    public float maxDistance;
 
-    public void PlaySound(SoundsNames soundName, bool is3Dsound)
+    public void PlaySound(SoundsNames soundName, bool is3Dsound, bool randomPitch)
     {
         var audioSource = GetAudioSource(soundName);
         if (audioSource.clip != null)
         {
-            audioSource.spatialBlend = (is3Dsound) ? 1f : 0f; // Check if we need sound distance
+            if (is3Dsound)
+            {
+                audioSource.spatialBlend = 1f;
+                audioSource.maxDistance = maxDistance;
+                audioSource.rolloffMode = AudioRolloffMode.Linear;      
+            } 
+            if (randomPitch)
+            {
+                audioSource.pitch = Random.Range(0.9f, 1.2f);
+            }
             audioSource.Play();
             StartCoroutine(WaitAndDestroy(audioSource));
         }      
@@ -39,9 +49,9 @@ public class SoundManager : MonoBehaviour
         Destroy(source);
     }
 
-
     public enum SoundsNames // Make sure to add an enum for every sound in the sounds list.
     {
-        GunShot_1
+        GunShot_1,
+        Quack_1
     }
 }
