@@ -96,7 +96,6 @@ public class GameModeController : MonoBehaviour
             default:
                 break;
         }
-
         GetComponentInChildren<GameOverUI>().ShowGameOver();
     }
 

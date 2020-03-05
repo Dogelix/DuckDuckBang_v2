@@ -35,6 +35,8 @@ public class PointsScript : MonoBehaviour
     {
         var temp = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>();
 
+        if (temp._gameOver && gameObject.tag != StringUtils.GameObjective) return;
+
         if (temp.GetType() == typeof(WaveGameMode_SO))
         {
             WaveGameMode_SO t = (WaveGameMode_SO)temp;
