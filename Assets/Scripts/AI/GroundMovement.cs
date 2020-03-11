@@ -43,7 +43,7 @@ public class GroundMovement : MonoBehaviour
 
     private void SetTarget()
     {
-        var targets = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective);
+        var targets = GameObject.FindGameObjectsWithTag(uString.GameObjective);
         int random = Random.Range(0, targets.Length);
         target = targets[random];
         agent.SetDestination(target.transform.position);

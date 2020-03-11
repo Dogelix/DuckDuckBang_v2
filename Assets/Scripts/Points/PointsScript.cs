@@ -22,14 +22,14 @@ public class PointsScript : MonoBehaviour
     {
         _hasMultiplier = (UnityEngine.Random.Range(0, 2) == 0) ? false : true;
         _uniqueToken = Guid.NewGuid().ToString();
-        _playerScore = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<PlayerScore>();
+        _playerScore = GameObject.FindGameObjectWithTag(uString.SceneManager).GetComponent<PlayerScore>();
     }
 
 
 
     private void OnDestroy()
     {
-        var temp = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>();
+        var temp = GameObject.FindGameObjectWithTag(uString.SceneManager).GetComponent<GameMode_SO>();
         if (temp._gameOver)
         {
             return;
