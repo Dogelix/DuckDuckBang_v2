@@ -31,12 +31,12 @@ public class ScoreBoard : MonoBehaviour
 
     private void UpdateScore()
     {
-        _value.text = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<PlayerScore>().GetScore.ToString();
+        _value.text = GameObject.FindGameObjectWithTag(uString.SceneManager).GetComponent<PlayerScore>().GetScore.ToString();
     }
 
     private void UpdateMultiplier()
     {
-        _multiplier.text = "x" + GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<PlayerScore>().GetMultiplier.ToString();
+        _multiplier.text = "x" + GameObject.FindGameObjectWithTag(uString.SceneManager).GetComponent<PlayerScore>().GetMultiplier.ToString();
     }
 
 }

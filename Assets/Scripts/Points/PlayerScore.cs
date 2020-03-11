@@ -21,8 +21,6 @@ public class PlayerScore : MonoBehaviour
     /// <param name="value">A positive or negative value</param>
     public void UpdateScore(int value, string unqToken )
     {
-        if (_currentScore <= 0) _currentScore = 0;
-
         if ( _seenTokens.Contains(unqToken) ) return;
         else _seenTokens.Add(unqToken);
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
-using static SoundManager;
 
 public class Hitscan : MonoBehaviour
 {
@@ -15,6 +14,8 @@ public class Hitscan : MonoBehaviour
 
     public float laserRange = 5000f;
 
+    public int _damage = 1;
+
     private SteamVR_Behaviour_Pose _pose;
 
     private WaitForSeconds shotDuration = new WaitForSeconds(0.1f);
@@ -25,7 +26,7 @@ public class Hitscan : MonoBehaviour
 
     private GameObject sphere;
 
-    private SoundManager soundManager;
+    private AudioSource gunshot;
 
     void Awake()
     {
@@ -36,7 +37,7 @@ public class Hitscan : MonoBehaviour
     void Start()
     {
         laser = GetComponent<LineRenderer>();
-        soundManager = FindObjectOfType<SoundManager>();
+        gunshot = GetComponent<AudioSource>();
     }
 
 
@@ -45,8 +46,6 @@ public class Hitscan : MonoBehaviour
     {
         if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire)
         {
-            soundManager.PlaySound(SoundsNames.GunShot_1, false, false);
-
             Debug.Log("Parent Forward Vector: " + Parent.transform.forward);
             nextFire = Time.time + firerate;
 
@@ -58,29 +57,18 @@ public class Hitscan : MonoBehaviour
 
             if (Physics.Raycast(shot, out hit, laserRange))
             {
+                var hitTransform = hit.transform;
                 laser.SetPosition(1, hit.point);
 
-                if (hit.collider.tag == "Enemy")
-                {
-                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GroundEnemy"))
-                    {
-                        hit.transform.gameObject.GetComponent<GroundAgentCollision>().RaycastDestroy();
+                if (hitTransform.tag == uString.Enemy) hitTransform.GetComponent<AgentHealth>().DoDamage(_damage);
 
-                    }
-                    else
-                    {
-                        hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
-                    }
-                }
-                else
-                {
-                    hit.transform.gameObject.GetComponent<QuitScript>().Activate();
-                }
+                if (hitTransform.tag == uString.Menu) hitTransform.GetComponent<MenuParentClass>().Activate();
             }
             else
             {
                 laser.SetPosition(1, Barrel.transform.position + (laserRange * Parent.transform.forward));
             }
+            gunshot.Play();            
         }
     }
 

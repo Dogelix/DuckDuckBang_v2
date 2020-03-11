@@ -15,7 +15,7 @@ public class GameModeController : MonoBehaviour
 
     private void Awake()
     {
-        Targets = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective).ToList();
+        Targets = GameObject.FindGameObjectsWithTag(uString.GameObjective).ToList();
         GameMode = GetComponent<GameMode_SO>();   
 
         switch (GameMode._type)
@@ -96,6 +96,7 @@ public class GameModeController : MonoBehaviour
             default:
                 break;
         }
+
         GetComponentInChildren<GameOverUI>().ShowGameOver();
     }
 

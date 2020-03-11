@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New PopUp Mode", menuName = "PopUp Mode")]
 public class PopUpGameMode_SO : GameMode_SO
 {
     /// <summary>

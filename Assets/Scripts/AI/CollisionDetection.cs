@@ -5,35 +5,16 @@ using System.Linq;
 
 public class CollisionDetection : MonoBehaviour
 {
-
-    private Flock flock;
     public FlockAgent agent;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        flock = GameObject.Find("/FlyingDucks").GetComponent<Flock>();
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.tag == "Bullet")
-        {
-            // Destroy bullet too
-            Destroy(collision.gameObject);
-            // Remove from list first
-            Flock.agents.Remove(agent);
-
-            Destroy(gameObject);
-        }
-
         if (collision.gameObject.tag == "GameObjective")
         {
             if(!agent.lockHealthDamage)
             {
-                //agent.lockHealthDamage = true; // Lock damaging
-                //StartCoroutine(UnlockHealthDamage()); // Unlock Health damage after certain time
+                agent.lockHealthDamage = true; // Lock damaging
+                StartCoroutine(UnlockHealthDamage()); // Unlock Health damage after certain time
                 agent.attack = false;
                 agent.stayInRadius = true;
                 agent.allign = true;
@@ -54,12 +35,5 @@ public class CollisionDetection : MonoBehaviour
     {
         yield return new WaitForSeconds(2f); // Wait two seconds before attacking again
         agent.lockHealthDamage = false;
-    }
-
-    public void RaycastDestroy()
-    {
-        // Remove from list first
-        Flock.agents.Remove(agent);
-        Destroy(gameObject);
     }
 }
