@@ -26,9 +26,4 @@ public class GameMode_SO : MonoBehaviour
     {
 
     }
-
-    public virtual void RestartGameMode()
-    {
-
-    }
 }

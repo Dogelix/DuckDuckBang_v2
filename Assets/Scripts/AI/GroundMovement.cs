@@ -2,27 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static SoundManager;
 
 public class GroundMovement : MonoBehaviour
 {
     private GameObject target;
     public NavMeshAgent agent;
-    private SoundManager soundManager;
-
-    private void Awake()
-    {
-        agent = GetComponent<NavMeshAgent>();
-    }
-
-
     // Start is called before the first frame update
     void Start()
     {
         SetTarget();
-        soundManager = FindObjectOfType<SoundManager>();
-        // Start Quacking
-        StartCoroutine(Quack(Random.Range(3f, 8f)));
     }
 
     void Update()
@@ -59,14 +47,6 @@ public class GroundMovement : MonoBehaviour
         int random = Random.Range(0, targets.Length);
         target = targets[random];
         agent.SetDestination(target.transform.position);
-    }
-
-    private IEnumerator Quack(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        // Quack!
-        soundManager.PlaySound(SoundsNames.Quack_1, true, true);
-        StartCoroutine(Quack(Random.Range(3f, 8f)));
     }
 
 

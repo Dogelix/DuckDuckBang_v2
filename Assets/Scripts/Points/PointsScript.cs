@@ -25,10 +25,6 @@ public class PointsScript : MonoBehaviour
         _playerScore = GameObject.FindGameObjectWithTag(uString.SceneManager).GetComponent<PlayerScore>();
     }
 
-    private void Update()
-    {
-
-    }
 
 
     private void OnDestroy()
@@ -39,15 +35,13 @@ public class PointsScript : MonoBehaviour
             return;
         }
 
-        if (temp._gameOver && gameObject.tag != uString.GameObjective) return;
-
-        if (temp.GetType() == typeof(WaveGameMode_SO))
+        if(temp.GetType() == typeof(WaveGameMode_SO))
         {
             WaveGameMode_SO t = (WaveGameMode_SO)temp;
             t.RemoveAgent(gameObject);
         }
 
-        if (_pointsValue < 0)
+        if(_pointsValue < 0)
             PointsPopUp.Create(transform.position, _pointsValue);
         else
             PointsPopUp.Create(transform.position, (_pointsValue * _playerScore.GetMultiplier));
@@ -56,10 +50,5 @@ public class PointsScript : MonoBehaviour
 
         if ( _hasMultiplier )
             _playerScore.UpdateMultiplier(_multiplierValue);
-
-        if (temp._gameOver)
-        {
-            return;
-        }
     }
 }
