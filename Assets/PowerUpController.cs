@@ -26,6 +26,7 @@ public class PowerUpController : MonoBehaviour
         imageHolder = GetComponentInChildren<Image>();
         _pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
         GameObject.Find("/Post Processing").GetComponent<Volume>().profile.TryGet(out filmGrain); // Get film grain effect
+        EnablePowerUp(PowerUps.BulletTime);
     }
 
     // Update is called once per frame

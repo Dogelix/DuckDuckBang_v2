@@ -163,5 +163,7 @@ public class WaveGameMode_SO : GameMode_SO
         _agents.Clear();
 
         Flock.agents.Clear();
+
+        base.EndGameMode();
     }
 }
