@@ -42,7 +42,6 @@ GameObject:
   m_Component:
   - component: {fileID: 721345664266354909}
   - component: {fileID: 1427258572926385528}
-  - component: {fileID: 3356691961924434729}
   - component: {fileID: 7845992022146233205}
   m_Layer: 0
   m_Name: AttractUnityCam
@@ -108,14 +107,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3356691961924434729
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7104405568663510866}
-  m_Enabled: 1
 --- !u!114 &7845992022146233205
 MonoBehaviour:
   m_ObjectHideFlags: 0

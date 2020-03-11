@@ -39,7 +39,7 @@ public class PointsScript : MonoBehaviour
             return;
         }
 
-        if (temp._gameOver && gameObject.tag != StringUtils.GameObjective) return;
+        if (temp._gameOver && gameObject.tag != uString.GameObjective) return;
 
         if (temp.GetType() == typeof(WaveGameMode_SO))
         {

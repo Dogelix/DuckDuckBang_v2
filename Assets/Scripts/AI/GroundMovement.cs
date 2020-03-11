@@ -10,6 +10,12 @@ public class GroundMovement : MonoBehaviour
     public NavMeshAgent agent;
     private SoundManager soundManager;
 
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
