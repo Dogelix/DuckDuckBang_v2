@@ -14,6 +14,9 @@ public class GolRegiSpawner : MonoBehaviour
     public GameObject[] clones;
     int spawn;
 
+    /// <summary>
+    /// Randomly generates a number, spawns the portals then spawns goldenRegi at the location of the spawn 
+    /// </summary>
     void Start()
     {
         RandomGenerate();

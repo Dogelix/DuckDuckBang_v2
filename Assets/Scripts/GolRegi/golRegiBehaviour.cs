@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class golRegiBehaviour : MonoBehaviour
 {
+    public Transform target;
+    int speed = 5;
     // Start is called before the first frame update
     void Start()
     {
-        
+        FindTarget();
     }
-
-    public Transform target;
 
     // Update is called once per frame
     void Update()
     {
         Direction();
-        transform.position += transform.forward * Time.deltaTime;
+        transform.position += transform.forward * speed * Time.deltaTime;
         // transform.position += transform.forward;
     }
 
+    /// <summary>
+    /// Changes Regi's position to face towards the target. As Regi flies forward, Direction() makes Regi face towards the target
+    /// </summary>
     void Direction()
     {
         Vector3 direction = target.position - transform.position;
@@ -27,8 +30,8 @@ public class golRegiBehaviour : MonoBehaviour
         transform.rotation = rotation;
     }
 
-    int collideTrue = 0;
 
+    int collideTrue = 0;
     /// <summary>
     /// If collides with EndPortal -> destroys GoldenRegi and EndPortal
     /// </summary>
@@ -44,4 +47,13 @@ public class golRegiBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    /// <summary>
+    /// Finds End Portal spawned in, gets the transformation, sets target to EndPortal's transformation.
+    /// </summary>
+    void FindTarget()
+    {
+        target = GameObject.Find("endPortal(Clone)").transform;
+    }
+    
 }
