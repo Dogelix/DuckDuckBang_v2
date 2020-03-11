@@ -12,7 +12,10 @@ public class GolRegiSpawner : MonoBehaviour
     public GameObject[] prefabs;
     // Clones as array. Same as Prefabs.
     public GameObject[] clones;
+    // Random size. Set in inspector to be -1 of size of Spawn/End locations.
+    public int locations;
     int spawn;
+    
 
     /// <summary>
     /// Randomly generates a number, spawns the portals then spawns goldenRegi at the location of the spawn 
@@ -47,7 +50,7 @@ public class GolRegiSpawner : MonoBehaviour
     /// </summary>
     void RandomGenerate()
     {
-        spawn = Random.Range(0, 4);
+        spawn = Random.Range(0, locations);
         Debug.Log(spawn);
     }
 }
