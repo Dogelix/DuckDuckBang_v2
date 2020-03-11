@@ -47,7 +47,7 @@ public class GolRegiSpawner : MonoBehaviour
     /// </summary>
     void RandomGenerate()
     {
-        spawn = Random.Range(0, 1);
+        spawn = Random.Range(0, 4);
         Debug.Log(spawn);
     }
 }
