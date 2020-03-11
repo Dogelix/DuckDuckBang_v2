@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
 using System.Linq;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 public class PowerUpController : MonoBehaviour
 {
@@ -16,11 +18,15 @@ public class PowerUpController : MonoBehaviour
     private SteamVR_Behaviour_Pose _pose;
     private Image imageHolder;
 
+    private FilmGrain filmGrain = null;
+
     // Start is called before the first frame update
     void Start()
     {
         imageHolder = GetComponentInChildren<Image>();
         _pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
+        EnablePowerUp(PowerUps.BulletTime);
+        GameObject.Find("/Post Processing").GetComponent<Volume>().profile.TryGet(out filmGrain); // Get film grain effect
     }
 
     // Update is called once per frame
@@ -31,7 +37,7 @@ public class PowerUpController : MonoBehaviour
 
     private void UsePowerUp()
     {
-        if (currentPowerUp != PowerUps.None && useAction.GetStateDown(_pose.inputSource) ) // Use
+        if (currentPowerUp != PowerUps.None && useAction.GetStateDown(_pose.inputSource)) // Use
         {
             GetType().GetMethod(currentPowerUp.ToString()).Invoke(this, null); // Calls method by its name (corresponds to Enum names). Avoids use of a switch statement           
         }
@@ -76,6 +82,9 @@ public class PowerUpController : MonoBehaviour
         imageHolder.enabled = false;
         currentPowerUp = PowerUps.None;
 
+        // Enable post processing effect
+        filmGrain.active = true;
+
         Time.timeScale = bulletTimeScale;
 
         StartCoroutine(StopBulletTime());
@@ -85,6 +94,7 @@ public class PowerUpController : MonoBehaviour
     {
         yield return new WaitForSeconds(BulletTimeDuration * Time.timeScale);
         Time.timeScale = 1.0f;
+        filmGrain.active = false;
     }
 
     #endregion
