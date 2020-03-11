@@ -236,6 +236,7 @@ MonoBehaviour:
     needsReinit: 0
   firerate: 0.25
   laserRange: 10000
+  _damage: 1
 --- !u!82 &250099135692921465
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1325,8 +1326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d7674946d9c1e498aca4882708500d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2372834385981126347, guid: 6b74756f88ee50541809960eb0c8096f,
-    type: 3}
   shotPower: 10000
   Barrel: {fileID: 7426101523916472771}
   Parent: {fileID: 7265445959652094682}
@@ -2362,7 +2361,7 @@ GameObject:
   - component: {fileID: 5124143170883537953}
   - component: {fileID: 1140264491098813232}
   m_Layer: 0
-  m_Name: UICanvas
+  m_Name: ChangeWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -3756,8 +3755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d7674946d9c1e498aca4882708500d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2372834385981126347, guid: 6b74756f88ee50541809960eb0c8096f,
-    type: 3}
   shotPower: 10000
   Barrel: {fileID: 3346174315059244863}
   Parent: {fileID: 5971935213808228865}
