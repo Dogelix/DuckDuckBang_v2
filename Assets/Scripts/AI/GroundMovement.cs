@@ -10,6 +10,8 @@ public class GroundMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponentInChildren<Animator>().SetTrigger("ZombieWalk");
+
         SetTarget();
     }
 
