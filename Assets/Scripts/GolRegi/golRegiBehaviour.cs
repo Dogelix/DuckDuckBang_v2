@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class golRegiBehaviour : MonoBehaviour
 {
-    public Transform target;
-    int speed = 5;
+    private Transform target;
+    public int speed = 5;
     // Start is called before the first frame update
     void Start()
     {
