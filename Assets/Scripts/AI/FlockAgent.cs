@@ -18,7 +18,7 @@ public class FlockAgent : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!target && !GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>()._gameOver)
+        if (!target && !GameObject.FindGameObjectWithTag(uString.SceneManager).GetComponent<GameMode_SO>()._gameOver)
             SetTarget();
            // CheckBoundaries();
     }
@@ -30,7 +30,7 @@ public class FlockAgent : MonoBehaviour
 
     private void SetTarget()
     {
-        var targets = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective);
+        var targets = GameObject.FindGameObjectsWithTag(uString.GameObjective);
         int random = Random.Range(0, targets.Length);
         target = targets[random];
     }

@@ -17,10 +17,10 @@ public class GameAssets : MonoBehaviour
         {
             if ( _i == null )
             {
-                var sManager = GameObject.FindGameObjectWithTag(StringUtils.SceneManager);
+                var sManager = GameObject.FindGameObjectWithTag(uString.SceneManager);
                 if ( sManager == null)
                 {
-                    _i = Instantiate(Resources.Load(StringUtils.SceneManager) as GameObject).GetComponent<GameAssets>();
+                    _i = Instantiate(Resources.Load(uString.SceneManager) as GameObject).GetComponent<GameAssets>();
 
                 }
                 else
@@ -43,6 +43,11 @@ public class GameAssets : MonoBehaviour
     /// For adding sprites as children to a game object
     /// </summary>
     public Transform InWorldSprite;
+
+    /// <summary>
+    /// Bullets
+    /// </summary>
+    public Transform Bullet;
 
     /// <summary>
     /// Basic Testing Duck
