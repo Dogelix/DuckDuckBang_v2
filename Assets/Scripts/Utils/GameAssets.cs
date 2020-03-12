@@ -44,6 +44,9 @@ public class GameAssets : MonoBehaviour
     /// </summary>
     public Transform InWorldSprite;
 
+
+    public Transform Bullet;
+
     /// <summary>
     /// Basic Testing Duck
     /// </summary>

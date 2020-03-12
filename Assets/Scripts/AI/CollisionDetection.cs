@@ -18,16 +18,6 @@ public class CollisionDetection : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.gameObject.tag == "Bullet")
-        {
-            // Destroy bullet too
-            Destroy(collision.gameObject);
-            // Remove from list first
-            Flock.agents.Remove(agent);
-
-            Destroy(gameObject);
-        }
-
         if (collision.gameObject.tag == "GameObjective")
         {
             if(!agent.lockHealthDamage)
