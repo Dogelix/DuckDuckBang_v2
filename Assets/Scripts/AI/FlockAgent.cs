@@ -18,19 +18,19 @@ public class FlockAgent : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!target && !GameObject.FindGameObjectWithTag(uString.SceneManager).GetComponent<GameMode_SO>()._gameOver)
+        if (!target && !GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>()._gameOver)
             SetTarget();
            // CheckBoundaries();
     }
 
     private void OnDestroy()
     {
-        Flock.agents.Remove(this);
+       Flock.agents.Remove(this);
     }
 
     private void SetTarget()
     {
-        var targets = GameObject.FindGameObjectsWithTag(uString.GameObjective);
+        var targets = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective);
         int random = Random.Range(0, targets.Length);
         target = targets[random];
     }

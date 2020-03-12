@@ -56,12 +56,11 @@ public class TargetHealth : MonoBehaviour
         this.gameObject.transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
     }
 
-
     public void TakeDamage()
     {
         if(_health == 1)
         {
-            GameObject.FindGameObjectWithTag(uString.SceneManager).GetComponent<GameModeController>().TargetGameOver(this.transform.parent.gameObject);
+            GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameModeController>().TargetGameOver(this.transform.parent.gameObject);
             Destroy(this.transform.parent.gameObject);
             return;
         }
@@ -70,8 +69,10 @@ public class TargetHealth : MonoBehaviour
 
         _health--;
 
-        GameObject.FindGameObjectWithTag(uString.SceneManager).GetComponent<PlayerScore>().UpdateScore(-10, id);
+        GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<PlayerScore>().UpdateScore(-10, id);
         PointsPopUp.Create(transform.position + new Vector3(0, 1, 0), -10);
+        id = Guid.NewGuid().ToString();
+
     } 
 
 }

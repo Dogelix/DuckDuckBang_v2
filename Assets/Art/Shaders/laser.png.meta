@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 94f359321c40d874d90589025ea3bee6
+<<<<<<< Updated upstream:Assets/Art/Shaders/laser.png.meta
+guid: 0c8f887c10f494645b214165cc1e4438
+=======
+guid: 8c85bfc9816f1b244b8d447a35738932
+>>>>>>> Stashed changes:Assets/Art/Models/Materials/Textures/Camera/t_Camera_Base_Color.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

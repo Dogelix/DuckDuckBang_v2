@@ -11,6 +11,6 @@ public class GameOverUI : MonoBehaviour
     public void ShowGameOver()
     {
         _canvas.enabled = true;
-        _textMesh.gameObject.GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag(uString.SceneManager).GetComponent<PlayerScore>().GetScore.ToString();
+        _textMesh.gameObject.GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<PlayerScore>().GetScore.ToString();
     }
 }

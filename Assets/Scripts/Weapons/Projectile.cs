@@ -5,6 +5,7 @@ using Valve.VR;
 
 public class Projectile : MonoBehaviour
 {
+    public GameObject bulletPrefab;
     public float shotPower = 8000f;
     public GameObject Barrel;
     public GameObject Parent;
@@ -23,8 +24,20 @@ public class Projectile : MonoBehaviour
     {
         if (_fireAction.GetStateDown(_pose.inputSource))
         {
-            var bullet = Instantiate(GameAssets.i.Bullet, Barrel.transform.position, transform.rotation);
+            var bullet = Instantiate(bulletPrefab, Barrel.transform.position, transform.rotation);
             bullet.GetComponent<Rigidbody>().AddForce(Parent.transform.forward * shotPower);
+            // Wait 5 seconds and check if bullet still exists.
+            StartCoroutine(WaitAndDestroy(5.0f, bullet));
+        }
+    }
+
+    private IEnumerator WaitAndDestroy(float waitTime, GameObject prefab)
+    {
+        yield return new WaitForSeconds(waitTime);
+        // Bullet execution time has ended, see if it still exists, if so; Destroy it
+        if (prefab != null)
+        {
+            Destroy(prefab);
         }
     }
 }

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2082417313564726036}
   - component: {fileID: 2082417313564726041}
   - component: {fileID: 6488330807104862337}
-  - component: {fileID: 5108526437205115822}
   m_Layer: 0
   m_Name: _SCENE_MANAGER_
   m_TagString: _SCENE_MANAGER_
@@ -64,7 +63,6 @@ MonoBehaviour:
     type: 3}
   InWorldSprite: {fileID: 6039809543801955085, guid: aba8b6f89c0d8024785bd8d8f6292c6f,
     type: 3}
-  Bullet: {fileID: 8587125489763062585, guid: 6b74756f88ee50541809960eb0c8096f, type: 3}
   GameJamDuck: {fileID: 1199668281248264204, guid: 0a951e87498025942b33b3ae94605e2c,
     type: 3}
   ZombieWalkingDuck: {fileID: 1567179578990772552, guid: 423f04bb08741c44da68969854241446,
@@ -108,19 +106,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverConditionsCount: 1
---- !u!114 &5108526437205115822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082417313564726037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e97d62d9ef2da346aabcb00d4e4140b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sounds:
-  - {fileID: 8300000, guid: 2fa5c283213894c4e9a6433beb665c75, type: 3}
-  - {fileID: 8300000, guid: 5ec6671151a7fcc4fa3fa0140bcf2c0b, type: 3}
-  maxDistance: 0

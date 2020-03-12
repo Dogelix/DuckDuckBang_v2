@@ -39,7 +39,7 @@ public class GrappleHook : MonoBehaviour
     private void OnCollisionEnter( Collision other )
     {
         Debug.Log(other.gameObject.name);
-        if(other.gameObject.tag == uString.GameObjective )
+        if(other.gameObject.tag == StringUtils.GameObjective )
         {
             KillMotion();
 
@@ -73,7 +73,7 @@ public class GrappleHook : MonoBehaviour
             var children = GetComponentsInChildren<Transform>();
             foreach ( var child in children )
             {
-                if ( child.tag != uString.GameObjective ) continue;
+                if ( child.tag != StringUtils.GameObjective ) continue;
                 else return child.gameObject;
             }
 
