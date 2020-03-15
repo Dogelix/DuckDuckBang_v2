@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,11 @@ public class GameMode_SO : MonoBehaviour
     public virtual void Init(object value)
     {
         _gameOver = false;
+    }
+
+    public virtual void RestartGameMode()
+    {
+
     }
 
     public virtual void Tick()

@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bread
   - Enemy
-  - Bullet
   - _SCENE_MANAGER_
   - projectile
   - FxTemporaire

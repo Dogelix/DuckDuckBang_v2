@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 03572c2f6e047e941a95813f5d2018ba
+<<<<<<< Updated upstream:Assets/Art/Textures/t_reg_AlbedoTransparency.png.meta
+guid: 05b4e32a73b60b348a1423569e53968c
+=======
+guid: a6b61982ed066bd4383f02519dfa68bd
+>>>>>>> Stashed changes:Assets/Art/Models/Materials/Stone_Path_normal.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
