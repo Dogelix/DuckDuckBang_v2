@@ -15,6 +15,10 @@ TagManager:
   - FlySpawn
   - GroundSpawn
   - MenuItem
+  - GoldenRegi
+  - endPortal
+  - Bullet
+  - Throwable
   layers:
   - Default
   - TransparentFX

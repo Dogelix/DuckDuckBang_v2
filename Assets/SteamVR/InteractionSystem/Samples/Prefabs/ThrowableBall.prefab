@@ -109,9 +109,10 @@ GameObject:
   - component: {fileID: 114000013822852628}
   - component: {fileID: 114000011129258500}
   - component: {fileID: 114000012554025852}
+  - component: {fileID: 2074548239524737772}
   m_Layer: 0
   m_Name: ThrowableBall
-  m_TagString: Untagged
+  m_TagString: Throwable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,3 +363,15 @@ MonoBehaviour:
   previewPoseSelection: 0
   blendingBehaviours: []
   scale: 1
+--- !u!114 &2074548239524737772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012660339372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec4f47489cec074dab9d81a4613ae5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

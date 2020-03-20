@@ -73,7 +73,7 @@ public class GroundMovement : MonoBehaviour
             var t = collision.gameObject;
             t.GetComponentInChildren<TargetHealth>().TakeDamage();
             StartCoroutine(KeepOnKilling(2f, t));
-        }
+        } 
     }
 
 }

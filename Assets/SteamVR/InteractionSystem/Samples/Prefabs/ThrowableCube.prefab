@@ -109,9 +109,10 @@ GameObject:
   - component: {fileID: 114000010795441088}
   - component: {fileID: 114000011933169550}
   - component: {fileID: 114000010658121184}
+  - component: {fileID: 2763520568508724659}
   m_Layer: 0
   m_Name: ThrowableCube
-  m_TagString: Untagged
+  m_TagString: Throwable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -332,7 +333,7 @@ MonoBehaviour:
   spawnObjectOnCollision: {fileID: 1000012514662164, guid: ada35c93b68ad004d9b4e7bd686cf189,
     type: 3}
   colorSpawnedObject: 1
-  destroyOnTargetCollision: 1
+  destroyOnTargetCollision: 0
 --- !u!114 &114000010658121184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poseEditorExpanded: 1
-  blendEditorExpanded: 0
+  blendEditorExpanded: 1
   poseNames:
   - CubePose (MAIN)
   overridePreviewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
@@ -362,3 +363,15 @@ MonoBehaviour:
   previewPoseSelection: 0
   blendingBehaviours: []
   scale: 1
+--- !u!114 &2763520568508724659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010777624494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec4f47489cec074dab9d81a4613ae5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
