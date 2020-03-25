@@ -35,7 +35,7 @@ public static class Localisation
         }
     }
 
-    public static string GetLocaleValue(string key )
+    public static string GetLocaleValue( string key )
     {
         if ( !_init )
         {
@@ -54,7 +54,7 @@ public static class Localisation
         }
 
         var result = _currentLanguageList.FirstOrDefault(w => w.key == key);
-        return ( result != null ) ? result.value : key + "does not exist";
+        return ( result != null ) ? result.value : key + " does not exist";
     }
     
 }
