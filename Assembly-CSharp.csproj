@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\Localisation.cs" />
     <Compile Include="Assets\Scripts\AI\AgentHealth.cs" />
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\AllignmentBehaviour.cs" />
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\AttackBehaviour.cs" />

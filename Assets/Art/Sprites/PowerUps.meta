@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Util/Menus.meta
+guid: b6bea1c494d648a44a40e393dac1b5be
+=======
 guid: f5e215bbd8b5eeb4093132a1de69feb6
+>>>>>>> origin/development:Assets/Art/Sprites/PowerUps.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
