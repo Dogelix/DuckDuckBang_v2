@@ -50,12 +50,17 @@ public class GameAssets : MonoBehaviour
     /// <summary>
     /// Basic Testing Duck
     /// </summary>
-    public Transform GameJamDuck;
+    public Transform RegularFlyingDuck;
 
     /// <summary>
     /// Zombie Reginald
     /// </summary>
     public Transform ZombieWalkingDuck;
+
+    /// <summary>
+    /// Zombie Reginald
+    /// </summary>
+    public Transform RegularWalkingDuck;
 
     /// <summary>
     /// For anything that has hearts

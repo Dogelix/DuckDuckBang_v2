@@ -4,16 +4,23 @@ using UnityEngine;
 using UnityEngine.AI;
 using static SoundManager;
 
+public enum EWalkType
+{
+    ZombieWalk,
+    Walking
+}
+
 public class GroundMovement : MonoBehaviour
 {
     private GameObject target;
     public NavMeshAgent agent;
+    public EWalkType _walkType = EWalkType.Walking;
     private SoundManager soundManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInChildren<Animator>().SetTrigger("ZombieWalk");
+        GetComponentInChildren<Animator>().SetTrigger(_walkType.ToString());
 
         SetTarget();
         soundManager = FindObjectOfType<SoundManager>();

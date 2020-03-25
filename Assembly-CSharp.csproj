@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DuckAssetLoader.cs" />
     <Compile Include="Assets\Resources\Localisation.cs" />
     <Compile Include="Assets\Scripts\AI\AgentHealth.cs" />
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\AllignmentBehaviour.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Scripts\AI\SpawnObjects.cs" />
     <Compile Include="Assets\Scripts\AI\TargetHealth.cs" />
     <Compile Include="Assets\Scripts\AI\TestScrip.cs" />
+    <Compile Include="Assets\Scripts\DataObjects\DuckAssetData.cs" />
     <Compile Include="Assets\Scripts\DoND\DoNDController.cs" />
     <Compile Include="Assets\Scripts\DoND\Timer.cs" />
     <Compile Include="Assets\Scripts\GolRegi\GolRegiSpawner.cs" />

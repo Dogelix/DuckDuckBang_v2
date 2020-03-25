@@ -129,7 +129,7 @@ public class WaveGameMode_SO : GameMode_SO
         }
         else
         {
-            var t = Instantiate(GameAssets.i.GameJamDuck.gameObject, _flySpawnLocations[Random.Range(0, _flySpawnLocations.Count)].position, Quaternion.identity);
+            var t = Instantiate(GameAssets.i.RegularFlyingDuck.gameObject, _flySpawnLocations[Random.Range(0, _flySpawnLocations.Count)].position, Quaternion.identity);
             t.GetComponent<FlockAgent>().SetCollider(); //Comment out for unlimted spawn
             Flock.agents.Add(t.GetComponent<FlockAgent>()); //Comment out for unlimted spawn
             _agents.Add(t); //Comment out for unlimted spawn
