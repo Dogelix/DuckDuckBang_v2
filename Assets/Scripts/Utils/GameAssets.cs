@@ -71,4 +71,6 @@ public class GameAssets : MonoBehaviour
     /// For anything that has hearts
     /// </summary>
     public Sprite FullHeart;
+
+    public RuntimeAnimatorController ReginalAnimControl;
 }

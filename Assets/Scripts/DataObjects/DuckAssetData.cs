@@ -6,4 +6,5 @@ using UnityEngine;
 public class DuckAssetData : ScriptableObject
 {
     public GameObject _asset;
+    public Avatar _avatar;
 }

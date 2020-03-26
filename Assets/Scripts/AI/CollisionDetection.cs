@@ -12,7 +12,7 @@ public class CollisionDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flock = GameObject.Find("/FlyingDucks").GetComponent<Flock>();
+        flock = FindObjectOfType<Flock>();
     }
 
     private void OnCollisionEnter(Collision collision)

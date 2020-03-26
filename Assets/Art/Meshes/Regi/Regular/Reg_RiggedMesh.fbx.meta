@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: ffd049ca998877b46877157ff46f1df3
+labels:
+- RegiAvatar
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
