@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DuckAssetLoader.cs" />
     <Compile Include="Assets\Resources\Localisation.cs" />
     <Compile Include="Assets\Scripts\AI\AgentHealth.cs" />
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\AllignmentBehaviour.cs" />
@@ -76,6 +75,7 @@
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\SteeredCohesionBehaviour.cs" />
     <Compile Include="Assets\Scripts\AI\CollisionDetection.cs" />
     <Compile Include="Assets\Scripts\AI\ContextFilter.cs" />
+    <Compile Include="Assets\Scripts\AI\DuckAssetLoader.cs" />
     <Compile Include="Assets\Scripts\AI\FilterFlockBehaviour.cs" />
     <Compile Include="Assets\Scripts\AI\Flight.cs" />
     <Compile Include="Assets\Scripts\AI\Flock.cs" />

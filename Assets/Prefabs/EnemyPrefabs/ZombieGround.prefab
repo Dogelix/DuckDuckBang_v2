@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 7485382167933233459}
   - component: {fileID: 6924378683493527896}
   - component: {fileID: -511508069554771652}
-  - component: {fileID: 5795563380829021424}
   - component: {fileID: 2271816831062532448}
+  - component: {fileID: 5667856724370081706}
   m_Layer: 10
   m_Name: ZombieGround
   m_TagString: Enemy
@@ -134,20 +134,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &5795563380829021424
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916069836710401455}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7175775138420666112, guid: 96c864123155e704ba8c6d53088fd91d, type: 3}
 --- !u!23 &2271816831062532448
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -187,3 +173,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &5667856724370081706
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916069836710401455}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
