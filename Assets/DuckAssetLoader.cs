@@ -15,9 +15,16 @@ public class DuckAssetLoader : MonoBehaviour
         duck.transform.localPosition = _position;
         duck.transform.localRotation = _rotation;
         duck.transform.localScale = _scale;
+
+        var anim = duck.GetComponent<Animator>();
+        if (anim == null )
+        {
+            anim = duck.AddComponent<Animator>();
+        }
         
-        var anim = duck.AddComponent<Animator>();
-        anim.runtimeAnimatorController = GameAssets.i.ReginalAnimControl;
+        anim.runtimeAnimatorController = _duckAsset._animationController;
         anim.avatar = _duckAsset._avatar;
+
+        
     }
 }

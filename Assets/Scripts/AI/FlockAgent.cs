@@ -14,6 +14,7 @@ public class FlockAgent : MonoBehaviour
     private void Start()
     {
         SetTarget();
+        GetComponentInChildren<Animator>().SetTrigger("Flying");
     }
 
     private void LateUpdate()

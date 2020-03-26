@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _duckAsset: {fileID: 11400000, guid: 58159e212160cf04caea1f19c1d77c1c, type: 2}
-  _position: {x: 0, y: -0.539, z: 0.142}
+  _position: {x: 0, y: -1.61, z: 0.142}
   _scale: {x: 20, y: 20, z: 20}
   _rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!195 &4559335837791300324

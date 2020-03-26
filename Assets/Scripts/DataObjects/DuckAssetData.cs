@@ -7,4 +7,5 @@ public class DuckAssetData : ScriptableObject
 {
     public GameObject _asset;
     public Avatar _avatar;
+    public RuntimeAnimatorController _animationController;
 }

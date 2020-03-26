@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _asset: {fileID: -927199367670048503, guid: ffd049ca998877b46877157ff46f1df3, type: 3}
   _avatar: {fileID: 9000000, guid: ffd049ca998877b46877157ff46f1df3, type: 3}
+  _animationController: {fileID: 9100000, guid: 15f72cbd66cd5d6459906717963af284,
+    type: 2}

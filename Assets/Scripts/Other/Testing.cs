@@ -11,7 +11,7 @@ public class Testing : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<Text>().text = Localisation.GetLocaleValue("test_message");
+
     }
 
     //private void OnEnable()
@@ -23,27 +23,6 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if ( Input.GetKeyDown(KeyCode.D) )
-        {
-            Localisation.Language = Language.DE;
-            a = !a;
-        }
-        if ( Input.GetKeyDown(KeyCode.F) )
-        {
-            Localisation.Language = Language.FR;
-            a = !a;
-        }
-        if ( Input.GetKeyDown(KeyCode.P) )
-        {
-            Localisation.Language = Language.PL;
-            a = !a;
-        }
-        if ( Input.GetKeyDown(KeyCode.E) )
-        {
-            Localisation.Language = Language.EN;
-            a = !a;
-        }
-        if ( !a ) { a = true; GetComponent<Text>().text = Localisation.GetLocaleValue("test_message"); }
     }
 
     //void SomeOtherFunction()
