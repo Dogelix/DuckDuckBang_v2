@@ -122,6 +122,7 @@
     <Compile Include="Assets\Scripts\Utils\KillMe.cs" />
     <Compile Include="Assets\Scripts\Utils\Limits.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\LevelSelector.cs" />
+    <Compile Include="Assets\Scripts\Utils\Menus\MainMenuBehaviours.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\MenuParentClass.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\QuitScript.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\RestartLevel.cs" />
