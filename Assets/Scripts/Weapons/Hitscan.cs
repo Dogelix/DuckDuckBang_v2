@@ -9,13 +9,9 @@ public class Hitscan : MonoBehaviour
     public GameObject Barrel;
     public GameObject Parent;
 
-    public SteamVR_Action_Boolean _fireAction = null;
-
     public float firerate = 0.25f;
 
     public float laserRange = 5000f;
-
-    private SteamVR_Behaviour_Pose _pose;
 
     private WaitForSeconds shotDuration = new WaitForSeconds(0.1f);
 
@@ -27,12 +23,6 @@ public class Hitscan : MonoBehaviour
 
     private SoundManager soundManager;
 
-    void Awake()
-    {
-        _pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
-    }
-
-
     void Start()
     {
         laser = GetComponent<LineRenderer>();
@@ -43,7 +33,7 @@ public class Hitscan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > nextFire)
         {
             soundManager.PlaySound(SoundsNames.GunShot_1, false, false);
 
