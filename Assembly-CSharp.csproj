@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ExtremeQuackersPlayer.cs" />
     <Compile Include="Assets\Resources\Localisation.cs" />
     <Compile Include="Assets\Scripts\AI\AgentHealth.cs" />
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\AllignmentBehaviour.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Assets\Scripts\Utils\KillMe.cs" />
     <Compile Include="Assets\Scripts\Utils\Limits.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\LevelSelector.cs" />
+    <Compile Include="Assets\Scripts\Utils\Menus\MainMenuBehaviours.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\MenuParentClass.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\QuitScript.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\RestartLevel.cs" />
@@ -137,6 +139,8 @@
     <Compile Include="Assets\Scripts\Weapons\Hitscan.cs" />
     <Compile Include="Assets\Scripts\Weapons\Projectile.cs" />
     <Compile Include="Assets\Scripts\Weapons\SwapWeapons.cs" />
+    <Compile Include="Assets\cameraController.cs" />
+    <Compile Include="Assets\playerMovement.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
