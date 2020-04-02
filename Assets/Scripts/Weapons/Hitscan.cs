@@ -54,7 +54,7 @@ public class Hitscan : MonoBehaviour
                 {
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GroundEnemy"))
                     {
-                        hit.transform.gameObject.GetComponent<GroundAgentCollision>().RaycastDestroy();
+                        Destroy(hit.transform.gameObject);
 
                     }
                     else

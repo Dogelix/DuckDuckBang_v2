@@ -12,75 +12,45 @@ public enum EWalkType
 
 public class GroundMovement : MonoBehaviour
 {
-    private GameObject target;
+    private GameObject player;
     public NavMeshAgent agent;
     public EWalkType _walkType = EWalkType.Walking;
-    private SoundManager soundManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInChildren<Animator>().SetTrigger(_walkType.ToString());
-
-        SetTarget();
-        soundManager = FindObjectOfType<SoundManager>();
-        // Start Quacking
-        StartCoroutine(Quack(Random.Range(3f, 8f)));
+        player = GameObject.FindGameObjectWithTag("Player");
+        GetComponentInChildren<Animator>().SetTrigger(_walkType.ToString()); 
     }
 
-    void Update()
-    {
-        //if (target != null && !targetSet)
-        //{
-        //    agent.SetDestination(target.transform.position); // Navmesh movement
-        //}
-    }
 
     private void LateUpdate()
     {
-        if (target == null)
-        {
-            SetTarget();
-        }
+        // We constantly update destination as player position is dynamic
+        agent.SetDestination(player.transform.position);
     }
 
-    private IEnumerator KeepOnKilling(float delay, GameObject t)
-    {
-        yield return new WaitForSeconds(delay);
-        if (t != null) // if our target still exist, keep on Killing
-        {
-            t.GetComponentInChildren<TargetHealth>().TakeDamage();
-            StartCoroutine(KeepOnKilling(2f, t));
-        }
+    //private IEnumerator KeepOnKilling(float delay, GameObject t)
+    //{
+    //    yield return new WaitForSeconds(delay);
+    //    if (t != null) // if our target still exist, keep on Killing
+    //    {
+    //        t.GetComponentInChildren<TargetHealth>().TakeDamage();
+    //        StartCoroutine(KeepOnKilling(2f, t));
+    //    }
 
-    }
-
-
-    private void SetTarget()
-    {
-        var targets = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective);
-        int random = Random.Range(0, targets.Length);
-        target = targets[random];
-        agent.SetDestination(target.transform.position);
-    }
-
-    private IEnumerator Quack(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        // Quack!
-        soundManager.PlaySound(SoundsNames.Quack_1, true, true);
-        StartCoroutine(Quack(Random.Range(3f, 8f)));
-    }
+    //}
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "GameObjective")
-        {
-            var t = collision.gameObject;
-            t.GetComponentInChildren<TargetHealth>().TakeDamage();
-            StartCoroutine(KeepOnKilling(2f, t));
-        }
-    }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "GameObjective")
+    //    {
+    //        var t = collision.gameObject;
+    //        t.GetComponentInChildren<TargetHealth>().TakeDamage();
+    //        StartCoroutine(KeepOnKilling(2f, t));
+    //    }
+    //}
 
 }

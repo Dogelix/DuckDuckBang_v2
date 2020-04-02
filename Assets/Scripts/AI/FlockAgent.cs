@@ -13,27 +13,13 @@ public class FlockAgent : MonoBehaviour
 
     private void Start()
     {
-        SetTarget();
+        target = GameObject.FindGameObjectWithTag("Player");
         GetComponentInChildren<Animator>().SetTrigger("Flying");
-    }
-
-    private void LateUpdate()
-    {
-        if (!target && !GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>()._gameOver)
-            SetTarget();
-           // CheckBoundaries();
     }
 
     private void OnDestroy()
     {
        Flock.agents.Remove(this);
-    }
-
-    private void SetTarget()
-    {
-        var targets = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective);
-        int random = Random.Range(0, targets.Length);
-        target = targets[random];
     }
 
     Collider agentCollider;

@@ -11,8 +11,7 @@ public class WaveGameMode_SO : GameMode_SO
     [Tooltip("Either the wave limit or waves survived")]
     public int _waves;
 
-    //For use only in the wave count down mode.
-    private int _currentWave;
+    private int _currentWave = 1;
 
     /// <summary>
     /// Amount of agents for the starting wave
@@ -26,7 +25,7 @@ public class WaveGameMode_SO : GameMode_SO
     [Tooltip("Amount to increase each wave by with a lower and upper value")]
     public Limits _waveIncreaseValue;
 
-    private int _currentWaveSize;
+    private int _currentWaveSize = 0;
 
     /// <summary>
     /// A ratio where Upper == Ground and Lower == Air
@@ -61,7 +60,7 @@ public class WaveGameMode_SO : GameMode_SO
         base._type = GameModeTypes.Wave;
 
         _flySpawnLocations = GameObject.FindGameObjectsWithTag("FlySpawn").Select(x => x.transform).ToList();
-        _groundSpawnLocations = GameObject.FindGameObjectsWithTag("GroundSpawn").Select(x => x.transform).ToList(); 
+        _groundSpawnLocations = GameObject.FindGameObjectsWithTag("GroundSpawn").Select(x => x.transform).ToList();
 
         if (!_countUp)
         {

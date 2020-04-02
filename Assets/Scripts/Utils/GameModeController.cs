@@ -12,6 +12,13 @@ public class GameModeController : MonoBehaviour
 
     private List<GameObject> Targets;
 
+    private void Start()
+    {
+        //Set Cursor to not be visible
+        Cursor.visible = false;
+        // Lock cursor on the window
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     private void Awake()
     {
