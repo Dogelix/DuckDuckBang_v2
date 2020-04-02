@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ExtremeQuackersPlayer.cs" />
+    <Compile Include="Assets\MouseLook.cs" />
     <Compile Include="Assets\Resources\Localisation.cs" />
     <Compile Include="Assets\Scripts\AI\AgentHealth.cs" />
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\AllignmentBehaviour.cs" />
