@@ -23,6 +23,7 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
+        if ( Input.GetKeyDown(KeyCode.Alpha1)) Debug.Log(Input.GetKeyDown(KeyCode.Alpha1));
     }
 
     //void SomeOtherFunction()

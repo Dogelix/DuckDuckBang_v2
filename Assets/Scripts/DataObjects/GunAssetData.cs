@@ -11,6 +11,7 @@ public class GunAssetData : ScriptableObject
     public int _damage;
     public int _maxAmmo;
     public int _clipSize;
+    public int _pointsCost;
 }
 
 public enum EGunType

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665274e36707eb44095e5b9da90d9e92, type: 3}
   m_Name: LightGun
   m_EditorClassIdentifier: 
-  _gun: {fileID: 0}
+  _gun: {fileID: 7940967021289243436, guid: a7ef1d0d0645d8746af9a15338fdf77b, type: 3}
   _particle: {fileID: 0}
   _gunType: 0
-  _damage: 0
-  _maxAmmo: 0
-  _clipSize: 0
+  _damage: 10
+  _maxAmmo: 30
+  _clipSize: 5

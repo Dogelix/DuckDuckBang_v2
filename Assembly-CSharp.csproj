@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AnimSetter.cs" />
     <Compile Include="Assets\Resources\Localisation.cs" />
     <Compile Include="Assets\Scripts\AI\AgentHealth.cs" />
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\AllignmentBehaviour.cs" />
@@ -89,12 +90,12 @@
     <Compile Include="Assets\Scripts\AI\TestScrip.cs" />
     <Compile Include="Assets\Scripts\DataObjects\DuckAssetData.cs" />
     <Compile Include="Assets\Scripts\DataObjects\GunAssetData.cs" />
+    <Compile Include="Assets\Scripts\DataObjects\KeybindingData.cs" />
     <Compile Include="Assets\Scripts\DoND\DoNDController.cs" />
     <Compile Include="Assets\Scripts\DoND\Timer.cs" />
     <Compile Include="Assets\Scripts\GolRegi\GolRegiSpawner.cs" />
     <Compile Include="Assets\Scripts\GolRegi\golRegiBehaviour.cs" />
     <Compile Include="Assets\Scripts\GolRegi\grSpawner.cs" />
-    <Compile Include="Assets\Scripts\GroundAgentCollision.cs" />
     <Compile Include="Assets\Scripts\Modular Game Modes\GameModeTypes.cs" />
     <Compile Include="Assets\Scripts\Modular Game Modes\GameMode_SO.cs" />
     <Compile Include="Assets\Scripts\Modular Game Modes\PopUpGameMode_SO.cs" />
@@ -110,12 +111,10 @@
     <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
     <Compile Include="Assets\Scripts\Player\cameraController.cs" />
     <Compile Include="Assets\Scripts\Player\playerMovement.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Points\PlayerScore.cs" />
     <Compile Include="Assets\Scripts\Points\PointsPopUp.cs" />
     <Compile Include="Assets\Scripts\Points\PointsScript.cs" />
     <Compile Include="Assets\Scripts\PowerUpController.cs" />
-    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\SpawnLocationGizmos.cs" />
     <Compile Include="Assets\Scripts\Targets\TargetController.cs" />
     <Compile Include="Assets\Scripts\Utils\EventManager.cs" />
@@ -123,6 +122,8 @@
     <Compile Include="Assets\Scripts\Utils\GameModeController.cs" />
     <Compile Include="Assets\Scripts\Utils\GameOverUI.cs" />
     <Compile Include="Assets\Scripts\Utils\Highscore.cs" />
+    <Compile Include="Assets\Scripts\Utils\Input\InputManager.cs" />
+    <Compile Include="Assets\Scripts\Utils\Input\KeybindingActions.cs" />
     <Compile Include="Assets\Scripts\Utils\KillMe.cs" />
     <Compile Include="Assets\Scripts\Utils\Limits.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\LevelSelector.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="Assets\Scripts\Utils\Menus\RestartLevel.cs" />
     <Compile Include="Assets\Scripts\Utils\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Utils\ScoreBoard.cs" />
+    <Compile Include="Assets\Scripts\Utils\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Utils\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Utils\SpawnPointType.cs" />
     <Compile Include="Assets\Scripts\Utils\StaticFunctions.cs" />
@@ -140,8 +142,11 @@
     <Compile Include="Assets\Scripts\Weapons\GrappleGun.cs" />
     <Compile Include="Assets\Scripts\Weapons\GrappleHook.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hitscan.cs" />
+    <Compile Include="Assets\Scripts\Weapons\IShootable.cs" />
     <Compile Include="Assets\Scripts\Weapons\Projectile.cs" />
     <Compile Include="Assets\Scripts\Weapons\SwapWeapons.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Weapons\WeaponInventory.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

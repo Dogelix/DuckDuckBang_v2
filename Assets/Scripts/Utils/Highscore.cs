@@ -31,9 +31,9 @@ public class Highscore : MonoBehaviour
     //}
 }
 
-public class Score
-{
-    public string Name { get; set; }
-    public GameMode Level { get; set; }
-    public int Value { get; set; }
-}
+//public class Score
+//{
+//    public string Name { get; set; }
+//    public GameMode Level { get; set; }
+//    public int Value { get; set; }
+//}
