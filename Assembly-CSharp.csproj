@@ -63,8 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ExtremeQuackersPlayer.cs" />
-    <Compile Include="Assets\MouseLook.cs" />
     <Compile Include="Assets\Resources\Localisation.cs" />
     <Compile Include="Assets\Scripts\AI\AgentHealth.cs" />
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\AllignmentBehaviour.cs" />
@@ -90,6 +88,7 @@
     <Compile Include="Assets\Scripts\AI\TargetHealth.cs" />
     <Compile Include="Assets\Scripts\AI\TestScrip.cs" />
     <Compile Include="Assets\Scripts\DataObjects\DuckAssetData.cs" />
+    <Compile Include="Assets\Scripts\DataObjects\GunAssetData.cs" />
     <Compile Include="Assets\Scripts\DoND\DoNDController.cs" />
     <Compile Include="Assets\Scripts\DoND\Timer.cs" />
     <Compile Include="Assets\Scripts\GolRegi\GolRegiSpawner.cs" />
@@ -108,6 +107,9 @@
     <Compile Include="Assets\Scripts\Other\RotationCorrect.cs" />
     <Compile Include="Assets\Scripts\Other\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\Other\Testing.cs" />
+    <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\Player\cameraController.cs" />
+    <Compile Include="Assets\Scripts\Player\playerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Points\PlayerScore.cs" />
     <Compile Include="Assets\Scripts\Points\PointsPopUp.cs" />
@@ -140,8 +142,6 @@
     <Compile Include="Assets\Scripts\Weapons\Hitscan.cs" />
     <Compile Include="Assets\Scripts\Weapons\Projectile.cs" />
     <Compile Include="Assets\Scripts\Weapons\SwapWeapons.cs" />
-    <Compile Include="Assets\cameraController.cs" />
-    <Compile Include="Assets\playerMovement.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -410,9 +410,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/UnityEditors/2019.3.0f6/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -785,26 +782,6 @@
     <ProjectReference Include="NavMeshComponentsExamples.csproj">
       <Project>{E14E281D-DD70-FBF7-E717-3C23453A2F5B}</Project>
       <Name>NavMeshComponentsExamples</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR_Input_Editor.csproj">
-      <Project>{2EBEEBAE-C624-160D-B881-EEBDF5DCBB34}</Project>
-      <Name>SteamVR_Input_Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR_Editor.csproj">
-      <Project>{099BB5B3-0CE8-EF6D-805F-70514270E298}</Project>
-      <Name>SteamVR_Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR.csproj">
-      <Project>{4E07683E-C0AD-A6E1-6F5A-C94F56610592}</Project>
-      <Name>SteamVR</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR_Actions.csproj">
-      <Project>{63450581-764B-766A-2A77-0934236908BF}</Project>
-      <Name>SteamVR_Actions</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
-      <Project>{8554727A-0A36-0E7F-ADF1-63A953824571}</Project>
-      <Name>SteamVR_Windows_EditorHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Valve.VR;
+//using Valve.VR;
 using System.Linq;
 
 public class PowerUpController : MonoBehaviour
 {
-    public SteamVR_Action_Boolean useAction = null;
+    //public SteamVR_Action_Boolean useAction = null;
     public List<Sprite> PowerUpImages;
 
     private PowerUps currentPowerUp = PowerUps.None;
-    private SteamVR_Behaviour_Pose _pose;
+    //private SteamVR_Behaviour_Pose _pose;
     private bool isDisplayed;
     private Image imageHolder;
 
@@ -20,7 +20,7 @@ public class PowerUpController : MonoBehaviour
     void Start()
     {
         imageHolder = GetComponentInChildren<Image>();
-        _pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
+        //_pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class PowerUpController : MonoBehaviour
 
     private void UsePowerUp()
     {
-        if (isDisplayed && currentPowerUp != PowerUps.None && useAction.GetStateDown(_pose.inputSource)) // Use
+        if (isDisplayed && currentPowerUp != PowerUps.None && Input.GetKeyDown(KeyCode.E)) // Use
         {
 
             GetType().GetMethod(currentPowerUp.ToString()).Invoke(this, null); // Calls method by its name (corresponds to Enum names). Avoids use of a switch statement
