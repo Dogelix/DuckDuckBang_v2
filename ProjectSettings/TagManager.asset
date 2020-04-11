@@ -19,6 +19,9 @@ TagManager:
   - endPortal
   - Bullet
   - Bread
+  - Level
+  - SpawnArea
+  - Init
   layers:
   - Default
   - TransparentFX
@@ -35,7 +38,7 @@ TagManager:
   - Target
   - Ground
   - Level
-  - 
+  - Player
   - 
   - 
   - 

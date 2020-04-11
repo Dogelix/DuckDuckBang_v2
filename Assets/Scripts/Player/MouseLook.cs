@@ -15,6 +15,10 @@ public class MouseLook : MonoBehaviour
         Vector3 rot = transform.localRotation.eulerAngles;
         rotY = rot.y;
         rotX = rot.x;
+        //Set Cursor to not be visible
+        Cursor.visible = false;
+        // Lock cursor on the window
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()

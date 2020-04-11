@@ -33,15 +33,9 @@ public class PointsScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        var temp = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>();
+        var temp = GameObject.FindGameObjectWithTag("Init").GetComponent<WaveController>();
 
-        if (temp._gameOver && gameObject.tag != StringUtils.GameObjective) return;
-
-        if (temp.GetType() == typeof(WaveGameMode_SO))
-        {
-            WaveGameMode_SO t = (WaveGameMode_SO)temp;
-            t.RemoveAgent(gameObject);
-        }
+        temp.Agents.Remove(gameObject);
 
         if (_pointsValue < 0)
             PointsPopUp.Create(transform.position, _pointsValue);
@@ -52,10 +46,5 @@ public class PointsScript : MonoBehaviour
 
         if ( _hasMultiplier )
             _playerScore.UpdateMultiplier(_multiplierValue);
-
-        if (temp._gameOver)
-        {
-            return;
-        }
     }
 }
