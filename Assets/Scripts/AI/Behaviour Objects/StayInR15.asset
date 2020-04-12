@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334b535350c1b2a4f8b8ac90229933ec, type: 3}
   m_Name: StayInR15
   m_EditorClassIdentifier: 
-  radius: 20
+  radius: 25
   height: 15

@@ -14,6 +14,7 @@ public class WaveController : MonoBehaviour
     public int AgentsMinIncrement;
     public int AgentsMaxIncrement;
 
+    public Flock Flock;
     private int agentsCount = 0;
     private GameObject[] levels;
     private GameObject[] spawnAreas;
@@ -24,6 +25,7 @@ public class WaveController : MonoBehaviour
     {
         levels = GameObject.FindGameObjectsWithTag("Level");
         spawnAreas = GameObject.FindGameObjectsWithTag("SpawnArea");
+        Flock = GetComponent<Flock>();
     }
 
     // Update is called once per frame
@@ -59,6 +61,14 @@ public class WaveController : MonoBehaviour
             // Spawn Walking zombie
             Agents.Add(Instantiate(WalkingDuckPrefab, randomSpawn.transform.position, Quaternion.identity)); 
         }
+        else if (randomSpawn.tag == "FlySpawn") // Spawn Flying zombie
+        {
+            var flockAgent = Instantiate(Flock.agentPrefab, randomSpawn.transform.position, Quaternion.identity);
+            flockAgent.center = levelController.FlyCenter.transform.position;
+            flockAgent.currentLevel = levelController.LevelNumber;
+            Flock.agents.Add(flockAgent);
+            Agents.Add(flockAgent.gameObject);
+        }
 
         currentAgentsCount++;
         if (currentAgentsCount == agentsCount)
@@ -76,8 +86,7 @@ public class WaveController : MonoBehaviour
             if (levelController.Passage != null && levelController.NumOfWavesToOpenNewArea == CurrentWave)
             {
                 levelController.Passage.SetActive(false);
-                //Destroy(levelController.Passage);
-                NavMesh.BuildNavMesh(); // Update navmech after destroying obstacle
+                NavMesh.BuildNavMesh(); // Update navmesh after disabling obstacle
                 break;
             }
         }

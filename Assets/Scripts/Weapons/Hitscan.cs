@@ -20,11 +20,14 @@ public class Hitscan : MonoBehaviour, IShootable
     private float nextFire;
 
     private AudioSource shotSound;
+    private WaveController waveController;
 
     void Start()
     {
         laser = GetComponent<LineRenderer>();
         shotSound = FindObjectOfType<AudioSource>();
+        waveController = GameObject.FindObjectOfType<WaveController>();
+        // ignore collision with area checker
     }
 
     private void Update()
@@ -57,7 +60,12 @@ public class Hitscan : MonoBehaviour, IShootable
         Ray shot = new Ray(Barrel.transform.position, Parent.transform.forward);
         laser.SetPosition(0, Barrel.transform.position);
 
-        if ( Physics.Raycast(shot, out hit, laserRange) )
+        // Bit shift the index of the layer  to get a bit mask
+        int layerMask = 1 << LayerMask.NameToLayer("SpawnArea");
+        // This would cast rays only against colliders in layer 16.
+        // But instead we want to collide against everything except layer SpawnArea. The ~ operator does this, it inverts a bitmask.
+        layerMask = ~layerMask;
+        if ( Physics.Raycast(shot, out hit, laserRange, layerMask))
         {
             laser.SetPosition(1, hit.point);
 
@@ -66,16 +74,16 @@ public class Hitscan : MonoBehaviour, IShootable
                 if ( hit.collider.gameObject.layer == LayerMask.NameToLayer("GroundEnemy") )
                 {
                     Destroy(hit.transform.gameObject);
-
                 }
-                else
+                else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("AirEnemy"))
                 {
-                    hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
+                    waveController.Agents.Remove(hit.transform.gameObject);
+                    Destroy(hit.transform.gameObject);
                 }
             }
             else
             {
-                hit.transform.gameObject.GetComponent<QuitScript>().Activate();
+                //hit.transform.gameObject.GetComponent<QuitScript>().Activate();
             }
         }
         else

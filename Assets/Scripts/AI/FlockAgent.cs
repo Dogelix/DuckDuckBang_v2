@@ -9,11 +9,11 @@ public class FlockAgent : MonoBehaviour
     public bool attack;
     public bool stayInRadius = true;
     public bool allign = true;
-    public GameObject target;
+    public Vector3 center;
+    public int currentLevel;
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
         GetComponentInChildren<Animator>().SetTrigger("Flying");
     }
 
@@ -35,23 +35,5 @@ public class FlockAgent : MonoBehaviour
     public void SetCollider()
     {
         agentCollider = GetComponent<Collider>();
-    }
-
-    private void CheckBoundaries()
-    {
-        float maxY = 30f;
-        float maxX = 31f;
-        float minX = -30f;
-        float maxZ = 33f;
-        float minZ = -39f;
-
-        var pos = transform.position;
-        if (pos.y > maxY || pos.x > maxX || pos.x < minX || pos.z > maxZ || pos.z < minZ)
-        {
-            attack = false;
-            stayInRadius = true;
-            allign = true;
-        }
-
     }
 }

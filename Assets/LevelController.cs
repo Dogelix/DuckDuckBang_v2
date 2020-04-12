@@ -8,6 +8,7 @@ public class LevelController : MonoBehaviour
     public int NumOfWavesToOpenNewArea;
     public GameObject Passage;
     public GameObject[] SpawnPoints;
+    public GameObject FlyCenter;
     // Start is called before the first frame update
     void Start()
     {

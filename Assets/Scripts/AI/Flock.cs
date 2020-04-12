@@ -5,12 +5,11 @@ using System.Linq;
 
 public class Flock : MonoBehaviour
 {
-    public GameObject SpawnPoints;
+    public GameObject Player;
     public FlockAgent agentPrefab;
     public static List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
-    public int startingCount = 10;
     const float AgentDensity = 0.04f;
 
     [Range(1f, 100f)]
@@ -22,7 +21,6 @@ public class Flock : MonoBehaviour
     [Range(0f, 1f)]
     public float avoidanceRadiusMultiplier = 0.8f;
     public float attackDelay = 5f;
-
 
     float squareMaxSpeed;
     float squareNeighbourRadius;
