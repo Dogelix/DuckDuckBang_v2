@@ -40,7 +40,7 @@ public class WaveController : MonoBehaviour
             for (int count = 0; count < agentsCount; count++)
             {
                 StartCoroutine(Spawn(spawnDelay));
-                spawnDelay += 1.5f;
+                spawnDelay += 1.0f;
             }
         }
     }
@@ -51,16 +51,7 @@ public class WaveController : MonoBehaviour
         // First determine where the player is standing
         var standingArea = spawnAreas.FirstOrDefault(x => x.GetComponent<BoxCollider>().bounds.Contains(Player.transform.position));
         var levelController = standingArea.GetComponentInParent<LevelController>();
-        GameObject randomSpawn = null;
-        try
-        {
-            randomSpawn = levelController.SpawnPoints[Random.Range(0, levelController.SpawnPoints.Count())];
-        }
-        catch(System.Exception e)
-        {
-
-        }
-        
+        var randomSpawn = levelController.SpawnPoints[Random.Range(0, levelController.SpawnPoints.Count())];
         
         //Determine spawn type
         if (randomSpawn.tag == "GroundSpawn")
