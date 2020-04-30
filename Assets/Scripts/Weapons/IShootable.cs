@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IShootable
 {
-    public bool Shoot();
+     bool Shoot();
 }

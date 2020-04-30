@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using Valve.VR;
+using Valve.VR;
 using static SoundManager;
 
 public class Hitscan : MonoBehaviour, IShootable
 {
     public GameObject Barrel;
     public GameObject Parent;
+
+    public SteamVR_Action_Boolean _fireAction = null;
+
+    private SteamVR_Behaviour_Pose _pose;
+
 
     public float firerate = 0.25f;
 
@@ -27,6 +32,16 @@ public class Hitscan : MonoBehaviour, IShootable
         soundManager = FindObjectOfType<SoundManager>();
     }
 
+    void Awake()
+    {
+        _pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
+    }
+
+    private void Update()
+    {
+        Shoot();
+    }
+
     private IEnumerator FireEffect()
     {
         laser.enabled = true;
@@ -36,45 +51,46 @@ public class Hitscan : MonoBehaviour, IShootable
 
     public bool Shoot()
     {
-        if ( !( Time.time > nextFire ) ) return false;
-
-        soundManager.PlaySound(SoundsNames.GunShot_1, false, false);
-
-        Debug.Log("Parent Forward Vector: " + Parent.transform.forward);
-        nextFire = Time.time + firerate;
-
-        StartCoroutine(FireEffect());
-
-        RaycastHit hit = new RaycastHit();
-        Ray shot = new Ray(Barrel.transform.position, Parent.transform.forward);
-        laser.SetPosition(0, Barrel.transform.position);
-
-        if ( Physics.Raycast(shot, out hit, laserRange) )
+        if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire)
         {
-            laser.SetPosition(1, hit.point);
+            soundManager.PlaySound(SoundsNames.GunShot_1, false, false);
 
-            if ( hit.collider.tag == "Enemy" )
+            Debug.Log("Parent Forward Vector: " + Parent.transform.forward);
+            nextFire = Time.time + firerate;
+
+            StartCoroutine(FireEffect());
+
+            RaycastHit hit = new RaycastHit();
+            Ray shot = new Ray(Barrel.transform.position, Parent.transform.forward);
+            laser.SetPosition(0, Barrel.transform.position);
+
+            if (Physics.Raycast(shot, out hit, laserRange))
             {
-                if ( hit.collider.gameObject.layer == LayerMask.NameToLayer("GroundEnemy") )
-                {
-                    Destroy(hit.transform.gameObject);
+                laser.SetPosition(1, hit.point);
 
+                if (hit.collider.tag == "Enemy")
+                {
+                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GroundEnemy"))
+                    {
+                        Destroy(hit.transform.gameObject);
+
+                    }
+                    else
+                    {
+                        hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
+                    }
                 }
                 else
                 {
-                    hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
+                    hit.transform.gameObject.GetComponent<QuitScript>().Activate();
                 }
             }
             else
             {
-                hit.transform.gameObject.GetComponent<QuitScript>().Activate();
+                laser.SetPosition(1, Barrel.transform.position + (laserRange * Parent.transform.forward));
             }
+            return true;
         }
-        else
-        {
-            laser.SetPosition(1, Barrel.transform.position + ( laserRange * Parent.transform.forward ));
-        }
-
-        return true;
+        return false;
     }
 }
