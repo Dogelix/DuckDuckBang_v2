@@ -7,7 +7,6 @@ using UnityEngine.AI;
 public class WaveController : MonoBehaviour
 {
     public GameObject WalkingDuckPrefab;
-    public NavMeshSurface NavMesh;
     public int CurrentWave;
     public List<GameObject> Agents = new List<GameObject>();
     public int AgentsMinIncrement;

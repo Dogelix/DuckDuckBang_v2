@@ -24,12 +24,10 @@ public class Hitscan : MonoBehaviour, IShootable
 
     private float nextFire;
 
-    private SoundManager soundManager;
 
     void Start()
     {
         laser = GetComponent<LineRenderer>();
-        soundManager = FindObjectOfType<SoundManager>();
     }
 
     void Awake()
@@ -53,7 +51,7 @@ public class Hitscan : MonoBehaviour, IShootable
     {
         if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire)
         {
-            soundManager.PlaySound(SoundsNames.GunShot_1, false, false);
+            //soundManager.PlaySound(SoundsNames.GunShot_1, false, false);
 
             Debug.Log("Parent Forward Vector: " + Parent.transform.forward);
             nextFire = Time.time + firerate;

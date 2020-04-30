@@ -789,6 +789,10 @@
       <Project>{E14E281D-DD70-FBF7-E717-3C23453A2F5B}</Project>
       <Name>NavMeshComponentsExamples</Name>
     </ProjectReference>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{63450581-764B-766A-2A77-0934236908BF}</Project>
+      <Name>SteamVR_Actions</Name>
+    </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
       <Project>{2EBEEBAE-C624-160D-B881-EEBDF5DCBB34}</Project>
       <Name>SteamVR_Input_Editor</Name>
@@ -804,10 +808,6 @@
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{8554727A-0A36-0E7F-ADF1-63A953824571}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR_Actions.csproj">
-      <Project>{63450581-764B-766A-2A77-0934236908BF}</Project>
-      <Name>SteamVR_Actions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
