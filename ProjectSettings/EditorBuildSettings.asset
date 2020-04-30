@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ExtremeQuackers.unity
     guid: 3102b7d8108010042aa747d862f4d95f
+  - enabled: 1
+    path: Assets/Scenes/MainMenu 1.unity
+    guid: 41bef5b7abd65cd4aa3962284a06e61f
+  - enabled: 1
+    path: Assets/Scenes/DuckOpsProgrammerLevel.unity
+    guid: 8f0eff2f7afbe1142b87bf4b3186161c
   m_configObjects: {}
