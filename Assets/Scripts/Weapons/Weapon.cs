@@ -13,4 +13,9 @@ public class Weapon : MonoBehaviour
         return this;
     }
 
+    public bool Shoot()
+    {
+        return true;
+    }
+
 }

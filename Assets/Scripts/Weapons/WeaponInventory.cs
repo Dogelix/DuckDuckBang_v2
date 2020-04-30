@@ -9,7 +9,7 @@ public class WeaponInventory : MonoBehaviour
 
     public InventorySlots _inventorySlots;
 
-    public GunAssetData _defaultPistol;
+    public Weapon _defaultPistol;
 
     [System.Serializable]
     public class InventorySlots
