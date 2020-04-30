@@ -33,6 +33,7 @@ public class PointsScript : MonoBehaviour
 
     private void OnDestroy()
     {
+        GameObject.FindObjectOfType<WaveController>().Agents.Remove(this.gameObject);
         var temp = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<GameMode_SO>();
 
         if (temp._gameOver && gameObject.tag != StringUtils.GameObjective) return;
