@@ -33,6 +33,9 @@ public class PointsScript : MonoBehaviour
 
     private void OnDestroy()
     {
+        // Power Up Drops 
+        GameObject.FindObjectOfType<PowerUpController>().TrySpawn(this.gameObject.transform.position);
+
         var temp = GameObject.FindGameObjectWithTag("Init").GetComponent<WaveController>();
 
         temp.Agents.Remove(gameObject);
