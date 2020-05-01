@@ -5,44 +5,36 @@ using System.Linq;
 
 public class CollisionDetection : MonoBehaviour
 {
-
-    private Flock flock;
     public FlockAgent agent;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        flock = FindObjectOfType<Flock>();
-    }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-
-        if (collision.gameObject.tag == "GameObjective")
+        if (other.gameObject.tag == "GameObjective")
         {
-            if(!agent.lockHealthDamage)
+            if (!agent.lockHealthDamage)
             {
-                //agent.lockHealthDamage = true; // Lock damaging
-                //StartCoroutine(UnlockHealthDamage()); // Unlock Health damage after certain time
+                agent.lockHealthDamage = true; // Lock damaging
+                StartCoroutine(UnlockHealthDamage()); // Unlock Health damage after certain time
                 agent.attack = false;
                 agent.stayInRadius = true;
                 agent.allign = true;
-                collision.gameObject.GetComponentInChildren<TargetHealth>().TakeDamage();
+                other.gameObject.GetComponentInChildren<TargetHealth>().TakeDamage();
             }
         }
 
-        if (collision.gameObject.tag == "Enemy")
-        {
-            
-            Flock.agents.Remove(agent);
-            Flock.agents.Add(agent);
-        }
-    }
+        //if (other.gameObject.tag == "Enemy")
+        //{
 
+        //    Flock.agents.Remove(agent);
+        //    Flock.agents.Add(agent);
+        //}
+    }
 
     private IEnumerator UnlockHealthDamage()
     {
-        yield return new WaitForSeconds(2f); // Wait two seconds before attacking again
+        yield return new WaitForSeconds(3f); // Wait seconds before attacking again
         agent.lockHealthDamage = false;
     }
 

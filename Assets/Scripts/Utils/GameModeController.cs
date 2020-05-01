@@ -46,7 +46,7 @@ public class GameModeController : MonoBehaviour
                 break;
         }
 
-        //GameMode.Print();
+        GameMode.Print();
     }
 
     private void Update()

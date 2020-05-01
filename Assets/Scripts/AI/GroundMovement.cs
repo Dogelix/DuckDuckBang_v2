@@ -12,45 +12,64 @@ public enum EWalkType
 
 public class GroundMovement : MonoBehaviour
 {
-    private GameObject player;
+    private GameObject target;
     public NavMeshAgent agent;
     public EWalkType _walkType = EWalkType.Walking;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        GetComponentInChildren<Animator>().SetTrigger(_walkType.ToString()); 
+        GetComponentInChildren<Animator>().SetTrigger(_walkType.ToString());
+        SetTarget();
     }
 
+
+     void Update()
+    {
+        if (target != null)
+        {
+            agent.SetDestination(target.transform.position); // Navmesh movement
+        }
+    }
 
     private void LateUpdate()
     {
-        // We constantly update destination as player position is dynamic
-        agent.SetDestination(player.transform.position);
+        if (target == null)
+        {
+            SetTarget();
+        }
     }
 
-    //private IEnumerator KeepOnKilling(float delay, GameObject t)
-    //{
-    //    yield return new WaitForSeconds(delay);
-    //    if (t != null) // if our target still exist, keep on Killing
-    //    {
-    //        t.GetComponentInChildren<TargetHealth>().TakeDamage();
-    //        StartCoroutine(KeepOnKilling(2f, t));
-    //    }
+    private IEnumerator KeepOnKilling(float delay, GameObject t)
+    {
+        yield return new WaitForSeconds(delay);
+        if (t != null) // if our target still exist, keep on Killing
+        {
+            t.GetComponentInChildren<TargetHealth>().TakeDamage();
+            StartCoroutine(KeepOnKilling(2f, t));
+        }
 
-    //}
+    }
 
+    private void SetTarget()
+    {
+        var targets = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective);
+        int random = Random.Range(0, targets.Length);
+        target = targets[random];
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "GameObjective")
+        {
+            if (other.gameObject == target)
+            {
+                var t = other.gameObject;
+                t.GetComponentInChildren<TargetHealth>().TakeDamage();
+                StartCoroutine(KeepOnKilling(2f, t));
+            }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "GameObjective")
-    //    {
-    //        var t = collision.gameObject;
-    //        t.GetComponentInChildren<TargetHealth>().TakeDamage();
-    //        StartCoroutine(KeepOnKilling(2f, t));
-    //    }
-    //}
+        }
+    }
 
 }

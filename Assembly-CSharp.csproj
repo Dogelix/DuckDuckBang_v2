@@ -781,6 +781,10 @@
       <Project>{2CB85900-1DB0-9ECB-DA0A-3AF6555D91DD}</Project>
       <Name>NavMeshComponentsEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{63450581-764B-766A-2A77-0934236908BF}</Project>
+      <Name>SteamVR_Actions</Name>
+    </ProjectReference>
     <ProjectReference Include="NavMeshComponents.csproj">
       <Project>{A3940672-D9C2-5281-969B-E1AC6511FE67}</Project>
       <Name>NavMeshComponents</Name>
@@ -788,10 +792,6 @@
     <ProjectReference Include="NavMeshComponentsExamples.csproj">
       <Project>{E14E281D-DD70-FBF7-E717-3C23453A2F5B}</Project>
       <Name>NavMeshComponentsExamples</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR_Actions.csproj">
-      <Project>{63450581-764B-766A-2A77-0934236908BF}</Project>
-      <Name>SteamVR_Actions</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
       <Project>{2EBEEBAE-C624-160D-B881-EEBDF5DCBB34}</Project>
