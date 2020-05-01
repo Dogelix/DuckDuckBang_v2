@@ -10,14 +10,13 @@ public class golRegiBehaviour : MonoBehaviour
     void Start()
     {
         FindTarget();
+        Direction();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Direction();
-        transform.position += transform.forward * speed * Time.deltaTime;
-        // transform.position += transform.forward;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
     /// <summary>
@@ -25,35 +24,32 @@ public class golRegiBehaviour : MonoBehaviour
     /// </summary>
     void Direction()
     {
-        Vector3 direction = target.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        transform.rotation = rotation;
+        Vector3 dir = target.position - transform.position;
+        var rot = Quaternion.LookRotation(dir);
+        transform.rotation = rot;
     }
 
-
-    int collideTrue = 0;
-    /// <summary>
-    /// If collides with EndPortal -> destroys GoldenRegi and EndPortal
-    /// </summary>
-    /// <param name="collision"></param>
-    void OnCollisionEnter (Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "endPortal")
+        if (other.gameObject.tag == "endPortal")
         {
-            collideTrue = 1;
-            Debug.Log(collideTrue);
-            // Destroy GoldenRegi & Portal
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
-    
+
+    private void OnDestroy()
+    {
+        GameObject.FindObjectOfType<GoldenRegSpawner>().DestroyPortals();
+    }
+
+
+
     /// <summary>
     /// Finds End Portal spawned in, gets the transformation, sets target to EndPortal's transformation.
     /// </summary>
     void FindTarget()
     {
-        target = GameObject.Find("endPortal(Clone)").transform;
+        target = GameObject.FindGameObjectWithTag("endPortal").transform;
     }
     
 }

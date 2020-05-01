@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1711088810137337058}
   - component: {fileID: 2202963950580872181}
   - component: {fileID: -2641252788747578527}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: goldRegi
-  m_TagString: GoldenRegi
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af650db5c346a9e44afcf198d72bfd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointsValue: 10
+  _pointsValue: 20
   _hasMultiplier: 1
   _multiplierValue: 1
 --- !u!54 &1711088810137337058
@@ -62,7 +62,7 @@ Rigidbody:
   m_Drag: 2
   m_AngularDrag: 2
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -74,7 +74,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3591804573751685920}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 26.045305, y: 13.033137, z: 19.477222}
@@ -91,12 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e518b09a92ebdc14293668c1b10b6f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  speed: 5
 --- !u!1001 &8430172939164252168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,6 +103,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: reg_Low
+      objectReference: {fileID: 0}
+    - target: {fileID: 295699110237804889, guid: 40d9736c42cd9584796f71df816d1b7b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189510717284954297, guid: 40d9736c42cd9584796f71df816d1b7b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3621405505475930954, guid: 40d9736c42cd9584796f71df816d1b7b,
         type: 3}

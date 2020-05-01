@@ -68,10 +68,9 @@ public class Hitscan : MonoBehaviour, IShootable
 
                 if (hit.collider.tag == "Enemy")
                 {
-                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GroundEnemy"))
+                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GroundEnemy") || hit.collider.gameObject.layer == LayerMask.NameToLayer("GoldRegi"))
                     {
                         Destroy(hit.transform.gameObject);
-
                     }
                     else
                     {

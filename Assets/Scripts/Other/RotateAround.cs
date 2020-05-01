@@ -19,7 +19,7 @@ public class RotateAround : MonoBehaviour
     {
         transform.RotateAround(pivot.transform.position, Vector3.down, speed * Time.deltaTime);
         // Rotate our child spawner. 
-        childGizmo.center = RotatePointAroundPivot(childGizmo.center, pivot.transform.position, Vector3.down * speed * Time.deltaTime);
+        //childGizmo.center = RotatePointAroundPivot(childGizmo.center, pivot.transform.position, Vector3.down * speed * Time.deltaTime);
     }
 
     Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles)
