@@ -16,6 +16,11 @@ public class StayInRadiusBehaviour : FlockBehaviour
 
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
         if (agent.stayInRadius)
         {
             var higher = new Vector3(player.transform.position.x, height, player.transform.position.z);
