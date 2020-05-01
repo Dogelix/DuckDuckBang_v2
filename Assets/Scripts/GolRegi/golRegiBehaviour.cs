@@ -40,6 +40,7 @@ public class golRegiBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         GameObject.FindObjectOfType<GoldenRegSpawner>().DestroyPortals();
+        GameObject.FindObjectOfType<PowerUpController>().TrySpawn(transform.position);
     }
 
 

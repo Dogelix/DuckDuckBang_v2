@@ -19,6 +19,7 @@ TagManager:
   - GoldenRegi
   - endPortal
   - MenuItem
+  - PowerUp
   layers:
   - Default
   - TransparentFX

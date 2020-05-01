@@ -77,6 +77,10 @@ public class Hitscan : MonoBehaviour, IShootable
                         hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
                     }
                 }
+                else if (hit.collider.tag == "PowerUp")
+                {
+                    Destroy(hit.transform.gameObject);
+                }
                 else
                 {
                     hit.transform.gameObject.GetComponent<QuitScript>().Activate();

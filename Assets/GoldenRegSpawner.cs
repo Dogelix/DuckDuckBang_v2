@@ -18,7 +18,7 @@ public class GoldenRegSpawner : MonoBehaviour
     private void Start()
     {
         SpawnWaveGeneration();
-        Spawn();
+        QualitySettings.vSyncCount = 1; // VSYNC TEST
     }
 
     private void SpawnWaveGeneration()
@@ -40,20 +40,21 @@ public class GoldenRegSpawner : MonoBehaviour
 
     private void Spawn()
     {
+        // Starting Portal
         var randomRotate = Random.Range(0, 360);
         Vector3 startPortalPos = SpawnCenter.transform.position + (Quaternion.Euler(0, randomRotate, 0) * Vector3.forward * 30);
         var startPortal = Instantiate(PortalPrefab, startPortalPos, PortalPrefab.transform.rotation);
         startPortal.transform.rotation = Quaternion.Euler(90, randomRotate, 0);
         spawnedPortals[0] = startPortal;
 
+        //Ending Portal
         Vector3 endPortalPos = SpawnCenter.transform.position + (Quaternion.Euler(0, randomRotate, 0) * Vector3.back * 30);
         var endPortal = Instantiate(PortalPrefab, endPortalPos, PortalPrefab.transform.rotation);
         endPortal.transform.rotation = Quaternion.Euler(90, randomRotate, 0);
         endPortal.tag = "endPortal";
         spawnedPortals[1] = endPortal;
 
-
-        // Spawn Regi behind starting portal
+        // Spawn Regi on starting portal
         var regi = Instantiate(GoldRegPrefab, startPortalPos, Quaternion.identity);
 
     }

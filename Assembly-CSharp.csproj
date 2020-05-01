@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\DataObjects\DuckAssetData.cs" />
     <Compile Include="Assets\Scripts\DataObjects\GunAssetData.cs" />
     <Compile Include="Assets\Scripts\DataObjects\KeybindingData.cs" />
+    <Compile Include="Assets\Scripts\DestroyAllPowerUp.cs" />
     <Compile Include="Assets\Scripts\DoND\DoNDController.cs" />
     <Compile Include="Assets\Scripts\DoND\Timer.cs" />
     <Compile Include="Assets\Scripts\GolRegi\GolRegiSpawner.cs" />
