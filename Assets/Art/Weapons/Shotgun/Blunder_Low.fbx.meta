@@ -3,7 +3,12 @@ guid: b664d1736f343d44caa5c47cfe32c1a2
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unwrapChekcerShader
+    second: {fileID: 2100000, guid: 56210ad7a9999cf40be23e60a67a5117, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

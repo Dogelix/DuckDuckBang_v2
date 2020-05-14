@@ -3,7 +3,22 @@ guid: 1064b3de51ce33045a82e9656606f23e
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: fd6255c3ec4a6b2459e269a8b45fdc62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unwrapBaseShader
+    second: {fileID: 2100000, guid: fd6255c3ec4a6b2459e269a8b45fdc62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unwrapChekcerShader
+    second: {fileID: 2100000, guid: fd6255c3ec4a6b2459e269a8b45fdc62, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
