@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1bd03edc0c92f449fb7638102c25f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketPrefab: {fileID: 669558293899740298, guid: ee2681a673053a4438542ed648d49b9d,
+  rocketPrefab: {fileID: 8103485745979512847, guid: 728849ee0cb7b1c48a8b3193aaa099ea,
     type: 3}
   _fireAction:
     actionPath: /actions/default/in/GrabPinch
