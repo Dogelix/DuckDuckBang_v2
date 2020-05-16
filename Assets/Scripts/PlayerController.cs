@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public  class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public string PlayerName;
     public GameMode GameMode;
 
-    private void Start()
+    public void SaveScore()
     {
-        //Highscore.SaveScore(new Score() { Name = "Pev", Level = GameMode.NOTLD, Value = 200 });
+        Highscore.SaveScore(new HighScores() { PlayerId = SystemInfo.deviceUniqueIdentifier, PlayerIden = PlayerName, GameMode_Fk = (int)GameMode, Score = FindObjectOfType<PlayerScore>().GetScore });
     }
 }
 
 public enum GameMode
 {
+    NULL,
     NOTLD
 }

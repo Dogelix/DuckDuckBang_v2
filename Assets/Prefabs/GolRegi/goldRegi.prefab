@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af650db5c346a9e44afcf198d72bfd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointsValue: 10
+  _pointsValue: 20
   _hasMultiplier: 1
-  _multiplierValue: 1
+  _multiplierValue: 3
 --- !u!54 &1711088810137337058
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -91,12 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e518b09a92ebdc14293668c1b10b6f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  speed: 5
 --- !u!1001 &8430172939164252168
 PrefabInstance:
   m_ObjectHideFlags: 0

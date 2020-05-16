@@ -96,7 +96,8 @@ public class GameModeController : MonoBehaviour
             default:
                 break;
         }
-        GetComponentInChildren<GameOverUI>().ShowGameOver();
+        //GetComponentInChildren<GameOverUI>().ShowGameOver();
+        GetComponent<PlayerController>().SaveScore();
     }
 
     public void TargetGameOver(GameObject target)
