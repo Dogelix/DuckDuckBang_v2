@@ -108,26 +108,35 @@ public class WaveGameMode_SO : GameMode_SO
             _currentWave++;
             
             //if wave is 2+ do this
-            if(_currentWave != 1)
+            if(_currentWave != 1 && (_currentWave % 10) != 0)
                 _currentWaveSize = _currentWaveSize + Random.Range(_waveIncreaseValue.Lower, _waveIncreaseValue.Upper + 1);
 
             int flying = (int)(_currentWaveSize * _enemyWeighting.Lower);
 
-            float spawnDelay = 0f;
-            for (int count = 0; count < _currentWaveSize; count++)
+            if(_currentWave % 10 == 0 )
             {
-                if(flying != 0 )
+                var spawnLoc = _groundSpawnLocations[Random.Range(0, _groundSpawnLocations.Count)].transform.position;
+                spawnLoc.y = 0;
+                _agents.Add(Instantiate(GameAssets.i.HeavyReginald.gameObject, spawnLoc, Quaternion.identity)); //Comment out for unlimted spawn
+            }
+            else
+            {
+                float spawnDelay = 0f;
+                for ( int count = 0; count < _currentWaveSize; count++ )
                 {
-                    StartCoroutine(Spawn(spawnDelay, true));
-                    flying--;
-                }
-                else
-                {
-                    StartCoroutine(Spawn(spawnDelay, false));
-                }
+                    if ( flying != 0 )
+                    {
+                        StartCoroutine(Spawn(spawnDelay, true));
+                        flying--;
+                    }
+                    else
+                    {
+                        StartCoroutine(Spawn(spawnDelay, false));
+                    }
 
-                spawnDelay += 1.0f;
-            }           
+                    spawnDelay += 1.0f;
+                }
+            }     
         }
     }
 
@@ -137,7 +146,10 @@ public class WaveGameMode_SO : GameMode_SO
 
         if (!flying)
         {
-            _agents.Add(Instantiate(GameAssets.i.ZombieWalkingDuck.gameObject, _groundSpawnLocations[Random.Range(0, _groundSpawnLocations.Count)].transform.position, Quaternion.identity)); //Comment out for unlimted spawn
+            var spawnLoc = _groundSpawnLocations[Random.Range(0, _groundSpawnLocations.Count)].transform.position;
+            spawnLoc.y = 0;
+
+            _agents.Add(Instantiate(GameAssets.i.ZombieWalkingDuck.gameObject, spawnLoc, Quaternion.identity)); //Comment out for unlimted spawn
         }
         else
         {

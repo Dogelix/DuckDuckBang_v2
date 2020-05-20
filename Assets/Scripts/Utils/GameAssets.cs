@@ -63,6 +63,8 @@ public class GameAssets : MonoBehaviour
     /// </summary>
     public Transform RegularWalkingDuck;
 
+    public Transform HeavyReginald;
+
     /// <summary>
     /// For anything that has hearts
     /// </summary>

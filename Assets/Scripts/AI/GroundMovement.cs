@@ -7,7 +7,8 @@ using static SoundManager;
 public enum EWalkType
 {
     ZombieWalk,
-    Walking
+    Walking,
+    Heavy
 }
 
 public class GroundMovement : MonoBehaviour
@@ -47,10 +48,8 @@ public class GroundMovement : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (t != null) // if our target still exist, keep on Killing
         {
-            _animator.SetTrigger("Attack");
-            t.GetComponentInChildren<TargetHealth>().TakeDamage();
+            Attack(t);
             StartCoroutine(KeepOnKilling(2f, t));
-            _animator.SetTrigger(_walkType.ToString());
         }
 
     }
@@ -68,13 +67,34 @@ public class GroundMovement : MonoBehaviour
         {
             if (other.gameObject == target)
             {
-                _animator.SetTrigger("Attack");
-
-                var t = other.gameObject;
-                t.GetComponentInChildren<TargetHealth>().TakeDamage();
-                StartCoroutine(KeepOnKilling(2f, t));
+                Attack(other.gameObject);
+                StartCoroutine(KeepOnKilling(2f, other.gameObject));
             }
+        }
+    }
 
+    private void Attack( GameObject t )
+    {
+        if ( _walkType == EWalkType.Heavy )
+        {
+            var overheadChance = Random.Range(0f, 1f);
+
+            if ( overheadChance <= 2.0f )
+            {
+                _animator.SetTrigger("Overhead");
+                t.GetComponentInChildren<TargetHealth>().TakeDamage();
+                t.GetComponentInChildren<TargetHealth>().TakeDamage();
+            }
+            else
+            {
+                _animator.SetTrigger("Punch");
+                t.GetComponentInChildren<TargetHealth>().TakeDamage();
+            }
+        }
+        else
+        {
+            _animator.SetTrigger("Attack");
+            t.GetComponentInChildren<TargetHealth>().TakeDamage();
         }
     }
 

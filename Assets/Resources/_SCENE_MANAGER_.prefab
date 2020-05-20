@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5031383065584856293}
   - component: {fileID: 5031383065584856292}
   - component: {fileID: 2082417313564726036}
+  - component: {fileID: 1684170204010399404}
   m_Layer: 0
   m_Name: _SCENE_MANAGER_
   m_TagString: _SCENE_MANAGER_
@@ -72,6 +73,8 @@ MonoBehaviour:
     type: 3}
   RegularWalkingDuck: {fileID: 1567179578990772552, guid: 423f04bb08741c44da68969854241446,
     type: 3}
+  HeavyReginald: {fileID: 3568206098096045717, guid: 342f36c5a2cf97940ac4ca516a934de6,
+    type: 3}
   EmptyHeart: {fileID: 21300000, guid: 5ffa19be0f7de084289ca0a1aeabcd56, type: 3}
   FullHeart: {fileID: 21300000, guid: d613be565b54b8a4b8a8604953b294ff, type: 3}
 --- !u!114 &5914476939415830222
@@ -87,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverConditionsCount: 2
+  GameMode: {fileID: 0}
 --- !u!114 &5031383065584856293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,3 +137,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c9e707bef03704f91e33e3e2cc7ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1684170204010399404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031383065584856317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e97d62d9ef2da346aabcb00d4e4140b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - {fileID: 8300000, guid: 5ec6671151a7fcc4fa3fa0140bcf2c0b, type: 3}
+  - {fileID: 8300000, guid: 2fa5c283213894c4e9a6433beb665c75, type: 3}
+  maxDistance: 0
