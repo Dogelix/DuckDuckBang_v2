@@ -21,7 +21,6 @@ public class PlayerScore : MonoBehaviour
     /// <param name="value">A positive or negative value</param>
     public void UpdateScore(int value, string unqToken )
     {
-        if (_currentScore <= 0) _currentScore = 0;
 
         if ( _seenTokens.Contains(unqToken) ) return;
         else _seenTokens.Add(unqToken);
@@ -29,7 +28,11 @@ public class PlayerScore : MonoBehaviour
         if ( value < 0 )
             ResetMultiplier();
 
+        // If 0 and basket destroyed sets to -200
         _currentScore = _currentScore + (value * _multiplier);
+
+        // This means you can never go below 0 even if just set to -200
+        if (_currentScore <= 0) _currentScore = 0;
         EventManager.TriggerEvent("UpdateScore");
     }
 

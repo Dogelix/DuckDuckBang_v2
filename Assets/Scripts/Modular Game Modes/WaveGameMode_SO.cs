@@ -163,5 +163,10 @@ public class WaveGameMode_SO : GameMode_SO
         _agents.Clear();
 
         Flock.agents.Clear();
+        GameOverMainCanvasObject.ShowGameOver();
     }
+
+    public GameOverUI GameOverMainCanvasObject;
+
+
 }
