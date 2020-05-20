@@ -6,6 +6,8 @@ public class golRegiBehaviour : MonoBehaviour
 {
     private Transform target;
     public int speed = 5;
+    bool spawnPowerup = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,13 +36,16 @@ public class golRegiBehaviour : MonoBehaviour
         if (other.gameObject.tag == "endPortal")
         {
             Destroy(this.gameObject);
+            spawnPowerup = false;
         }
     }
 
     private void OnDestroy()
     {
         GameObject.FindObjectOfType<GoldenRegSpawner>().DestroyPortals();
-        GameObject.FindObjectOfType<PowerUpController>().TrySpawn(transform.position);
+
+        if(spawnPowerup)
+            GameObject.FindObjectOfType<PowerUpController>().TrySpawn(transform.position);
     }
 
 

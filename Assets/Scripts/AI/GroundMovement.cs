@@ -15,11 +15,13 @@ public class GroundMovement : MonoBehaviour
     private GameObject target;
     public NavMeshAgent agent;
     public EWalkType _walkType = EWalkType.Walking;
+    private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInChildren<Animator>().SetTrigger(_walkType.ToString());
+        _animator = GetComponentInChildren<Animator>();
+        _animator.SetTrigger(_walkType.ToString());
         SetTarget();
     }
 
@@ -45,8 +47,10 @@ public class GroundMovement : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (t != null) // if our target still exist, keep on Killing
         {
+            _animator.SetTrigger("Attack");
             t.GetComponentInChildren<TargetHealth>().TakeDamage();
             StartCoroutine(KeepOnKilling(2f, t));
+            _animator.SetTrigger(_walkType.ToString());
         }
 
     }
@@ -64,6 +68,8 @@ public class GroundMovement : MonoBehaviour
         {
             if (other.gameObject == target)
             {
+                _animator.SetTrigger("Attack");
+
                 var t = other.gameObject;
                 t.GetComponentInChildren<TargetHealth>().TakeDamage();
                 StartCoroutine(KeepOnKilling(2f, t));

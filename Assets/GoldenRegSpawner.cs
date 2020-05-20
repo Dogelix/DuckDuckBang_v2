@@ -6,7 +6,6 @@ public class GoldenRegSpawner : MonoBehaviour
 {
     public GameObject GoldRegPrefab;
     public GameObject PortalPrefab;
-    public WaveController WaveController;
     public GameObject SpawnCenter;
 
     public int MinWaveRangeIncrement = 5;
@@ -14,6 +13,8 @@ public class GoldenRegSpawner : MonoBehaviour
 
     private int waveToSpawn = 0;
     private GameObject[] spawnedPortals = new GameObject[2];
+    public bool spawned = false;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -28,11 +29,11 @@ public class GoldenRegSpawner : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnCheck(int currentWave)
     {
-        if (WaveController.CurrentWave == waveToSpawn)
+        if ( currentWave == waveToSpawn && !spawned )
         {
+            spawned = true;
             SpawnWaveGeneration();
             StartCoroutine(WaitBeforeSpawn(Random.Range(2, 5))); // Wait a little bit before spawning
         }

@@ -39,7 +39,7 @@ public class TargetHealth : MonoBehaviour
         {
             var heart = Instantiate(GameAssets.i.InWorldSprite, transform);
             heart.name = "Heart_" + i.ToString();
-            heart.transform.localScale = new Vector3(0.25f, 0.25f, 1);
+            heart.transform.localScale = new Vector3(0.025f, 0.025f, 1);
 
             heart.transform.localPosition = new Vector3(currentSpacing, _heartsHeight, 0);
             currentSpacing += _spacing;

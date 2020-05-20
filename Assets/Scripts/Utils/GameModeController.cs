@@ -8,7 +8,7 @@ public class GameModeController : MonoBehaviour
     [SerializeField]
     private int _gameOverConditionsCount = 1;
 
-    private GameMode_SO GameMode;
+    public GameMode_SO GameMode;
 
     private List<GameObject> Targets;
 
@@ -23,20 +23,15 @@ public class GameModeController : MonoBehaviour
     private void Awake()
     {
         Targets = GameObject.FindGameObjectsWithTag(StringUtils.GameObjective).ToList();
-        GameMode = GetComponent<GameMode_SO>();   
-
+        //GameMode = GetComponent<GameMode_SO>();
+        Debug.Log(GameMode._type.ToString());
         switch (GameMode._type)
         {
             case GameModeTypes.Timed:
                 break;
             case GameModeTypes.Wave:
-                var spawns = GameObject.FindGameObjectsWithTag("FlySpawn");
-                List<Transform> temp = new List<Transform>();
-                foreach (var s in spawns)
-                {
-                    temp.Add(s.transform);
-                }
-                GameMode.Init(temp);
+                var t = (WaveGameMode_SO)GameMode;
+                t.Init("test");
                 break;
             case GameModeTypes.Points:
                 break;
@@ -46,7 +41,7 @@ public class GameModeController : MonoBehaviour
                 break;
         }
 
-        GameMode.Print();
+        //GameMode.Print();
     }
 
     private void Update()

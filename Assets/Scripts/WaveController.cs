@@ -32,7 +32,7 @@ public class WaveController : MonoBehaviour
         {
             spawnLock = true;
             CurrentWave++;
-            agentsCount = agentsCount + Random.Range(AgentsMinIncrement, AgentsMaxIncrement); ;
+            agentsCount = agentsCount + Random.Range(AgentsMinIncrement, AgentsMaxIncrement);
 
             float spawnDelay = 0f;
             for (int count = 0; count < agentsCount; count++)

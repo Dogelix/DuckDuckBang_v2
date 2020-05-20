@@ -5,33 +5,43 @@ using System.Linq;
 
 public class DestroyAllPowerUp : MonoBehaviour
 {
-    private void Update()
+    bool applyPower = true;
+
+    private void Start()
     {
-        RotateMe();
+        StartCoroutine(Die(10.0f));
     }
+
+    private IEnumerator Die( float spawnDelay )
+    {
+        yield return new WaitForSeconds(spawnDelay);
+        applyPower = false;
+        Destroy(gameObject);
+    }
+
+    private void Update() {}
+
     // Start is called before the first frame update
     private void OnDestroy()
     {
-        int flyCount = Flock.agents.Count();
-
-        for (int i = flyCount - 1; i >= 0; i--)
+        if ( applyPower )
         {
-            if (Flock.agents[i] != null)
+            int flyCount = Flock.agents.Count();
+
+            for ( int i = flyCount - 1; i >= 0; i-- )
             {
-                Destroy(Flock.agents.ElementAt(i).gameObject);
+                if ( Flock.agents[i] != null )
+                {
+                    Destroy(Flock.agents.ElementAt(i).gameObject);
+                }
+            }
+
+            var agents = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach ( var b in agents )
+            {
+                Destroy(b);
             }
         }
-
-        var agents = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (var b in agents)
-        {
-            Destroy(b); 
-        }
-    }
-
-    private void RotateMe()
-    {
-        transform.Rotate(Vector3.up);
     }
 
 }

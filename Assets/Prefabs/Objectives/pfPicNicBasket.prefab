@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af650db5c346a9e44afcf198d72bfd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointsValue: -200
+  _pointsValue: -50
   _hasMultiplier: 0
   _multiplierValue: 1
 --- !u!1 &8087866355646594485
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03e363fdc101a343adce38b36c3de91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  _health: 1
   _heartsHeight: 0.4
 --- !u!1001 &7229664118986350785
 PrefabInstance:
