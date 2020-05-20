@@ -20,6 +20,7 @@ TagManager:
   - endPortal
   - MenuItem
   - PowerUp
+  - FlyCenter
   layers:
   - Default
   - TransparentFX
