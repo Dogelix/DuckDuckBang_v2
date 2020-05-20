@@ -44,6 +44,7 @@ public class GameAssets : MonoBehaviour
     /// </summary>
     public Transform InWorldSprite;
 
+    public Transform Basket;
 
     public Transform Bullet;
 

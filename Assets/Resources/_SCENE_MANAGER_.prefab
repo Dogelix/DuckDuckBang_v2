@@ -63,6 +63,7 @@ MonoBehaviour:
     type: 3}
   InWorldSprite: {fileID: 6039809543801955085, guid: aba8b6f89c0d8024785bd8d8f6292c6f,
     type: 3}
+  Basket: {fileID: 8087866355408670932, guid: 9f2d88b82c338f543a7180e910ff7fc2, type: 3}
   Bullet: {fileID: 8587125489763062585, guid: 6b74756f88ee50541809960eb0c8096f, type: 3}
   RegularFlyingDuck: {fileID: 1199668281248264204, guid: 0a951e87498025942b33b3ae94605e2c,
     type: 3}
@@ -70,9 +71,8 @@ MonoBehaviour:
     type: 3}
   RegularWalkingDuck: {fileID: 1567179578990772552, guid: 423f04bb08741c44da68969854241446,
     type: 3}
-  EmptyHeart: {fileID: 21300000, guid: 275cc3e84e9121a4788d64bac89aa222, type: 3}
-  FullHeart: {fileID: 21300000, guid: 7d51f8539517efc44aca39e96b0f5e94, type: 3}
-  ReginalAnimControl: {fileID: 9100000, guid: 15f72cbd66cd5d6459906717963af284, type: 2}
+  EmptyHeart: {fileID: 21300000, guid: 5ffa19be0f7de084289ca0a1aeabcd56, type: 3}
+  FullHeart: {fileID: 21300000, guid: d613be565b54b8a4b8a8604953b294ff, type: 3}
 --- !u!114 &2082417313564726036
 MonoBehaviour:
   m_ObjectHideFlags: 0

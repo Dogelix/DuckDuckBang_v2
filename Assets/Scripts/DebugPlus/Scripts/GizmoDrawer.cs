@@ -10,8 +10,9 @@ namespace DebugPlusNS {
 
         private void Update() {
             foreach (var d in drawings.ToList()) {
+                if (d.creationFrame == Time.frameCount) continue;
                 d.duration -= Time.deltaTime;
-                if (d.drawn && d.duration < 0) drawings.Remove(d);
+                if (d.duration < 0) drawings.Remove(d);
             }
         }
 
@@ -27,13 +28,16 @@ namespace DebugPlusNS {
 
                 Gizmos.color = prevColor;
                 Gizmos.matrix = prevMatrix;
-
-                d.drawn = true;
             }
         }
 
         public static void Draw(Drawing drawing) {
             I.drawings.Add(drawing);
+        }
+
+        [RuntimeInitializeOnLoadMethod]
+        static void Init() {
+            applicationIsQuitting = false;
         }
     }
 }

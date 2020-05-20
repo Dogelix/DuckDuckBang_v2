@@ -35,6 +35,13 @@ public class WaveGameMode_SO : GameMode_SO
     [Tooltip("A ratio where Upper == Ground and Lower == Air e.g. Upper 2:1 Lower")]
     public Limits _enemyWeighting;
 
+    /// <summary>
+    /// A fraction where Lower is the chance in Upper
+    /// Lower/Upper
+    /// </summary>
+    [Tooltip("A fraction where Lower is the chance in Upper e.g. v")]
+    public Limits _randomBasketSpawn;
+
     public List<GameObject> _agents;
 
     // Private holder for all transforms within spawn containers
@@ -73,6 +80,13 @@ public class WaveGameMode_SO : GameMode_SO
 
     public override void Tick()
     {
+        var chance  = Random.Range(0, _randomBasketSpawn.Upper + 1);
+
+        if(chance <= _randomBasketSpawn.Lower )
+        {
+
+        }
+
         if(_agents.Count == 0)
         {
             //Debug.Log("Agents: " + _agents.Count);
