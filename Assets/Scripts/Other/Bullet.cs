@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int _damage = 1;
     public float _despawnTime = 5.0f;
 
     private void Awake()
@@ -12,12 +11,14 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, _despawnTime);
     }
 
+
+
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == uString.Enemy)
+        if (collision.transform.tag == uString.Enemy)
         {
-            collision.transform.GetComponent<AgentHealth>().DoDamage(_damage);
             Destroy(gameObject);
+            Destroy(collision.gameObject);
         }
         if (collision.transform.tag == uString.Menu) collision.transform.GetComponent<MenuParentClass>().Activate();
     }

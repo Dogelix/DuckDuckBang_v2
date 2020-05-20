@@ -42,7 +42,7 @@
     },
     {
       "name": "/actions/default/in/SnapTurnLeft",
-      "type": "vector2",
+      "type": "boolean",
       "requirement": "suggested"
     },
     {
@@ -51,6 +51,14 @@
     },
     {
       "name": "/actions/default/in/Swipe",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/SwipeLeft",
+      "type": "vector3"
+    },
+    {
+      "name": "/actions/default/in/Touch",
       "type": "vector2"
     },
     {
