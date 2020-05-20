@@ -47,6 +47,8 @@ public class WaveGameMode_SO : GameMode_SO
     private List<GameObject> _flySpawnLocations;
     private List<GameObject> _groundSpawnLocations;
 
+    private GoldenRegSpawner _goldenRegSpawner;
+
     public bool _countUp;
     public bool _spawnBaskets;
 
@@ -73,6 +75,7 @@ public class WaveGameMode_SO : GameMode_SO
 
             _flySpawnLocations = GameObject.FindGameObjectsWithTag("FlySpawn").ToList();
             _groundSpawnLocations = GameObject.FindGameObjectsWithTag("GroundSpawn").ToList();
+            _goldenRegSpawner = GetComponent<GoldenRegSpawner>();
 
             _currentWave = 0;
             _currentWaveSize = _waveBaseValue;
@@ -87,6 +90,8 @@ public class WaveGameMode_SO : GameMode_SO
 
     public override void Tick()
     {
+        _goldenRegSpawner.SpawnCheck(_currentWave);
+
         var chance  = Random.Range(0, _randomBasketSpawn.Upper + 1);
 
         if ( chance <= _randomBasketSpawn.Lower )
@@ -96,6 +101,9 @@ public class WaveGameMode_SO : GameMode_SO
 
         if (_agents.Count == 0 && spawnLock == false)
         {
+            if( GameObject.FindObjectOfType<GoldenRegSpawner>().spawned )
+                GameObject.FindObjectOfType<GoldenRegSpawner>().spawned = false;
+            
             spawnLock  = true;
             _currentWave++;
             
@@ -118,7 +126,7 @@ public class WaveGameMode_SO : GameMode_SO
                     StartCoroutine(Spawn(spawnDelay, false));
                 }
 
-                spawnDelay += 1.5f;
+                spawnDelay += 1.0f;
             }           
         }
     }

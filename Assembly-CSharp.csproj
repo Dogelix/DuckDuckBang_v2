@@ -124,6 +124,7 @@
     <Compile Include="Assets\Scripts\Points\PointsPopUp.cs" />
     <Compile Include="Assets\Scripts\Points\PointsScript.cs" />
     <Compile Include="Assets\Scripts\PowerUpController.cs" />
+    <Compile Include="Assets\Scripts\RotateChild.cs" />
     <Compile Include="Assets\Scripts\SpawnLocationGizmos.cs" />
     <Compile Include="Assets\Scripts\Targets\TargetController.cs" />
     <Compile Include="Assets\Scripts\Utils\EventManager.cs" />
@@ -140,7 +141,6 @@
     <Compile Include="Assets\Scripts\Utils\Menus\MenuParentClass.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\QuitScript.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\RestartLevel.cs" />
-    <Compile Include="Assets\Scripts\Utils\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Utils\ScoreBoard.cs" />
     <Compile Include="Assets\Scripts\Utils\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Utils\SpawnPoint.cs" />

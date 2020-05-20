@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class RotateChild : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject Child;
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(Vector3.up * Time.deltaTime * 20);
     }
 }
