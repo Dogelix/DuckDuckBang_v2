@@ -15,7 +15,7 @@ public class Highscore : MonoBehaviour
 
     private static string _dataPath = Application.dataPath + "/highscore.json";
 
-    public static async Task<List<HighScores>> GetHighscoresForModeAsync( GameMode mode ) // MAX HIGHORE SPACE IS 10
+    public static async Task<List<HighScores>> GetHighscoresForModeAsync( EGameMode mode ) // MAX HIGHORE SPACE IS 10
     {
         HighScores[] retValue = null;
 
