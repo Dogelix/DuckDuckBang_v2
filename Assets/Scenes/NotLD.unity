@@ -9913,6 +9913,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3755836081623969762, guid: 9f2d88b82c338f543a7180e910ff7fc2,
+        type: 3}
+      propertyPath: _pointsValue
+      value: -200
+      objectReference: {fileID: 0}
     - target: {fileID: 4025999906278499772, guid: 9f2d88b82c338f543a7180e910ff7fc2,
         type: 3}
       propertyPath: m_Size.z
@@ -9997,6 +10002,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pfPicNicBasket (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087866355646594483, guid: 9f2d88b82c338f543a7180e910ff7fc2,
+        type: 3}
+      propertyPath: _health
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f2d88b82c338f543a7180e910ff7fc2, type: 3}
@@ -28148,6 +28158,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3755836081623969762, guid: 9f2d88b82c338f543a7180e910ff7fc2,
+        type: 3}
+      propertyPath: _pointsValue
+      value: -200
+      objectReference: {fileID: 0}
     - target: {fileID: 4025999906278499772, guid: 9f2d88b82c338f543a7180e910ff7fc2,
         type: 3}
       propertyPath: m_Size.z
@@ -28232,6 +28247,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pfPicNicBasket
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087866355646594483, guid: 9f2d88b82c338f543a7180e910ff7fc2,
+        type: 3}
+      propertyPath: _health
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f2d88b82c338f543a7180e910ff7fc2, type: 3}
@@ -40205,6 +40225,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3755836081623969762, guid: 9f2d88b82c338f543a7180e910ff7fc2,
+        type: 3}
+      propertyPath: _pointsValue
+      value: -200
+      objectReference: {fileID: 0}
     - target: {fileID: 4025999906278499772, guid: 9f2d88b82c338f543a7180e910ff7fc2,
         type: 3}
       propertyPath: m_Size.z
@@ -40289,6 +40314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pfPicNicBasket (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087866355646594483, guid: 9f2d88b82c338f543a7180e910ff7fc2,
+        type: 3}
+      propertyPath: _health
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f2d88b82c338f543a7180e910ff7fc2, type: 3}
