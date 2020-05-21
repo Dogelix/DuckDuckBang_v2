@@ -3877,8 +3877,8 @@ MonoBehaviour:
   _waves: 0
   _waveBaseValue: 5
   _waveIncreaseValue:
-    Upper: 1
-    Lower: 9
+    Upper: 9
+    Lower: 1
   _enemyWeighting:
     Ground: 0.8
     Flying: 0.2
