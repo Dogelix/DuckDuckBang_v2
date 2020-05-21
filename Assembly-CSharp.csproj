@@ -138,6 +138,7 @@
     <Compile Include="Assets\Scripts\Targets\TargetController.cs" />
     <Compile Include="Assets\Scripts\Utils\EventManager.cs" />
     <Compile Include="Assets\Scripts\Utils\GameAssets.cs" />
+    <Compile Include="Assets\Scripts\Utils\GameMode.cs" />
     <Compile Include="Assets\Scripts\Utils\GameModeController.cs" />
     <Compile Include="Assets\Scripts\Utils\GameOverUI.cs" />
     <Compile Include="Assets\Scripts\Utils\Highscore.cs" />
@@ -261,6 +262,12 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.postprocessing.Editor">
+      <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/com.unity.postprocessing.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.postprocessing.Runtime">
+      <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/com.unity.postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/UnityEditors/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

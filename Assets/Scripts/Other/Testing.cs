@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -12,11 +13,7 @@ public class Testing : MonoBehaviour
 
     private void Awake()
     {
-        DebugPlus.DrawSphere(new Vector3(-29.7f, 0, -37.9f), 1);
-        DebugPlus.DrawSphere(new Vector3(470.3f, 0, -37.9f), 1);
-        DebugPlus.DrawSphere(new Vector3(-29.7f, 0, 462.1f), 1);
-        DebugPlus.DrawSphere(new Vector3(470.3f, 0, 462.1f), 1);
-
+        
     }
 
     //private void OnEnable()
