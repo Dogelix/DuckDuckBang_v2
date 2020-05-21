@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Valve.VR;
 
 public class GameModeController : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class GameModeController : MonoBehaviour
         Cursor.visible = false;
         // Lock cursor on the window
         Cursor.lockState = CursorLockMode.Locked;
+
+        SteamVR_Fade.View(Color.clear, 2);
+
     }
 
     private void Awake()
