@@ -31,7 +31,8 @@ public class LauncherScript : MonoBehaviour
 
     public bool Shoot()
     {
-        int ammo = GetComponentInChildren<LauncherAmmoController>().Ammo;
+        var ammoCOntroller = FindObjectOfType<LauncherAmmoController>();
+        int ammo = ammoCOntroller.Ammo;
 
         if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire && ammo > 0)
         {
@@ -39,7 +40,7 @@ public class LauncherScript : MonoBehaviour
 
             var rocket = Instantiate(Rocket, Barrel.transform.position, transform.rotation);
             rocket.GetComponent<Rigidbody>().AddForce(Parent.transform.forward * shotPower);
-            GetComponentInChildren<LauncherAmmoController>().Ammo = ammo - 1;
+            ammoCOntroller.Ammo = ammo - 1;
         }
         return false;
     }
