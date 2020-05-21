@@ -72,11 +72,7 @@
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\GoldenRegSpawner.cs" />
-    <Compile Include="Assets\LauncherScript.cs" />
-    <Compile Include="Assets\LookAt.cs" />
     <Compile Include="Assets\Resources\Localisation.cs" />
-    <Compile Include="Assets\RocketExplosion.cs" />
     <Compile Include="Assets\Scripts\AI\AgentHealth.cs" />
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\AllignmentBehaviour.cs" />
     <Compile Include="Assets\Scripts\AI\Behaviour Scripts\AttackBehaviour.cs" />
@@ -114,6 +110,7 @@
     <Compile Include="Assets\Scripts\DoND\DoNDController.cs" />
     <Compile Include="Assets\Scripts\DoND\Timer.cs" />
     <Compile Include="Assets\Scripts\GolRegi\GolRegiSpawner.cs" />
+    <Compile Include="Assets\Scripts\GolRegi\GoldenRegSpawner.cs" />
     <Compile Include="Assets\Scripts\GolRegi\golRegiBehaviour.cs" />
     <Compile Include="Assets\Scripts\GolRegi\grSpawner.cs" />
     <Compile Include="Assets\Scripts\Modular Game Modes\GameModeTypes.cs" />
@@ -147,6 +144,7 @@
     <Compile Include="Assets\Scripts\Utils\Input\KeybindingActions.cs" />
     <Compile Include="Assets\Scripts\Utils\KillMe.cs" />
     <Compile Include="Assets\Scripts\Utils\Limits.cs" />
+    <Compile Include="Assets\Scripts\Utils\LookAt.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\LevelSelector.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\MainMenuBehaviours.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\MenuParentClass.cs" />
@@ -164,7 +162,9 @@
     <Compile Include="Assets\Scripts\Weapons\GrappleHook.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hitscan.cs" />
     <Compile Include="Assets\Scripts\Weapons\IShootable.cs" />
+    <Compile Include="Assets\Scripts\Weapons\LauncherScript.cs" />
     <Compile Include="Assets\Scripts\Weapons\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Weapons\RocketExplosion.cs" />
     <Compile Include="Assets\Scripts\Weapons\ShotgunScript.cs" />
     <Compile Include="Assets\Scripts\Weapons\SwapWeapons.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
@@ -230,9 +230,6 @@
     <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
       <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.postprocessing.Editor">
-      <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/com.unity.postprocessing.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
@@ -241,9 +238,6 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
       <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.postprocessing.Runtime">
-      <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/com.unity.postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualEffectGraph.Editor">
       <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
