@@ -19,7 +19,6 @@ public class GoldenRegSpawner : MonoBehaviour
     private void Start()
     {
         SpawnWaveGeneration();
-        QualitySettings.vSyncCount = 1; // VSYNC TEST
     }
 
     private void SpawnWaveGeneration()
