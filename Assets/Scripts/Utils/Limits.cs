@@ -11,7 +11,7 @@ public class Limits
 public class LimitedLimits
 {
     [Range(0, 1)]
-    public float Upper;
+    public float Ground;
     [Range(0, 1)]
-    public float Lower;
+    public float Flying;
 }

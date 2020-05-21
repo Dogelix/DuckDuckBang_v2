@@ -111,7 +111,7 @@ public class WaveGameMode_SO : GameMode_SO
             if(_currentWave != 1 && (_currentWave % 10) != 0)
                 _currentWaveSize = _currentWaveSize + Random.Range(_waveIncreaseValue.Lower, _waveIncreaseValue.Upper + 1);
 
-            int flying = (int)(_currentWaveSize * _enemyWeighting.Lower);
+            int flying = (int)(_currentWaveSize * _enemyWeighting.Flying);
 
             if(_currentWave % 10 == 0 )
             {
