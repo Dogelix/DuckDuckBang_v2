@@ -102,6 +102,9 @@ public class GameModeController : MonoBehaviour
             default:
                 break;
         }
+
+        Highscore.SaveScore(new HighScores { PlayerId = SystemInfo.deviceUniqueIdentifier, PlayerIden = GameMode._playerName, GameMode_Fk = (int)EGameMode.NOTLD, Score = FindObjectOfType<PlayerScore>().GetScore });
+
         //GetComponentInChildren<GameOverUI>().ShowGameOver();
     }
 
