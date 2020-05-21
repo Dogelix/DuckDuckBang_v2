@@ -16,7 +16,7 @@ public class LauncherScript : MonoBehaviour
     private float nextFire;
     public float shotPower;
 
-    public GameObject Ammo;
+    //public GameObject Ammo;
 
     void Awake()
     {
@@ -31,7 +31,7 @@ public class LauncherScript : MonoBehaviour
 
     public bool Shoot()
     {
-        int ammo = Int32.Parse(Ammo.GetComponent<UnityEngine.UI.Text>().text);
+        int ammo = GetComponentInChildren<LauncherAmmoController>().Ammo;
 
         if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire && ammo > 0)
         {
@@ -39,7 +39,7 @@ public class LauncherScript : MonoBehaviour
 
             var rocket = Instantiate(Rocket, Barrel.transform.position, transform.rotation);
             rocket.GetComponent<Rigidbody>().AddForce(Parent.transform.forward * shotPower);
-            Ammo.GetComponent<UnityEngine.UI.Text>().text = (ammo - 1).ToString();
+            GetComponentInChildren<LauncherAmmoController>().Ammo = ammo - 1;
         }
         return false;
     }

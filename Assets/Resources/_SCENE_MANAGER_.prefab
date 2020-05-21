@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 5031383065584856292}
   - component: {fileID: 2082417313564726036}
   - component: {fileID: 1684170204010399404}
+  - component: {fileID: 6611405987224883133}
+  - component: {fileID: 7615982618955007496}
   m_Layer: 0
   m_Name: _SCENE_MANAGER_
   m_TagString: _SCENE_MANAGER_
@@ -153,3 +155,38 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5ec6671151a7fcc4fa3fa0140bcf2c0b, type: 3}
   - {fileID: 8300000, guid: 2fa5c283213894c4e9a6433beb665c75, type: 3}
   maxDistance: 0
+--- !u!114 &6611405987224883133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031383065584856317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46bd5693db14c714aaf931ebe017d641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerUpPrefabs:
+  - {fileID: 6967509642595373574, guid: 2baa958aeaae95d48b0bd58cdb4e63d2, type: 3}
+  - {fileID: 1455410311587967567, guid: c96226c440e676141b43d2dbfbb1c3ff, type: 3}
+--- !u!114 &7615982618955007496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5031383065584856317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c231004bd27bdee47b265fc95372806a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GoldRegPrefab: {fileID: 3591804573751685920, guid: 02d2ab427400abb4d8d600edd4fbd5d2,
+    type: 3}
+  PortalPrefab: {fileID: 1440511796690364786, guid: 934f49bbe72223047a066efbfa7b502d,
+    type: 3}
+  SpawnCenter: {fileID: 0}
+  MinWaveRangeIncrement: 5
+  MaxWaveRangeIncrement: 10
+  spawned: 0

@@ -30,27 +30,6 @@ Transform:
   m_Father: {fileID: 8636295769564368562}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3648194905840532373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4720072465554947233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27766d177aad8f043a53c234e4bb1683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Barrel: {fileID: 3648194905795984539}
-  Parent: {fileID: 3648194906522593990}
-  Rocket: {fileID: 1781881782054621343, guid: ee2681a673053a4438542ed648d49b9d, type: 3}
-  _fireAction:
-    actionPath: /actions/default/in/GrabPinch
-    needsReinit: 0
-  firerate: 2
-  shotPower: 1000
-  Ammo: {fileID: 3648194906900324228}
 --- !u!1 &3648194906518687128
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +154,7 @@ GameObject:
   - component: {fileID: 3648194906900324227}
   - component: {fileID: 3648194906900324224}
   - component: {fileID: 3648194906900324225}
+  - component: {fileID: 6394724967256303854}
   - component: {fileID: 3648194906900324226}
   m_Layer: 0
   m_Name: Ammo
@@ -242,6 +222,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 2
+--- !u!114 &6394724967256303854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3648194906900324228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925aea866c04f8b4aaeb09bb87ec131d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ammo: 2
 --- !u!114 &3648194906900324226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +247,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc3e04ba0900e24aba1c9322a15857f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3648194905840532373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4720072465554947233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27766d177aad8f043a53c234e4bb1683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Barrel: {fileID: 3648194905795984539}
+  Parent: {fileID: 3648194906522593990}
+  Rocket: {fileID: 1781881782054621343, guid: ee2681a673053a4438542ed648d49b9d, type: 3}
+  _fireAction:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  firerate: 2
+  shotPower: 1000
 --- !u!1001 &3648194906772366760
 PrefabInstance:
   m_ObjectHideFlags: 0

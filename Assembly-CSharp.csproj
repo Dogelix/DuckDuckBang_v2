@@ -113,6 +113,7 @@
     <Compile Include="Assets\Scripts\GolRegi\GoldenRegSpawner.cs" />
     <Compile Include="Assets\Scripts\GolRegi\golRegiBehaviour.cs" />
     <Compile Include="Assets\Scripts\GolRegi\grSpawner.cs" />
+    <Compile Include="Assets\Scripts\LauncherAmmoPowerUpScript.cs" />
     <Compile Include="Assets\Scripts\Modular Game Modes\GameModeTypes.cs" />
     <Compile Include="Assets\Scripts\Modular Game Modes\GameMode_SO.cs" />
     <Compile Include="Assets\Scripts\Modular Game Modes\PopUpGameMode_SO.cs" />
@@ -162,6 +163,7 @@
     <Compile Include="Assets\Scripts\Weapons\GrappleHook.cs" />
     <Compile Include="Assets\Scripts\Weapons\Hitscan.cs" />
     <Compile Include="Assets\Scripts\Weapons\IShootable.cs" />
+    <Compile Include="Assets\Scripts\Weapons\LauncherAmmoController.cs" />
     <Compile Include="Assets\Scripts\Weapons\LauncherScript.cs" />
     <Compile Include="Assets\Scripts\Weapons\Projectile.cs" />
     <Compile Include="Assets\Scripts\Weapons\RocketExplosion.cs" />
