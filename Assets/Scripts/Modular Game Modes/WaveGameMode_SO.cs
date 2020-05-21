@@ -68,7 +68,7 @@ public class WaveGameMode_SO : GameMode_SO
     /// <param name="value">The Spawn Locations as a List<Transform></param>
     public override void Init(object value)
     {
-        DebugPlus.LogOnScreen("WaveGameMode_SO.Init()");
+        //DebugPlus.LogOnScreen("WaveGameMode_SO.Init()");
         try
         {
             base._type = GameModeTypes.Wave;
