@@ -17,7 +17,8 @@ public class Bullet : MonoBehaviour
     {
         if (collision.transform.tag == uString.Enemy)
         {
-            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            collision.gameObject.GetComponent<AgentHealth>().DoDamage(1);
         }
         if (collision.transform.tag == uString.Menu) collision.transform.GetComponent<IMenuItem>().Activate();
     }

@@ -7,8 +7,8 @@ public class RocketExplosion : MonoBehaviour
 {
     public GameObject effect;
     public int radius;
+    public int blastBackRadius;
 
-    
     private void OnCollisionEnter(Collision collision)
     {
         Destroy(this.gameObject);
@@ -25,9 +25,16 @@ public class RocketExplosion : MonoBehaviour
         obj.GetComponent<ParticleSystem>().loop = false;
         Destroy(obj, 2);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius).Where(x => x.gameObject.tag == "Enemy").ToArray();
+        Collider[] blastHitColliders = Physics.OverlapSphere(transform.position, blastBackRadius).Where(x => x.gameObject.tag == "Enemy").ToArray();
+
         for (int i = 0; i < hitColliders.Length; i++)
         {
-            Destroy(hitColliders[i].gameObject);
+            hitColliders[i].gameObject.GetComponent<AgentHealth>().DoDamage(5);
+        }
+
+        for ( int i = 0; i < blastHitColliders.Length; i++ )
+        {
+            blastHitColliders[i].GetComponent<Rigidbody>().AddExplosionForce(25, transform.position, blastBackRadius);
         }
     }
 }
