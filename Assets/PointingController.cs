@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿:joy
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -41,6 +42,10 @@ public class PointingController : MonoBehaviour
                     StartCoroutine(FadeOutMusic(MainSong, 2));
                     SteamVR_Fade.View(Color.black, 2);
                     StartCoroutine(WaitForSceneLoad("NotLD"));
+                }
+                else if(hit.collider.tag == "MenuItem" )
+                {
+                    hit.transform.GetComponent<IMenuItem>().Activate();
                 }
             }
             else if (_fireAction.GetStateDown(_pose.inputSource))
