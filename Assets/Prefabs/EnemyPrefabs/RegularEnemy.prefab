@@ -114,6 +114,8 @@ MonoBehaviour:
   stayInRadius: 1
   allign: 1
   target: {fileID: 0}
+  Feathers: {fileID: 1831051925938493075, guid: 6a74aae3988e0804d937fd9f473bd544,
+    type: 3}
 --- !u!114 &3922288760915581753
 MonoBehaviour:
   m_ObjectHideFlags: 0
