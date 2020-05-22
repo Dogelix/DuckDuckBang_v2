@@ -24,6 +24,8 @@ public class Hitscan : MonoBehaviour, IShootable
 
     private float nextFire;
 
+    public AudioSource gunShot;
+
 
     void Start()
     {
@@ -51,7 +53,7 @@ public class Hitscan : MonoBehaviour, IShootable
     {
         if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire)
         {
-            //soundManager.PlaySound(SoundsNames.GunShot_1, false, false);
+            gunShot.Play();
 
             Debug.Log("Parent Forward Vector: " + Parent.transform.forward);
             nextFire = Time.time + firerate;
@@ -87,7 +89,7 @@ public class Hitscan : MonoBehaviour, IShootable
                 }
                 else
                 {
-                    Debug.LogWarning("Hitscan hit : " + hit.transform.name);
+                   // hit.transform.gameObject.GetComponent<QuitScript>().Activate();
                 }
             }
             else
@@ -96,6 +98,9 @@ public class Hitscan : MonoBehaviour, IShootable
             }
             return true;
         }
+
+ 
+
         return false;
     }
 }

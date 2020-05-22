@@ -14,6 +14,11 @@ public class RocketExplosion : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    private void Update()
+    {
+        transform.Rotate(10, 20, 0, Space.Self);
+    }
+
     private void OnDestroy()
     {
         var obj = Instantiate(effect, transform.position, Quaternion.identity);
