@@ -74,7 +74,7 @@ public class Hitscan : MonoBehaviour, IShootable
                     }
                     else
                     {
-                        hit.transform.gameObject.GetComponent<TargetHealth>().TakeDamage();
+                        hit.transform.gameObject.GetComponent<AgentHealth>().DoDamage(1);
                     }
                 }
                 else if (hit.collider.tag == "PowerUp")

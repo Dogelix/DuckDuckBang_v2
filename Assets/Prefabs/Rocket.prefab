@@ -125,3 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
   radius: 8
+  blastBackRadius: 0

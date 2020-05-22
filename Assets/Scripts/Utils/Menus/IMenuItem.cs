@@ -1,5 +1,5 @@
 ﻿
-interface IMenuItem
+public interface IMenuItem
 {
-    public void Activate();
+    void Activate();
 }
