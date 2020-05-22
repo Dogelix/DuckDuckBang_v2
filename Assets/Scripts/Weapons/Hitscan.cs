@@ -70,18 +70,22 @@ public class Hitscan : MonoBehaviour, IShootable
 
                 if (hit.collider.tag == "Enemy")
                 {
-                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GroundEnemy") || hit.collider.gameObject.layer == LayerMask.NameToLayer("GoldRegi"))
+                    if ( hit.collider.gameObject.layer == LayerMask.NameToLayer("GoldRegi"))
                     {
                         Destroy(hit.transform.gameObject);
                     }
                     else
                     {
-                        hit.transform.gameObject.GetComponent<CollisionDetection>().RaycastDestroy();
+                        hit.transform.gameObject.GetComponent<TargetHealth>().TakeDamage();
                     }
                 }
                 else if (hit.collider.tag == "PowerUp")
                 {
                     Destroy(hit.transform.gameObject);
+                }
+                else if(hit.collider.tag == "MenuItem")
+                {
+                    hit.transform.gameObject.GetComponent<IMenuItem>().Activate();
                 }
                 else
                 {

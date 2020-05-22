@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        if (collision.transform.tag == uString.Menu) collision.transform.GetComponent<MenuParentClass>().Activate();
-        Destroy(gameObject);
+        if (collision.transform.tag == uString.Menu) collision.transform.GetComponent<IMenuItem>().Activate();
     }
 }
