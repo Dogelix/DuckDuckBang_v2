@@ -17,6 +17,7 @@ public class GroundMovement : MonoBehaviour
     public NavMeshAgent agent;
     public EWalkType _walkType = EWalkType.Walking;
     private Animator _animator;
+    public GameObject Feathers;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +27,12 @@ public class GroundMovement : MonoBehaviour
         SetTarget();
     }
 
+    private void OnDestroy()
+    {
+        Instantiate(Feathers, transform.position, Quaternion.identity);
+    }
 
-     void Update()
+    void Update()
     {
         if (target != null)
         {
@@ -96,6 +101,6 @@ public class GroundMovement : MonoBehaviour
             _animator.SetTrigger("Attack");
             t.GetComponentInChildren<TargetHealth>().TakeDamage();
         }
-    }
+    } 
 
 }

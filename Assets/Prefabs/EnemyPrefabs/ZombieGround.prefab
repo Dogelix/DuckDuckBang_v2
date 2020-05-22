@@ -90,6 +90,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 4559335837791300324}
   _walkType: 0
+  Feathers: {fileID: 1831051925938493075, guid: 6a74aae3988e0804d937fd9f473bd544,
+    type: 3}
 --- !u!114 &7485382167933233459
 MonoBehaviour:
   m_ObjectHideFlags: 0
