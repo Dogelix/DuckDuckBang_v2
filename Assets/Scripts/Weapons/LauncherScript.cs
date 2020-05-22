@@ -16,11 +16,13 @@ public class LauncherScript : MonoBehaviour
     private float nextFire;
     public float shotPower;
 
-    //public GameObject Ammo;
+    private LauncherAmmoController ammoCOntroller;
 
     void Awake()
     {
         _pose = GetComponentInParent<SteamVR_Behaviour_Pose>();
+        ammoCOntroller = FindObjectOfType<LauncherAmmoController>();
+
     }
 
     private void Update()
@@ -31,7 +33,7 @@ public class LauncherScript : MonoBehaviour
 
     public bool Shoot()
     {
-        int ammo = GetComponentInChildren<LauncherAmmoController>().Ammo;
+        int ammo = ammoCOntroller.Ammo;
 
         if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire && ammo > 0)
         {
@@ -39,7 +41,7 @@ public class LauncherScript : MonoBehaviour
 
             var rocket = Instantiate(Rocket, Barrel.transform.position, transform.rotation);
             rocket.GetComponent<Rigidbody>().AddForce(Parent.transform.forward * shotPower);
-            GetComponentInChildren<LauncherAmmoController>().Ammo = ammo - 1;
+            ammoCOntroller.Ammo = ammo - 1;
         }
         return false;
     }

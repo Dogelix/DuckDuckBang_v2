@@ -12,4 +12,5 @@ public class LauncherAmmoController : MonoBehaviour
     {
         GetComponent<UnityEngine.UI.Text>().text = Ammo.ToString();
     }
+
 }
