@@ -149,9 +149,11 @@
     <Compile Include="Assets\Scripts\Utils\Limits.cs" />
     <Compile Include="Assets\Scripts\Utils\LookAt.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\IMenuItem.cs" />
+    <Compile Include="Assets\Scripts\Utils\Menus\Key.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\LevelSelector.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\MainMenuBehaviours.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\MenuParentClass.cs" />
+    <Compile Include="Assets\Scripts\Utils\Menus\PlayerNameManager.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\QuitScript.cs" />
     <Compile Include="Assets\Scripts\Utils\Menus\RestartLevel.cs" />
     <Compile Include="Assets\Scripts\Utils\ScoreBoard.cs" />
