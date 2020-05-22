@@ -46,7 +46,7 @@ public class Flock : MonoBehaviour
             }
         }
         // set different timing
-        attackDelay = Random.Range(1f, 7f);
+        attackDelay = Random.Range(5f, 10f);
         StartCoroutine(Attack());
     }
 

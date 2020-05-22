@@ -7,9 +7,16 @@ public class RocketExplosion : MonoBehaviour
 {
     public GameObject effect;
     public int radius;
+
+    
     private void OnCollisionEnter(Collision collision)
     {
         Destroy(this.gameObject);
+    }
+
+    private void Update()
+    {
+        transform.Rotate(10, 20, 0, Space.Self);
     }
 
     private void OnDestroy()

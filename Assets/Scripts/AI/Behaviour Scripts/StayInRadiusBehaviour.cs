@@ -6,26 +6,26 @@ using UnityEngine;
 public class StayInRadiusBehaviour : FlockBehaviour
 {
     public float radius = 15f;
-    public float height;
+    //public float height;
     private GameObject center;
 
     private void OnEnable()
     {
-        center = GameObject.FindGameObjectWithTag("Player");
+        center = GameObject.FindGameObjectWithTag("FlyCenter");
     }
 
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
         if (center == null)
         {
-            center = GameObject.FindGameObjectWithTag("Player");
+            center = GameObject.FindGameObjectWithTag("FlyCenter");
         }
 
         if (agent.stayInRadius)
         {
-            var higher = new Vector3(center.transform.position.x, height, center.transform.position.z);
+           // var higher = new Vector3(center.transform.position.x, height, center.transform.position.z);
 
-            Vector3 centerOffset = higher - agent.transform.position;
+            Vector3 centerOffset = center.transform.position - agent.transform.position;
 
             float t = centerOffset.magnitude / radius;
             if (t < 0.9f)

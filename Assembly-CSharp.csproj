@@ -137,6 +137,7 @@
     <Compile Include="Assets\Scripts\RotateChild.cs" />
     <Compile Include="Assets\Scripts\SpawnLocationGizmos.cs" />
     <Compile Include="Assets\Scripts\Targets\TargetController.cs" />
+    <Compile Include="Assets\Scripts\Utils\EGameMode.cs" />
     <Compile Include="Assets\Scripts\Utils\EventManager.cs" />
     <Compile Include="Assets\Scripts\Utils\GameAssets.cs" />
     <Compile Include="Assets\Scripts\Utils\GameModeController.cs" />
@@ -200,6 +201,24 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -212,24 +231,6 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualEffectGraph.Runtime">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
@@ -239,26 +240,26 @@
     <Reference Include="Unity.VisualEffectGraph.Editor">
       <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ProBuilder">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ProBuilder.Editor">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
+      <HintPath>C:/Users/pavel.watras/Desktop/duck/Ducks New Repo/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -799,9 +800,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="NavMeshComponentsExamplesEditor.csproj">
+      <Project>{C924D00B-8053-A2AA-1F94-3F59AE268220}</Project>
+      <Name>NavMeshComponentsExamplesEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{2CB85900-1DB0-9ECB-DA0A-3AF6555D91DD}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="SteamVR_Actions.csproj">
       <Project>{63450581-764B-766A-2A77-0934236908BF}</Project>
       <Name>SteamVR_Actions</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{A3940672-D9C2-5281-969B-E1AC6511FE67}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsExamples.csproj">
+      <Project>{E14E281D-DD70-FBF7-E717-3C23453A2F5B}</Project>
+      <Name>NavMeshComponentsExamples</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
       <Project>{2EBEEBAE-C624-160D-B881-EEBDF5DCBB34}</Project>
@@ -818,22 +835,6 @@
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{8554727A-0A36-0E7F-ADF1-63A953824571}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
-    </ProjectReference>
-    <ProjectReference Include="NavMeshComponentsExamplesEditor.csproj">
-      <Project>{C924D00B-8053-A2AA-1F94-3F59AE268220}</Project>
-      <Name>NavMeshComponentsExamplesEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="NavMeshComponentsEditor.csproj">
-      <Project>{2CB85900-1DB0-9ECB-DA0A-3AF6555D91DD}</Project>
-      <Name>NavMeshComponentsEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{A3940672-D9C2-5281-969B-E1AC6511FE67}</Project>
-      <Name>NavMeshComponents</Name>
-    </ProjectReference>
-    <ProjectReference Include="NavMeshComponentsExamples.csproj">
-      <Project>{E14E281D-DD70-FBF7-E717-3C23453A2F5B}</Project>
-      <Name>NavMeshComponentsExamples</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

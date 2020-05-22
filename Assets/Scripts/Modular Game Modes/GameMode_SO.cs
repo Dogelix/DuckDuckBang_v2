@@ -11,12 +11,15 @@ public class GameMode_SO : MonoBehaviour
     public bool _gameOver;
     public GameModeTypes _type;
     public string _playerName;
-
-    private static string _dataPath = Application.dataPath + "/playersettings.json";
+    private static string _dataPath;
+    private void Start()
+    {
+        _dataPath = Application.dataPath + "/playersettings.json";
+    }
 
     private void Awake()
     {
-        using ( StreamReader r = new StreamReader(_dataPath) )
+        using (StreamReader r = new StreamReader(_dataPath))
         {
             string json = r.ReadToEnd();
             JObject @object = JsonConvert.DeserializeObject<JObject>(json);
