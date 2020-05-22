@@ -233,6 +233,9 @@
     <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
       <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.postprocessing.Editor">
+      <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/com.unity.postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
@@ -241,6 +244,9 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
       <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.postprocessing.Runtime">
+      <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/com.unity.postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualEffectGraph.Editor">
       <HintPath>C:/Users/Jake.yeatman/Desktop/RandomProjects/DuckDuckBang_v2/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
