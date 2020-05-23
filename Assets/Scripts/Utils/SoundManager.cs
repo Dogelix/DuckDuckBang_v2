@@ -52,6 +52,7 @@ public class SoundManager : MonoBehaviour
     public enum SoundsNames // Make sure to add an enum for every sound in the sounds list.
     {
         GunShot_1,
-        Quack_1
+        Quack_1,
+        explosion
     }
 }

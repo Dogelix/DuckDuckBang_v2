@@ -15,6 +15,7 @@ public class ShotgunScript : MonoBehaviour, IShootable
     private float nextFire;
     public float shotPower;
     public int numberOfBuletsPerShot;
+    public AudioSource shotgunShot;
 
    public float offset;
 
@@ -35,8 +36,8 @@ public class ShotgunScript : MonoBehaviour, IShootable
     {
         if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire)
         {
+            shotgunShot.Play();
             nextFire = Time.time + firerate;
-
             for (int i = 0; i < numberOfBuletsPerShot; i++)
             {
                 var bullet = Instantiate(GameAssets.i.Bullet, Barrel.transform.position, transform.rotation);

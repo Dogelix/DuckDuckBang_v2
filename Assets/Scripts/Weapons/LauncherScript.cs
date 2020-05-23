@@ -15,6 +15,7 @@ public class LauncherScript : MonoBehaviour
     private WaitForSeconds shotDuration = new WaitForSeconds(0.1f);
     private float nextFire;
     public float shotPower;
+    public AudioSource launchSound;
 
     private LauncherAmmoController ammoCOntroller;
 
@@ -37,6 +38,7 @@ public class LauncherScript : MonoBehaviour
 
         if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire && ammo > 0)
         {
+            launchSound.Play();
             nextFire = Time.time + firerate;
 
             var rocket = Instantiate(Rocket, Barrel.transform.position, transform.rotation);

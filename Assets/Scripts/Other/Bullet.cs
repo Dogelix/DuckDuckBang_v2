@@ -16,10 +16,10 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == uString.Enemy)
-        {
-            Destroy(gameObject);
+        {           
             collision.gameObject.GetComponent<AgentHealth>().DoDamage(1);
         }
         if (collision.transform.tag == uString.Menu) collision.transform.GetComponent<IMenuItem>().Activate();
+        Destroy(gameObject);
     }
 }

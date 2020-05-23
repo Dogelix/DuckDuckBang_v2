@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using static SoundManager;
 
 public class RocketExplosion : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class RocketExplosion : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        FindObjectOfType<SoundManager>().PlaySound(SoundsNames.explosion, false, false);
         Destroy(this.gameObject);
     }
 
