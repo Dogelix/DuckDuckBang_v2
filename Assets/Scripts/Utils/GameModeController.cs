@@ -105,7 +105,7 @@ public class GameModeController : MonoBehaviour
 
         Highscore.SaveScore(new HighScores { PlayerId = SystemInfo.deviceUniqueIdentifier, PlayerIden = GameMode._playerName, GameMode_Fk = (int)EGameMode.NOTLD, Score = FindObjectOfType<PlayerScore>().GetScore });
 
-        //GetComponentInChildren<GameOverUI>().ShowGameOver();
+        GetComponentInChildren<GameOverUI>().ShowGameOver();
     }
 
     public void TargetGameOver(GameObject target)
