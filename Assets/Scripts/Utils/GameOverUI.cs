@@ -7,10 +7,26 @@ public class GameOverUI : MonoBehaviour
 {
     public Canvas _canvas;
     public RectTransform _textMesh;
+    float lerp = 0;
 
     public void ShowGameOver()
     {
         _canvas.enabled = true;
-        _textMesh.gameObject.GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag(StringUtils.SceneManager).GetComponent<PlayerScore>().GetScore.ToString();
+
+        _textMesh.gameObject.GetComponent<TextMeshProUGUI>().text = GetComponentInParent<PlayerScore>().GetScore.ToString();
+    }
+
+    private void FixedUpdate()
+    {
+        if ( transform.localScale != Vector3.one && _canvas.enabled )
+        {
+            ScaleUp();
+        }
+    }
+
+    private void ScaleUp()
+    {
+        lerp += Time.deltaTime / 4;
+        transform.localScale = new Vector3(Mathf.Lerp(0, 1, lerp), Mathf.Lerp(0, 1, lerp), Mathf.Lerp(0, 1, lerp));
     }
 }
