@@ -6,12 +6,12 @@ using static SoundManager;
 
 public class RocketExplosion : MonoBehaviour
 {
-    public GameObject effect;
     public int radius;
     public int blastBackRadius;
-
+    public GameObject mushroom;
     private void OnCollisionEnter(Collision collision)
     {
+        Instantiate(mushroom, transform.position, Quaternion.identity);
         FindObjectOfType<SoundManager>().PlaySound(SoundsNames.explosion, false, false);
         Destroy(this.gameObject);
     }
@@ -23,9 +23,6 @@ public class RocketExplosion : MonoBehaviour
 
     private void OnDestroy()
     {
-        var obj = Instantiate(effect, transform.position, Quaternion.identity);
-        obj.GetComponent<ParticleSystem>().loop = false;
-        Destroy(obj, 2);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius).Where(x => x.gameObject.tag == "Enemy").ToArray();
         Collider[] blastHitColliders = Physics.OverlapSphere(transform.position, blastBackRadius).Where(x => x.gameObject.tag == "Enemy").ToArray();
 

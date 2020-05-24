@@ -15,13 +15,13 @@ public class GameModeController : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         //Set Cursor to not be visible
         Cursor.visible = false;
         // Lock cursor on the window
         Cursor.lockState = CursorLockMode.Locked;
 
         SteamVR_Fade.View(Color.clear, 2);
-
     }
 
     private void Awake()

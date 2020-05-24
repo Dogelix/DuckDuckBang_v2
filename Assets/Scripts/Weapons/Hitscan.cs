@@ -11,7 +11,7 @@ public class Hitscan : MonoBehaviour, IShootable
 
     public SteamVR_Action_Boolean _fireAction = null;
 
-    private SteamVR_Behaviour_Pose _pose;
+    public SteamVR_Behaviour_Pose _pose;
 
 
     public float firerate = 0.25f;

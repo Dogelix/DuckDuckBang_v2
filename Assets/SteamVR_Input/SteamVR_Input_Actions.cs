@@ -45,6 +45,8 @@ namespace Valve.VR
         
         private static SteamVR_Action_Vector2 p_default_Touch;
         
+        private static SteamVR_Action_Boolean p_default_Menu;
+        
         private static SteamVR_Action_Vibration p_default_Haptic;
         
         private static SteamVR_Action_Vector2 p_platformer_Move;
@@ -173,6 +175,14 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Action_Boolean default_Menu
+        {
+            get
+            {
+                return SteamVR_Actions.p_default_Menu.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
         public static SteamVR_Action_Vibration default_Haptic
         {
             get
@@ -254,6 +264,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_Swipe,
                     SteamVR_Actions.default_SwipeLeft,
                     SteamVR_Actions.default_Touch,
+                    SteamVR_Actions.default_Menu,
                     SteamVR_Actions.default_Haptic,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
@@ -277,6 +288,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_Swipe,
                     SteamVR_Actions.default_SwipeLeft,
                     SteamVR_Actions.default_Touch,
+                    SteamVR_Actions.default_Menu,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Steering,
@@ -298,6 +310,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_GrabGrip,
                     SteamVR_Actions.default_HeadsetOnHead,
                     SteamVR_Actions.default_SnapTurnLeft,
+                    SteamVR_Actions.default_Menu,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset};
@@ -327,6 +340,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_Swipe,
                     SteamVR_Actions.default_SwipeLeft,
                     SteamVR_Actions.default_Touch,
+                    SteamVR_Actions.default_Menu,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Steering,
@@ -351,6 +365,7 @@ namespace Valve.VR
             SteamVR_Actions.p_default_Swipe = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/default/in/Swipe")));
             SteamVR_Actions.p_default_SwipeLeft = ((SteamVR_Action_Vector3)(SteamVR_Action.Create<SteamVR_Action_Vector3>("/actions/default/in/SwipeLeft")));
             SteamVR_Actions.p_default_Touch = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/default/in/Touch")));
+            SteamVR_Actions.p_default_Menu = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/Menu")));
             SteamVR_Actions.p_default_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Action.Create<SteamVR_Action_Vibration>("/actions/default/out/Haptic")));
             SteamVR_Actions.p_platformer_Move = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/platformer/in/Move")));
             SteamVR_Actions.p_platformer_Jump = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/platformer/in/Jump")));

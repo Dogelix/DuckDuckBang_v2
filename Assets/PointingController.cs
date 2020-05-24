@@ -40,7 +40,7 @@ public class PointingController : MonoBehaviour
                     disableShoot = true;
                     GunShot.Play();
                     StartCoroutine(FadeOutMusic(MainSong, 2));
-                    SteamVR_Fade.View(Color.black, 2);
+                    SteamVR_Fade.View(Color.black, 3);
                     StartCoroutine(WaitForSceneLoad("NotLD"));
                 }
                 else if(hit.collider.tag == "MenuItem" )
@@ -69,7 +69,7 @@ public class PointingController : MonoBehaviour
     private IEnumerator WaitForSceneLoad(string scene)
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        SceneManager.LoadScene(scene);
 
     }
 

@@ -21,6 +21,11 @@ TagManager:
   - MenuItem
   - PowerUp
   - FlyCenter
+  - NOTLD
+  - Barrel
+  - Weapon
+  - Quit
+  - Resume
   layers:
   - Default
   - TransparentFX
@@ -38,9 +43,9 @@ TagManager:
   - Portal
   - GoldRegi
   - Bullet
-  - 
-  - 
-  - 
+  - Player
+  - Weapon
+  - PauseCanvas
   - 
   - 
   - 

@@ -153,7 +153,7 @@ MonoBehaviour:
   effect: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
   radius: 10
   blastBackRadius: 0
-  explosionSound: {fileID: -7826704892732447516}
+  mushroom: {fileID: 670691439109680058, guid: 7eea4b717a370224f89571a81249d6b0, type: 3}
 --- !u!1001 &2808848243607199892
 PrefabInstance:
   m_ObjectHideFlags: 0

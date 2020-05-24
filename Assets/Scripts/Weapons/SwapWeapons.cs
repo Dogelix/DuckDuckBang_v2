@@ -12,7 +12,7 @@ public class SwapWeapons : MonoBehaviour
 
     public SteamVR_Action_Boolean swapAction = null;
     public SteamVR_Action_Vector2 touch = null;
-
+    public PauseController pauseController;
 
     private SteamVR_Behaviour_Pose _pose;
     private int currentImageIndex = 0;
@@ -34,41 +34,43 @@ public class SwapWeapons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 axis = touch.GetAxis(_pose.inputSource);           
-
-        // Open Weapon Menu
-        if (swapAction.GetStateDown(_pose.inputSource))
+        if (!pauseController.Paused)
         {
-            if (!isDisplayed && axis.x > -0.7f && axis.x < 0.7f)
-            {
-                imageHolder.enabled = true;
-                isDisplayed = true;
-                tempIndex = currentImageIndex;
-            }
-            else if (isDisplayed)
-            {
-                if (axis.x <= -0.7f) // Swipe Left
-                {
-                    currentImageIndex = (currentImageIndex - 1 < 0) ? WeaponImages.Length - 1 : currentImageIndex - 1;
-                    imageHolder.sprite = WeaponImages[currentImageIndex];
-                }
-                else if (axis.x >= 0.7f) // Swipe Right
-                {
-                    currentImageIndex = (currentImageIndex + 1 > WeaponImages.Length - 1) ? 0 : currentImageIndex + 1;
-                    imageHolder.sprite = WeaponImages[currentImageIndex];
-                } 
-                else if (axis.x > -0.7f && axis.x < 0.7f)
-                {
-                    imageHolder.enabled = false;
-                    isDisplayed = false;
-                    // Disable Previous weapon
-                    weapons[tempIndex].SetActive(false);
-                    // Enable current weapon
-                    weapons[currentImageIndex].SetActive(true);
-                }              
-            }
-        }
+            Vector2 axis = touch.GetAxis(_pose.inputSource);
 
+            // Open Weapon Menu
+            if (swapAction.GetStateDown(_pose.inputSource))
+            {
+                if (!isDisplayed && axis.x > -0.7f && axis.x < 0.7f)
+                {
+                    imageHolder.enabled = true;
+                    isDisplayed = true;
+                    tempIndex = currentImageIndex;
+                }
+                else if (isDisplayed)
+                {
+                    if (axis.x <= -0.7f) // Swipe Left
+                    {
+                        currentImageIndex = (currentImageIndex - 1 < 0) ? WeaponImages.Length - 1 : currentImageIndex - 1;
+                        imageHolder.sprite = WeaponImages[currentImageIndex];
+                    }
+                    else if (axis.x >= 0.7f) // Swipe Right
+                    {
+                        currentImageIndex = (currentImageIndex + 1 > WeaponImages.Length - 1) ? 0 : currentImageIndex + 1;
+                        imageHolder.sprite = WeaponImages[currentImageIndex];
+                    }
+                    else if (axis.x > -0.7f && axis.x < 0.7f)
+                    {
+                        imageHolder.enabled = false;
+                        isDisplayed = false;
+                        // Disable Previous weapon
+                        weapons[tempIndex].SetActive(false);
+                        // Enable current weapon
+                        weapons[currentImageIndex].SetActive(true);
+                    }
+                }
+            }
+        }       
     }
 
 }
