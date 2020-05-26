@@ -8,9 +8,11 @@ public class GameOverUI : MonoBehaviour
     public Canvas _canvas;
     public RectTransform _textMesh;
     float lerp = 0;
+    public AudioSource GameOverSound;
 
     public void ShowGameOver()
     {
+        GameOverSound.Play();
         _canvas.enabled = true;
 
         _textMesh.gameObject.GetComponent<TextMeshProUGUI>().text = GetComponentInParent<PlayerScore>().GetScore.ToString();

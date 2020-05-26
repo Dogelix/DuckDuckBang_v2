@@ -27,14 +27,14 @@ public class PausePointerControll : MonoBehaviour
 
         if (CurrentHighlight != null)
         {
-            CurrentHighlight.GetComponent<UnityEngine.UI.Text>().color = Color.black;
+            CurrentHighlight.GetComponent<Light>().enabled = false;
             CurrentHighlight = null;
         }
 
         if (contact && hit.collider.gameObject.layer == LayerMask.NameToLayer("PauseCanvas"))
         {
             CurrentHighlight = hit.collider.gameObject;
-            hit.collider.gameObject.GetComponent<UnityEngine.UI.Text>().color = Color.green;
+            hit.collider.gameObject.GetComponent<Light>().enabled = true;
 
             if (Shoot.GetStateDown(Pose.inputSource))
             {

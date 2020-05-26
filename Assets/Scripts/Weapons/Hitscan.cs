@@ -86,11 +86,7 @@ public class Hitscan : MonoBehaviour, IShootable
                 else if(hit.collider.tag == "MenuItem")
                 {
                     hit.transform.gameObject.GetComponent<IMenuItem>().Activate();
-                }
-                else
-                {
-                   // hit.transform.gameObject.GetComponent<QuitScript>().Activate();
-                }
+                }               
             }
             else
             {

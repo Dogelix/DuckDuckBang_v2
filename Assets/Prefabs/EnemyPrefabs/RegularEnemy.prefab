@@ -50,6 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 1
+  Feathers: {fileID: 1831051925938493075, guid: 6a74aae3988e0804d937fd9f473bd544,
+    type: 3}
 --- !u!114 &5624585639347908089
 MonoBehaviour:
   m_ObjectHideFlags: 0

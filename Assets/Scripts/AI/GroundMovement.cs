@@ -17,7 +17,7 @@ public class GroundMovement : MonoBehaviour
     public NavMeshAgent agent;
     public EWalkType _walkType = EWalkType.Walking;
     private Animator _animator;
-    public GameObject Feathers;
+    public float AttackAnimationSpeed; 
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,6 @@ public class GroundMovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        Instantiate(Feathers, transform.position, Quaternion.identity);
     }
 
     void Update()
@@ -44,17 +43,26 @@ public class GroundMovement : MonoBehaviour
     {
         if (target == null)
         {
+            _animator.SetTrigger(_walkType.ToString());
             SetTarget();
         }
     }
 
-    private IEnumerator KeepOnKilling(float delay, GameObject t)
+    private IEnumerator KeepOnKilling(float delay, GameObject t, int damage)
     {
         yield return new WaitForSeconds(delay);
         if (t != null) // if our target still exist, keep on Killing
         {
+            for (int i = 0; i < damage; i++)
+            {
+                t.GetComponentInChildren<TargetHealth>().TakeDamage();
+            }
             Attack(t);
-            StartCoroutine(KeepOnKilling(2f, t));
+        }
+        else
+        {
+            _animator.StopPlayback();
+            _animator.SetTrigger(_walkType.ToString());
         }
 
     }
@@ -73,7 +81,6 @@ public class GroundMovement : MonoBehaviour
             if (other.gameObject == target)
             {
                 Attack(other.gameObject);
-                StartCoroutine(KeepOnKilling(2f, other.gameObject));
             }
         }
     }
@@ -87,20 +94,21 @@ public class GroundMovement : MonoBehaviour
             if ( overheadChance <= 2.0f )
             {
                 _animator.SetTrigger("Overhead");
-                t.GetComponentInChildren<TargetHealth>().TakeDamage();
-                t.GetComponentInChildren<TargetHealth>().TakeDamage();
+                StartCoroutine(KeepOnKilling(AttackAnimationSpeed, t, 2));
+
             }
             else
             {
                 _animator.SetTrigger("Punch");
-                t.GetComponentInChildren<TargetHealth>().TakeDamage();
+                StartCoroutine(KeepOnKilling(AttackAnimationSpeed, t, 1));
+
             }
         }
         else
         {
             _animator.SetTrigger("Attack");
-            t.GetComponentInChildren<TargetHealth>().TakeDamage();
+            StartCoroutine(KeepOnKilling(AttackAnimationSpeed, t, 1));
         }
-    } 
+    }
 
 }

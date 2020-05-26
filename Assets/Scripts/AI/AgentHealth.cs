@@ -5,9 +5,10 @@ using UnityEngine;
 public class AgentHealth : MonoBehaviour
 {
     public int _hp = 1;
-
+    public GameObject Feathers;
     public void DoDamage(int dmg)
     {
+        Instantiate(Feathers, transform.position, Quaternion.identity);
         _hp -= dmg;
         if(_hp <= 0)
         {

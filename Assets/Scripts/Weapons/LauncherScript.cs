@@ -16,6 +16,8 @@ public class LauncherScript : MonoBehaviour
     private float nextFire;
     public float shotPower;
     public AudioSource launchSound;
+    //public AudioSource rubberDuckSound;
+
 
     private LauncherAmmoController ammoCOntroller;
 
@@ -39,6 +41,7 @@ public class LauncherScript : MonoBehaviour
         if (_fireAction.GetStateDown(_pose.inputSource) && Time.time > nextFire && ammo > 0)
         {
             launchSound.Play();
+           // rubberDuckSound.Play();
             nextFire = Time.time + firerate;
 
             var rocket = Instantiate(Rocket, Barrel.transform.position, transform.rotation);

@@ -150,8 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c178d6aa1b961664898a61785c5ab081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
-  radius: 10
+  radius: 7
   blastBackRadius: 0
   mushroom: {fileID: 670691439109680058, guid: 7eea4b717a370224f89571a81249d6b0, type: 3}
 --- !u!1001 &2808848243607199892

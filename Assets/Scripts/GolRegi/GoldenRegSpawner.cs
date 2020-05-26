@@ -55,8 +55,7 @@ public class GoldenRegSpawner : MonoBehaviour
         spawnedPortals[1] = endPortal;
 
         // Spawn Regi on starting portal
-        var regi = Instantiate(GoldRegPrefab, startPortalPos, Quaternion.identity);
-
+        Instantiate(GoldRegPrefab, startPortalPos, Quaternion.identity);
     }
 
     private IEnumerator WaitBeforeSpawn(float delay)

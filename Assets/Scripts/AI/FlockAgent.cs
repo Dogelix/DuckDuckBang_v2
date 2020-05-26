@@ -10,7 +10,6 @@ public class FlockAgent : MonoBehaviour
     public bool stayInRadius = true;
     public bool allign = true;
     public GameObject target;
-    public GameObject Feathers;
 
     private void Start()
     {
@@ -28,7 +27,6 @@ public class FlockAgent : MonoBehaviour
 
     private void OnDestroy()
     {
-       Instantiate(Feathers, transform.position, Quaternion.identity);
        Flock.agents.Remove(this);
     }
 

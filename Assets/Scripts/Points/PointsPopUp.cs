@@ -37,7 +37,7 @@ public class PointsPopUp : MonoBehaviour
     }
 
     float lerp = 0.0f;
-    int startSize = 12;
+    int startSize = 20;
     int endSize = 0;
 
     private void DecreaseFont()

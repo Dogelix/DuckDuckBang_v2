@@ -11,7 +11,8 @@ public class RocketExplosion : MonoBehaviour
     public GameObject mushroom;
     private void OnCollisionEnter(Collision collision)
     {
-        Instantiate(mushroom, transform.position, Quaternion.identity);
+        var pos = new Vector3(transform.position.x, transform.position.y - 0.8f, transform.position.z);
+        Instantiate(mushroom, pos, Quaternion.identity);
         FindObjectOfType<SoundManager>().PlaySound(SoundsNames.explosion, false, false);
         Destroy(this.gameObject);
     }
@@ -28,7 +29,7 @@ public class RocketExplosion : MonoBehaviour
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
-            hitColliders[i].gameObject.GetComponent<AgentHealth>().DoDamage(5);
+            hitColliders[i].gameObject.GetComponent<AgentHealth>().DoDamage(20);
         }
 
         for ( int i = 0; i < blastHitColliders.Length; i++ )

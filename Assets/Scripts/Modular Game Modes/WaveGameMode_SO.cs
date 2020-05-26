@@ -11,7 +11,7 @@ public class WaveGameMode_SO : GameMode_SO
     [Tooltip("Either the wave limit or waves survived")]
     public int _waves;
 
-    private int _currentWave = 1;
+    public int _currentWave = 1;
 
     /// <summary>
     /// Amount of agents for the starting wave
@@ -106,6 +106,8 @@ public class WaveGameMode_SO : GameMode_SO
             
             spawnLock  = true;
             _currentWave++;
+
+            FindObjectOfType<WaveDisplayer>().Init(_currentWave);
             
             //if wave is 2+ do this
             if(_currentWave != 1 && (_currentWave % 10) != 0)

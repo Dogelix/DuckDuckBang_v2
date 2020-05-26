@@ -6,11 +6,11 @@ public class Bullet : MonoBehaviour
 {
     public float _despawnTime = 5.0f;
 
+
     private void Awake()
     {
         Destroy(gameObject, _despawnTime);
     }
-
 
 
     private void OnCollisionEnter(Collision collision)

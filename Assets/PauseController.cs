@@ -10,7 +10,7 @@ public class PauseController : MonoBehaviour
     public SteamVR_Behaviour_Pose Pose;
     public bool Paused;
     public GameObject Pointer;
-    public GameObject Canvas;
+    public GameObject PauseObj;
 
     private int coolingMask;
     private GameObject currentWeapon;
@@ -27,7 +27,7 @@ public class PauseController : MonoBehaviour
         {
             if (PauseButton.GetStateDown(Pose.inputSource))
             {
-                Canvas.SetActive(true);
+                PauseObj.SetActive(true);
                 currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
                 currentWeapon.SetActive(false);
                 Pointer.SetActive(true);
@@ -41,7 +41,7 @@ public class PauseController : MonoBehaviour
 
     public void Resume()
     {
-        Canvas.SetActive(false);
+        PauseObj.SetActive(false);
         currentWeapon.SetActive(true);
         Pointer.SetActive(false);
         Time.timeScale = 1;
