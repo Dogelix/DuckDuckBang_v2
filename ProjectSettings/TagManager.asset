@@ -8,6 +8,24 @@ TagManager:
   - Enemy
   - Bullet
   - _SCENE_MANAGER_
+  - projectile
+  - FxTemporaire
+  - Fire
+  - Obstacle
+  - AiTarget
+  - GameObjective
+  - FlySpawn
+  - GroundSpawn
+  - GoldenRegi
+  - endPortal
+  - MenuItem
+  - PowerUp
+  - FlyCenter
+  - NOTLD
+  - Barrel
+  - Weapon
+  - Quit
+  - Resume
   layers:
   - Default
   - TransparentFX
@@ -17,18 +35,18 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Physics
+  - AirEnemy
+  - GroundEnemy
+  - Physics
+  - Target
+  - Portal
+  - GoldRegi
+  - Bullet
+  - Player
+  - Weapon
+  - PauseCanvas
+  - LauncherAmmo
   - 
   - 
   - 

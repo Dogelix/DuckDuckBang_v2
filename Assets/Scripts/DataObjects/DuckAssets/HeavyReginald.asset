@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7b1cee187f270499165475638dd537, type: 3}
+  m_Name: HeavyReginald
+  m_EditorClassIdentifier: 
+  _asset: {fileID: 1662266536894160791, guid: 959db61c107bcc743b8d492174e495ec, type: 3}
+  _avatar: {fileID: 9000000, guid: 144ae431a62e3af4cbde809de1d66061, type: 3}
+  _animationController: {fileID: 9100000, guid: 5e048f64c69702f42810bf7621025d06,
+    type: 2}
